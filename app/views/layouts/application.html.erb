@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Indieclonego</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPhIt2dsEfbLvodELR9OpHDHmX-bFoboo"%>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
