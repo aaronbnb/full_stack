@@ -14,23 +14,37 @@
  *= require_self
  */
 
- h1, h2, h3, header, img, li, ul, div {
+ h1, h2, h3, header, img, li, ul, div,
+ hgroup, button, link, body  {
    margin: 0px;
+   padding: 0px;
+   margin-top: 0px;
+   position: 0px
+   list-style: none;
  }
 
 .login-signup {
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: Gill Sans;
   float: right;
   text-decoration: none;
+  font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-left: 10px;
+
+}
+
+.righthandmost {
+  margin-right: 5%
 }
 
 .login-signup a {
     color: black;
-    padding: 25px 22px;
+    padding: 25px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    overflow: auto;
 }
 
 .login-signup a:visited {
@@ -45,17 +59,56 @@ h1 {
   float: left;
 }
 
+.modal-btn {
+  background-color: #eb1478;
+  border: 2px solid #eb1478;
+  padding: 11px 18px;
+  font-family: Gill Sans;
+  font-weight: 500;
+  font-size: 15px;
+  color: #FFFFFF;
+  border-radius: 2px;
+  line-height: 16px;
+  letter-spacing: 1px;
+
+}
+
 header h1 img {
-  width: 190px;
-  height: 70px;
   margin-left: 5%;
 }
 
+.logo {
+  max-height: 26px;
+}
+
 header {
+  margin-top: 1px;
   height: 74px;
-  border-color: black;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #dddddd;
+
+}
+
+ul.testpics img {
+  margin-top: -1px;
+    height: 33%;
+    width: 33%;
+    display: inline-block;
+}
+
+.login-input {
+  min-width: 90%;
+  line-height: 24px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Gill Sans, sans-serif;
+}
+
+.login-form {
+  display: block;
+  margin: 0 auto 0 auto;
 }

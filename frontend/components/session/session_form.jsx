@@ -66,9 +66,9 @@ class SessionForm extends React.Component {
 				<nav className="login-signup">
           <Link onClick={(this.headerDemo.bind(this))}>Demo</Link>
           &nbsp;  &nbsp;
-					<Link onClick={this.openModal.bind(this, 'login')}>Log In</Link>
-					&nbsp;  &nbsp;
 					<Link onClick={this.openModal.bind(this, 'signup')}>Sign Up</Link>
+          &nbsp;  &nbsp;
+          <Link onClick={this.openModal.bind(this, 'login')} className='rightmost'>Log In</Link>
           &nbsp;  &nbsp;
 
 				</nav>
@@ -98,46 +98,19 @@ class SessionForm extends React.Component {
 									className="login-input" />
 							</label>
               <br/>
-              <button onClick={this.demo}>Demo</button>
+              <button className='modal-demo-btn' onClick={this.demo}>Demo</button>
 							<br/>
-							<input type="submit" value="Submit" />
+							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
 						</div>
 					</form>
 				</Modal>
-</div>
+      </div>
 );
 
-    //
-    //
-    // return (
-    //   <div>
-    //     <form onSubmit={this.handleSubmit}>
-    //       <h3>{ formHeader } or {this.navLink()}</h3>
-    //       {this.renderErrors()}
-    //       <br/>
-		// 				<label> Username:
-		// 					<input type="text"
-		// 						value={this.state.username}
-		// 						onChange={this.update("username")}
-		// 						/>
-		// 				</label>
-		// 				<br/>
-		// 				<label> Password:
-		// 					<input type="password"
-		// 						value={this.state.password}
-		// 						onChange={this.update("password")}
-		// 						/>
-		// 				</label>
-		// 				<br/>
-		// 				<input type="submit" value="Submit" />
-    //     </form>
-    //   </div>
-    //
-    // );
   }
 
-  formHeader() {
-
+  modalSubmit(modalType) {
+    return (modalType === 'login') ? "LOG IN" : "CREATE AN ACCOUNT";
   }
 
   navLink() {
