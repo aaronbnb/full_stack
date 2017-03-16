@@ -14,23 +14,23 @@
  *= require_self
  */
 
- h1, header {
+ h1, h2, h3, header, img, li, ul, div {
    margin: 0px;
  }
 
 .login-signup {
   font-family: sans-serif;
+  font-weight: bold;
   float: right;
-  margin-top: 25px;
-  margin-right: 5%;
+  text-decoration: none;
 }
 
-.login-signup a:link {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-
-  padding: 30px 15px;
+.login-signup a {
+    color: black;
+    padding: 25px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .login-signup a:visited {
@@ -46,8 +46,9 @@ h1 {
 }
 
 header h1 img {
-  width: 40%;
-  height: 40%;
+  width: 190px;
+  height: 70px;
+  margin-left: 5%;
 }
 
 header {

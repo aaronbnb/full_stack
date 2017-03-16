@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
+import Modal from 'react-modal';
+import ModalStyle from './modal_style';
 
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
+      // this.state = { username: "", password: ""};
       this.state = {
           username: "",
-          password: ""
+          password: "",
+          modalOpen: false,
+			    modalType: 'login'
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.openModal = this.openModal.bind(this);
+      this.closeModal = this.closeModal.bind(this);
+      this.demo = this.demo.bind(this);
+      this.headerDemo = this.headerDemo.bind(this);
   }
 
   componentDidUpdate() {
@@ -21,6 +30,25 @@ class SessionForm extends React.Component {
 		}
 	}
 
+  headerDemo() {
+    this.openModal('login');
+    setTimeout(
+    this.setState({
+      username: "test",
+      password: "password"
+    }),
+    2000);
+    this.props.login({user: {username: "test", password: "password"}});
+  }
+
+  demo() {
+    this.setState({
+      username: "test",
+      password: "password"
+    });
+    this.props.login(this.state);
+  }
+
   update(field) {
 		return e => this.setState({
 			[field]: e.currentTarget.value
@@ -29,33 +57,83 @@ class SessionForm extends React.Component {
 
   render() {
     //need to add classes to this form
-    const { formType } = this.props;
-    const formHeader = (formType === 'login') ? "Log In" : "Sign Up";
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>{ formHeader } or {this.navLink()}</h3>
-          {this.renderErrors()}
-          <br/>
-						<label> Username:
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-								/>
-						</label>
-						<br/>
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-								/>
-						</label>
-						<br/>
-						<input type="submit" value="Submit" />
-        </form>
-      </div>
+    // const { formType } = this.props;
+    // const formHeader = (formType === 'login') ? "Log In" : "Sign Up";
 
-    );
+    return (
+
+			<div className="login-signup-box">
+				<nav className="login-signup">
+          <Link onClick={(this.headerDemo.bind(this))}>Demo</Link>
+          &nbsp;  &nbsp;
+					<Link onClick={this.openModal.bind(this, 'login')}>Log In</Link>
+					&nbsp;  &nbsp;
+					<Link onClick={this.openModal.bind(this, 'signup')}>Sign Up</Link>
+          &nbsp;  &nbsp;
+
+				</nav>
+				<Modal
+					contentLabel="Modal"
+					isOpen={this.state.modalOpen}
+					onRequestClose={this.closeModal}
+					style={ModalStyle}>
+          Welcome to IndieClono!
+ 					<br/>
+            Please {this.state.modalType} or {this.navLink()}
+					<form onSubmit={this.handleSubmit} >
+						{this.renderErrors()}
+						<div className="login-form">
+							<br/>
+							<label> Username:
+								<input type="text"
+									value={this.state.username}
+									onChange={this.update("username")}
+									className="login-input" />
+							</label>
+							<br/>
+							<label> Password:
+							<input type="password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									className="login-input" />
+							</label>
+              <br/>
+              <button onClick={this.demo}>Demo</button>
+							<br/>
+							<input type="submit" value="Submit" />
+						</div>
+					</form>
+				</Modal>
+</div>
+);
+
+    //
+    //
+    // return (
+    //   <div>
+    //     <form onSubmit={this.handleSubmit}>
+    //       <h3>{ formHeader } or {this.navLink()}</h3>
+    //       {this.renderErrors()}
+    //       <br/>
+		// 				<label> Username:
+		// 					<input type="text"
+		// 						value={this.state.username}
+		// 						onChange={this.update("username")}
+		// 						/>
+		// 				</label>
+		// 				<br/>
+		// 				<label> Password:
+		// 					<input type="password"
+		// 						value={this.state.password}
+		// 						onChange={this.update("password")}
+		// 						/>
+		// 				</label>
+		// 				<br/>
+		// 				<input type="submit" value="Submit" />
+    //     </form>
+    //   </div>
+    //
+    // );
   }
 
   formHeader() {
@@ -63,16 +141,33 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    const { formType } = this.props;
-
-    if(formType === 'login') {
-      return <Link to={'/signup'}>Sign Up instead</Link>;
+    // const { formType } = this.props;
+    //
+    // if(formType === 'login') {
+    //   return <Link to={'/signup'}>Sign Up instead</Link>;
+    // } else {
+    //   return (
+    //     <Link to={'/login'}>Log In instead</Link>
+    //   );
+    // }
+    if (this.state.modalType === 'login') {
+      return <button onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>;
     } else {
-      return (
-        <Link to={'/login'}>Log In instead</Link>
-      );
+      return <button onClick={this.openModal.bind(this, 'login')}>Log In</button>;
     }
+
   }
+
+  openModal(modalType) {
+		this.setState({
+			modalOpen: true,
+			modalType
+	  });
+	}
+
+  closeModal() {
+		this.setState({modalOpen: false});
+	}
 
   renderErrors() {
     return (
@@ -86,9 +181,15 @@ class SessionForm extends React.Component {
 
 
   handleSubmit(e) {
-   e.preventDefault();
-   const user = Object.assign({}, this.state);
-   this.props.processForm(user);
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+  //  this.props.processForm(user);
+  //modal code...
+    if (this.state.modalType === 'login') {
+			this.props.login({user});
+		} else {
+			this.props.signup({user});
+		}
  }
   //...
 }
