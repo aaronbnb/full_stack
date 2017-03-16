@@ -101,6 +101,7 @@ class SessionForm extends React.Component {
               <button className='modal-demo-btn' onClick={this.demo}>Demo</button>
 							<br/>
 							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
+              <p>{this.modalAltText(this.state.modalType)}</p>
 						</div>
 					</form>
 				</Modal>
