@@ -5,6 +5,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
+import UserContainer from './users/user_container';
+import UserFormContainer from './users/user_form_container';
+import UserShowContainer from './users/user_show_container';
 
 const Root = ({ store }) => {
 
@@ -26,8 +29,12 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-          <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="users/:userId" component={UserContainer} onEnter={_ensureLoggedIn}>
+            <IndexRoute component={UserShowContainer}  onEnter={_ensureLoggedIn}/>
+            <Route path="edit" component={UserFormContainer} onEnter={_ensureLoggedIn}/>
+          </Route>
         </Route>
       </Router>
     </Provider>

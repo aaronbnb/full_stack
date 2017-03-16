@@ -17,7 +17,10 @@ class Greeting extends React.Component {
   personalGreeting(currentUser, logout) {
     return(
       <hgroup className="header-group">
-        <h2 className="header-name">Hi, {currentUser.username}!</h2>
+        <h3 className="header-name">
+          <Link to={`users/${currentUser.id}`}>{currentUser.username}
+          </Link>
+        </h3>
         <button className="header-button" onClick={logout}>Log Out</button>
       </hgroup>
     );

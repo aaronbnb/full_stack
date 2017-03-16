@@ -98,16 +98,26 @@ class SessionForm extends React.Component {
 									className="login-input" />
 							</label>
               <br/>
-              <button className='modal-demo-btn' onClick={this.demo}>Demo</button>
+              <button className='modal-btn' onClick={this.demo}>Demo</button>
 							<br/>
 							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
-              <p>{this.modalAltText(this.state.modalType)}</p>
+              {this.modalAltText(this.state.modalType)}
 						</div>
 					</form>
 				</Modal>
       </div>
 );
 
+  }
+
+  modalAltText(modalType) {
+    if(modalType === 'login') {
+      return (<p className="modal-alt-text-log-in">New to Indieclono?&nbsp;
+      <Link className='modal-alt-link' onClick={this.openModal.bind(this,'signup')}> Sign Up </Link></p>);
+    } else {
+      return (<p className="modal-alt-text-sign-up">By signing up you agree to our
+      <Link className='modal-alt-link' onClick={() => "en.wikipedia.org/wiki/Privacy_policy"}> Terms of Use </Link> and Privacy Policy</p>);
+    }
   }
 
   modalSubmit(modalType) {

@@ -19,12 +19,11 @@
    margin: 0px;
    padding: 0px;
    margin-top: 0px;
-   position: 0px
-   list-style: none;
+   position: 0px;
  }
 
 .login-signup {
-  font-family: Gill Sans;
+  font-family: "Gill Sans";
   float: right;
   text-decoration: none;
   font-size: 16px;
@@ -63,7 +62,7 @@ h1 {
   background-color: #eb1478;
   border: 2px solid #eb1478;
   padding: 10px 18px;
-  font-family: Gill Sans;
+  font-family: "Gill Sans";
   font-weight: 500;
   font-size: 15px;
   color: #FFFFFF;
@@ -71,7 +70,29 @@ h1 {
   line-height: 16px;
   letter-spacing: 1px;
   outline: none;
+  display: inline-block;
+  margin: 5px 0px;
+  text-transform: uppercase;
 
+}
+
+.modal-alt-link {
+  color: #0eb4b6;
+}
+
+.modal-alt-link:hover {
+  text-decoration: underline;
+}
+
+.modal-alt-text-log-in {
+  font-family: sans-serif;
+  color: #6A6A6A;
+}
+
+.modal-alt-text-sign-up {
+  font-family: sans-serif;
+  color: #6A6A6A;
+  text-decoration: none;
 }
 
 header h1 img {
@@ -104,6 +125,7 @@ ul.testpics img {
   min-width: 90%;
   line-height: 24px;
   padding: 5px;
+  margin: 5px;
   font-size: 16px;
   font-weight: 300;
   font-family: Gill Sans, sans-serif;
@@ -112,4 +134,24 @@ ul.testpics img {
 .login-form {
   display: block;
   margin: 0 auto 0 auto;
+}
+
+.user-nav-bar {
+  background-color: #2A2A2A;
+
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: 1px;
+  margin: 0px;
+}
+
+.user-nav-bar a {
+  text-decoration: none;
+  color: #FAFAFA;
+  vertical-align: middle;
+}
+
+.user-nav-bar a:hover {
+  color: #FFFFFF;
 }

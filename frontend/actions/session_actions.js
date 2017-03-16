@@ -10,6 +10,12 @@ export const login = user => dispatch => (
   ///solutions has errors.responseJSON?
 );
 
+export const update = user => dispatch => (
+  SessionAPIUtil.update(user)
+  .then( updatedUser => dispatch(receiveCurrentUser(user)),
+  errors => dispatch(receiveErrors(errors.responseJSON)))
+);
+
 export const logout = () => dispatch => (
   SessionAPIUtil.logout().then( nonUser => dispatch(receiveCurrentUser(null)))
 );
