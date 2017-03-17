@@ -182,3 +182,66 @@ ul.testpics img {
   border: 2px solid #eb1478;
   color: #ffffff;
 }
+
+
+
+.header-right-signedin {
+    display: flex;
+    div {
+      align-self: center;
+      position: relative;
+      margin: 10px;
+      font-family: sans-serif;
+      text-transform: capitalize;
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+    };
+  }
+
+
+
+
+      .header-loggedin-popout{
+        //the buttons that are shown when signed in
+        width: 160px;
+        border: 1px solid $indie-lightgray;
+        right: 0px;
+        top: 50px;
+        background-color: white;
+        position: absolute;
+        font-family: 'Libre Franklin', sans-serif;
+        font-weight: normal;
+        z-index: 100;
+        ul{
+          //the container for the drop down menu
+          margin: 0;
+          list-style: none;
+
+          li{
+            //each item in the drop down menu
+            border-bottom: 1px solid $indie-lightgray;
+            height: 50px;
+            padding: 10px;
+            box-sizing: border-box;
+            line-height: 200%;
+            cursor: pointer;
+            a{
+              color: $indie-gray;
+              text-decoration: none;
+            }
+            a:hover{
+              color: $indie-pink;
+            }
+          }
+          li:last-of-type{
+            border: none;
+          }
+          li:hover{
+            //mouse over effect for the drop down menu
+            color: $indie-pink;
+          }
+        }
+      }
+    }

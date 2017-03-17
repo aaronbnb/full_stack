@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import UserMenu from '../session/user_menu';
 import SessionFormContainer from '../session/session_form_container';
 import CampaignFormContainer from '../campaigns/campaign_form_container';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showUserMenu: false
+    };
+    this.toggleUserMenu = this.toggleUserMenu.bind(this);
   }
 
   sessionLinks() {
@@ -15,12 +19,24 @@ class Greeting extends React.Component {
     );
   }
 
+  toggleUserMenu(e){
+   this.setState({
+     showUserMenu: true
+   });
+ }
+
   personalGreeting(currentUser, logout) {
     return(
       <hgroup className="header-group">
         <h3 className="header-name">
+          <div className="header-right-signedin">
+            <div onClick={this.toggleUserMenu}>x{currentUser.username}x</div>
+          </div>
+          <br></br>
           <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
           <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
+
+
         </h3>
         <br></br>
         <button className="header-button" onClick={logout}>Log Out</button>
