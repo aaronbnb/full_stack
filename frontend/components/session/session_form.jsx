@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
 
 			<div className="login-signup-box">
 				<nav className="login-signup">
-          <Link onClick={(this.headerDemo.bind(this))}>Demo</Link>
+          <Link onClick={this.headerDemo.bind(this)}>Demo</Link>
           &nbsp;  &nbsp;
 					<Link onClick={this.openModal.bind(this, 'signup')}>Sign Up</Link>
           &nbsp;  &nbsp;
@@ -98,12 +98,12 @@ class SessionForm extends React.Component {
 									className="login-input" />
 							</label>
               <br/>
-              <button className='modal-btn' onClick={this.demo}>Demo</button>
-							<br/>
 							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
-              {this.modalAltText(this.state.modalType)}
-						</div>
+                <button className='modal-btn' onClick={this.demo}>Demo</button>
+                {this.modalAltText(this.state.modalType)}
+          </div>
 					</form>
+          <br/>
 				</Modal>
       </div>
 );

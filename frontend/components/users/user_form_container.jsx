@@ -6,7 +6,7 @@ import UserForm from './user_form';
 
 const mapStateToProps = (state, ownProps) => {
   debugger;
-  return ({currentUser: ownProps.currentUser,
+  return ({currentUser: state.session.currentUser,
           formType: 'edit'});
   // .currentUser[ownProps.params.userId]
 };

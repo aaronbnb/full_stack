@@ -5,6 +5,7 @@ import UserFormContainer from './user_form_container';
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
     this.state = this.props;
   }
 
