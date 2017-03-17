@@ -98,13 +98,16 @@ class SessionForm extends React.Component {
 									className="login-input" />
 							</label>
               <br/>
+              <div className='modal-btn-container'>
 							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
                 <button className='modal-btn' onClick={this.demo}>Demo</button>
                 {this.modalAltText(this.state.modalType)}
+                </div>
           </div>
 					</form>
           <br/>
 				</Modal>
+
       </div>
 );
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import SessionFormContainer from '../session/session_form_container';
+import CampaignFormContainer from '../campaigns/campaign_form_container';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -18,9 +19,10 @@ class Greeting extends React.Component {
     return(
       <hgroup className="header-group">
         <h3 className="header-name">
-          <Link to={`users/${currentUser.id}`}>{currentUser.username}
-          </Link>
+          <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
+          <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
         </h3>
+        <br></br>
         <button className="header-button" onClick={logout}>Log Out</button>
       </hgroup>
     );
@@ -33,7 +35,14 @@ class Greeting extends React.Component {
       </div>
     );
   }
-}
+
+
+    // Add click listener to gear icon which invokes toggle function;
+  }
+
+
+
+
 
 
 //

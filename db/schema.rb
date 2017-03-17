@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316233835) do
+ActiveRecord::Schema.define(version: 20170317174739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string  "title",        null: false
+    t.string  "description",  null: false
+    t.string  "location"
+    t.string  "overview"
+    t.integer "goal",         null: false
+    t.integer "status"
+    t.string  "main_img_url"
+    t.integer "user_id"
+    t.integer "category_id"
+    t.integer "duration"
+    t.index ["title"], name: "index_campaigns_on_title", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

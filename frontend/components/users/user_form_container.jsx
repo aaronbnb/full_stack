@@ -5,7 +5,6 @@ import { logout, update } from '../../actions/session_actions';
 import UserForm from './user_form';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return ({currentUser: state.session.currentUser,
           formType: 'edit'});
   // .currentUser[ownProps.params.userId]

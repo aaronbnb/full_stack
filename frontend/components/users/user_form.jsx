@@ -4,7 +4,6 @@ import { Link, hashHistory, withRouter } from 'react-router';
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     this.state = this.props.currentUser;
     this.state.description = "";
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +14,6 @@ class UserForm extends React.Component {
     const user = Object.assign({}, this.state);
   //  this.props.processForm(user);
   //modal code...
-    debugger;
     this.props.update(user);
  }
 

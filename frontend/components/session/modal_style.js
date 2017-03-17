@@ -16,8 +16,8 @@ const ModalStyle = {
     boxShadow             : '5px 10px 10px 0px rgba(40, 40, 40, .6)',
     backgroundColor       : 'rgba(245, 245, 245, 1)',
     margin                : '0',
-    minWidth              : '260px',
-    minHeight             : '610px',
+    minWidth              : '265px',
+    minHeight             : '503px',
     borderRadius          : '0px',
     overflow              : 'hidden'
   }

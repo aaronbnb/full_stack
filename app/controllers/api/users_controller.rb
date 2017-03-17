@@ -8,7 +8,6 @@ class Api::UsersController < ApplicationController
       @user.description = ""
       @user.profile_img_url = ""
       @user.email = ""
-      puts 'it works, passed validations, in users controller'
       render :show
     else
       render json: @user.errors.full_messages, status: 422
