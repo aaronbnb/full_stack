@@ -25,11 +25,11 @@ class UserNav extends React.Component {
   navBar(pageType) {
     return (
       <nav className='user-nav-bar'>
+        <img src="https://s5.postimg.org/w23pq1407/Screen_Shot_2017_03_16_at_2_01_26_PM.png"/>
         <Link to={`users/${this.props.currentUser.id}`}>
-          <img src="https://s5.postimg.org/w23pq1407/Screen_Shot_2017_03_16_at_2_01_26_PM.png"/>
           View Profile</Link>
+        <img src="https://s5.postimg.org/eq3d4laiv/Screen_Shot_2017_03_16_at_2_17_31_PM.png"/>
         <Link to={`users/${this.props.currentUser.id}/edit`}>
-          <img src="https://s5.postimg.org/eq3d4laiv/Screen_Shot_2017_03_16_at_2_17_31_PM.png"/>
           Edit Profile & Settings</Link>
       </nav>
     );

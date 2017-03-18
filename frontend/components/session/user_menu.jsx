@@ -1,10 +1,12 @@
 
 import React from 'react';
 import {withRouter, Link} from 'react-router';
+import { logout } from '../../actions/session_actions';
 
  class UserMenu extends React.Component{
  	  constructor(props){
  	    super(props);
+      debugger;
       this.link = this.link.bind(this);
  	  }
 
@@ -18,12 +20,12 @@ import {withRouter, Link} from 'react-router';
       let cname = "header-loggedin-popout";
  	    return(
         <div className={cname}>
-          <ul>
-            <li onClick={this.link(`/profile/${this.props.userId}/campaigns`)}>My Campaigns</li>
-            <li onClick={this.link(`/profile/${this.props.userId}/contributions`)}>My Contributions</li>
-            <li onClick={this.link(`/profile/${this.props.userId}`)}>My Profile</li>
-            <li onClick={this.link(`/profile/${this.props.userId}/?edit`)}>My Settings</li>
-            <li onClick={this.props.logOut}>Log Out</li>
+          <ul className="header-popout">
+            <li className="popout-li" onClick={this.link(`/users/${this.props.currentUser.id}/campaigns`)}>My Campaigns</li>
+            <li className="popout-li" onClick={this.link(`/users/${this.props.userId}/contributions`)}>My Contributions</li>
+            <li className="popout-li"><Link to={`users/${this.props.currentUser.id}`}>My Profile</Link></li>
+            <li className="popout-li"><Link to={`users/${this.props.currentUser.id}/edit`}>My Settings</Link></li>
+            <li className="popout-li" onClick={this.props.logout}>Log Out</li>
           </ul>
         </div>
  	    );

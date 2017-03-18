@@ -34,16 +34,16 @@ class SessionForm extends React.Component {
     this.openModal('login');
     setTimeout(
     this.setState({
-      username: "test",
+      username: "aaron12",
       password: "password"
     }),
     2000);
-    this.props.login({user: {username: "test", password: "password"}});
+    this.props.login({user: {username: "aaron12", password: "password"}});
   }
 
   demo() {
     this.setState({
-      username: "test",
+      username: "aaron12",
       password: "password"
     });
     this.props.login(this.state);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserMenu from '../session/user_menu';
+import UserMenuContainer from '../session/user_menu_container';
 import SessionFormContainer from '../session/session_form_container';
 import CampaignFormContainer from '../campaigns/campaign_form_container';
 
@@ -19,29 +19,32 @@ class Greeting extends React.Component {
     );
   }
 
-  toggleUserMenu(e){
-   this.setState({
-     showUserMenu: true
-   });
- }
+  userMenu(e){
+
+    return <UserMenuContainer />;
+  }
+
+  toggleUserMenu() {
+    console.log("works");
+    this.setState({"showUserMenu": !this.state.showUserMenu});
+  }
 
   personalGreeting(currentUser, logout) {
     return(
       <hgroup className="header-group">
-        <h3 className="header-name">
-          <div className="header-right-signedin">
-            <div onClick={this.toggleUserMenu}>x{currentUser.username}x</div>
-          </div>
           <br></br>
           <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
-          <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
 
+          <div>
+            <div className='current-user-link' onClick={this.toggleUserMenu}>{currentUser.username}</div>
 
-        </h3>
+            {(this.state.showUserMenu === true) ? this.userMenu() : ""}
+          </div>
         <br></br>
-        <button className="header-button" onClick={logout}>Log Out</button>
       </hgroup>
     );
+      // <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
+    // <button className="header-button" onClick={logout}>Log Out</button>
   }
 
   render() {

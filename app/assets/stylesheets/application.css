@@ -110,6 +110,7 @@ header {
   height: 74px;
   background-color: #FFFFFF;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #dddddd;
@@ -146,7 +147,8 @@ ul.testpics img {
 
 .user-nav-bar {
   background-color: #2A2A2A;
-
+  align-items: center;
+  display: flex;
   width: 100%;
   height: 30px;
   padding: 10px;
@@ -157,7 +159,6 @@ ul.testpics img {
 .user-nav-bar a {
   text-decoration: none;
   color: #FAFAFA;
-  align-items: center;
 }
 
 .user-nav-bar a:hover {
@@ -169,6 +170,13 @@ ul.testpics img {
   height: 285px;
 }
 
+.header-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 25px;
+}
+
 .campaign-create-btn {
   font-weight: bold;
   font-size: 12px;
@@ -176,71 +184,71 @@ ul.testpics img {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 10px 13px 9px;
-  min-height: 35px;
+  max-height: 35px;
+  margin-right: 20px;
   text-decoration: none;
   background-color: #eb1478;
   border: 2px solid #eb1478;
   color: #ffffff;
 }
 
+.header-popout {
+  list-style: none;
 
+  margin-top: 15px;
+  margin-right: 15px;
+  line-height: 200%;
+  cursor: pointer;
+  display: list-item;
+  width: 160px;
+  right: 0px;
+  background-color: white;
+  position: absolute;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: normal;
+  z-index: 100;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 
-.header-right-signedin {
-    display: flex;
-    div {
-      align-self: center;
-      position: relative;
-      margin: 10px;
-      font-family: sans-serif;
-      text-transform: capitalize;
-      font-family: 'Libre Franklin', sans-serif;
-      font-weight: 800;
-      font-size: 14px;
-      cursor: pointer;
-    };
-  }
+}
 
+.popout-li {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 50px;
+  border-bottom: 1px solid #dddddd;
+}
 
+li.popout-li a {
+  text-decoration: none;
+  color: black;
+}
+li.popout-li a:hover {
+  color: #eb1478;
+}
 
-/*
-      .header-loggedin-popout{
-        //the buttons that are shown when signed in
-        width: 160px;
-        border: 1px solid $indie-lightgray;
-        right: 0px;
-        top: 50px;
-        background-color: white;
-        position: absolute;
-        font-family: 'Libre Franklin', sans-serif;
-        font-weight: normal;
-        z-index: 100;
-        ul{
-          //the container for the drop down menu
-          margin: 0;
-          list-style: none;
+.popout-li:hover {
+  color: #eb1478;
+}
 
-          li{
-            //each item in the drop down menu
-            border-bottom: 1px solid $indie-lightgray;
-            height: 50px;
-            padding: 10px;
-            box-sizing: border-box;
-            line-height: 200%;
-            cursor: pointer;
-            a{
-              color: $indie-gray;
-              text-decoration: none;
-            }
-            a:hover{
-              color: $indie-pink;
-            }
-          }
-          li:last-of-type{
-            border: none;
-          }
-          li:hover{
-            //mouse over effect for the drop down menu
-            color: $indie-pink;
-          }
-        }
-      }*/
+.current-user-link {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.current-user-link:hover {
+  color: #eb1478;
+}
+
+/*.current-user-link div:hover {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  margin: 0px;
+  padding: 0px;
+}*/
