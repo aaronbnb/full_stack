@@ -5,7 +5,6 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.currentUser;
-    this.state.description = "";
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -15,6 +14,7 @@ class UserForm extends React.Component {
   //  this.props.processForm(user);
   //modal code...
     this.props.update(user);
+    hashHistory.push(`users/${this.props.currentUser.id}`);
  }
 
  update(field) {
@@ -25,30 +25,61 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
+    <div>
+      <br/>
+      <br/>
+      <h1 className="user-title">{this.props.currentUser.username}</h1>
+    <div className="user-profile-update-component">
+      <form onSubmit={this.handleSubmit} className="user-update-form">
+        <div className="user-basic-info">
           <br/>
-          <h2>Basic Info</h2>
+          <h2 className="user-form-header">Basic Info</h2>
           <br/>
-            <label> Username
+            <label> &nbsp; Username
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="edit-input" />
+               />
             </label>
+            <br/>
+            <label> &nbsp;  Email
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+             />
+            </label>
+            <br/>
+            <label> &nbsp; Post Code
+              <input type="text"
+                value={this.state.zip}
+                onChange={this.update('zip')}
+               />
+            </label>
+        </div>
+          <br/>
+          <br/>
+        <div className="update-user-bio">
           <br/>
           <h2>Your Story</h2>
-          <label> About Me
+          <br/>
+          <label> &nbsp; Short Description
+          <input className="tagline-box"
+              value={this.state.tagline}
+              onChange={this.update('tagline')}/>
+          </label>
+          <br/>
+          <label> &nbsp; About Me
           <textarea className="about-me-box"
             value={this.state.description}
             onChange={this.update('description')}/>
           </label>
           <br/>
-
         </div>
-        <input className='update-btn' type='submit'/>
-      </form>
 
+        <input className='user-update-btn' type='submit' value="save"></input>
+      </form>
+    </div>
+    </div>
     );
   }
 }

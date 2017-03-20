@@ -18,8 +18,7 @@
  hgroup, button, link, body  {
    margin: 0px;
    padding: 0px;
-   margin-top: 0px;
-   position: 0px;
+
  }
 
 .login-signup {
@@ -107,7 +106,7 @@ header h1 img {
 
 header {
   margin-top: 1px;
-  height: 74px;
+  height: 80px;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: row;
@@ -150,18 +149,47 @@ ul.testpics img {
   align-items: center;
   display: flex;
   width: 100%;
-  height: 30px;
-  padding: 10px;
-  border: 1px;
-  margin: 0px;
+  height: 35px;
+  font-family: "Benton Sans", "Gill Sans", sans-serif;
+  font-size: 18px;
+  letter-spacing: .5px;
+  margin-left: 5%;
+
+}
+
+.user-nav-bar-container {
+  padding: 12px;
+  background-color: #2A2A2A;
+  display: flex;
 }
 
 .user-nav-bar a {
   text-decoration: none;
-  color: #FAFAFA;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-.user-nav-bar a:hover {
+.nav-bar-selected {
+  padding: 1px 5px 1px 5px;
+  color: #FFFFFF;
+}
+
+.nav-bar-selected a, i, .fa {
+  color: #FFFFFF;
+
+}
+
+
+.nav-bar-unselected {
+  padding: 1px 5px 1px 5px;
+}
+
+.nav-bar-unselected a, i, .fa {
+  color: #DBDBDB;
+
+}
+
+.nav-bar-unselected a:hover, i:hover {
   color: #FFFFFF;
 }
 
@@ -178,23 +206,24 @@ ul.testpics img {
 }
 
 .campaign-create-btn {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 12px;
+  font-weight: 600;
+  font-family: Gill Sans, sans-serif;
+  font-size: 13px;
+  line-height: 13px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 13px 9px;
+  letter-spacing: 2px;
+  padding: 12px 13px 12px;
   max-height: 35px;
   margin-right: 20px;
   text-decoration: none;
   background-color: #eb1478;
   border: 2px solid #eb1478;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .header-popout {
   list-style: none;
-
   margin-top: 15px;
   margin-right: 15px;
   line-height: 200%;
@@ -218,6 +247,8 @@ ul.testpics img {
   padding: 10px;
   height: 50px;
   border-bottom: 1px solid #dddddd;
+  font-size: 18px;
+  color: #2a2a2a;
 }
 
 li.popout-li a {
@@ -235,12 +266,205 @@ li.popout-li a:hover {
 .current-user-link {
   font-weight: bold;
   font-size: 16px;
+  font-family: Gill-Sans, sans-serif;
   line-height: 20px;
 }
 
 .current-user-link:hover {
   color: #eb1478;
 }
+
+ul.user-links {
+  display: block;
+  list-style: none;
+  font-family: sans-serif;
+  border-bottom: 2px solid #dddddd;
+  margin-left: 7%;
+  width: 85%;
+}
+
+.user-links li {
+  display: inline-block;
+  margin-right: 26px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.user-links li:hover {
+  color: #eb1478;
+}
+
+.user-sidebar {
+  margin-top: 20px;
+  margin-right: 5%;
+  width: 300px;
+  background-color: #FAFAFA;
+}
+
+.user-title {
+  font-family: Gill Sans, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 58px;
+  letter-spacing: 1px;
+  width: 100%;
+  margin-top: 45px;
+  margin-left: 7%;
+  padding-bottom: 30px;
+}
+
+.user-profile-img {
+  width: 460px;
+  height: 290px;
+  margin-top: 20px;
+  margin-left: 7%;
+  display: inline-block;
+}
+
+.user-profile-img img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.user-location {
+  margin-left: 7%;
+}
+
+.user-form-header {
+  color: #2A2A2A;
+  font-weight: 600;
+  font-size: 30px;
+  border-bottom: 1px #DDDDDD;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.user-profile-update-component {
+  display: block;
+  margin-left: 5%;
+}
+
+.user-update-form {
+  float: left;
+  width: 85%;
+}
+
+.user-basic-info {
+  margin-left: 3%;
+  background-color: #F5F5F5;
+  margin-bottom: 10px;
+}
+
+.user-body-description {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #757575;
+  width: 450px;
+  margin-left: 7%;
+}
+
+.no-user-bio {
+  font-family: "Gill Sans", sans-serif;
+  font-style: italic;
+  color: #7b7c7a;
+  font-size: 14px;
+}
+
+.about-me-header {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 28px;
+  width: 420px;
+  margin-left: 7%;
+}
+
+
+.user-update-form div input {
+  width: 60%;
+  max-width: 600px;
+  margin-top: 5px;
+  height: 34px;
+  border: 1px solid #dddddd;
+  padding-left: 10px;
+  font-size: 14px;
+  display: block;
+  margin-left: 3%;
+}
+
+.user-basic-info label, h2 {
+  margin-top: 10px;
+  margin-left: 3%;
+  color: #7b7c7a;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.update-user-bio {
+  margin-top: 10px;
+  margin-left: 3%;
+  background-color: #F5F5F5;
+  margin-bottom: 10px;
+}
+
+.update-user-bio {
+  margin-left: 3%;
+  background-color: #F5F5F5;
+  margin-bottom: 10px;
+  color: #7b7c7a;
+  display: block;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.update-user-bio textarea {
+  display: block;
+  width: 60%;
+  max-width: 604px;
+  height: 500px;
+  resize: none;
+  margin-left: 3%;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+.update-user-bio h2 {
+  color: #2A2A2A;
+  font-weight: 600;
+  font-size: 30px;
+  border-bottom: 1px #DDDDDD;
+  font-family: "Gill Sans", sans-serif;
+}
+
+.update-user-bio h2, label {
+  margin-top: 10px;
+  margin-left: 3%;
+}
+
+.user-update-from label {
+  font-family: "Gill Sans", sans-serif;
+  position: relative;
+  padding-top: 1px;
+  color: #7b7c7a;
+  margin-left: 3%;
+}
+
+.user-update-btn {
+  background-color: #EB1478;
+  height: 42px;
+  letter-spacing: 2px;
+  padding: 1px 15px 1px 15px;
+  color: #FFFFFF;
+  width: 100px;
+  border: 2px #f90e7c;
+  border-radius: 1px;
+  font-size: 14px;
+  font-family: "Gill Sans", sans-serif;
+  float: right;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+
 
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);

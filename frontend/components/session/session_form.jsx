@@ -173,8 +173,12 @@ class SessionForm extends React.Component {
   //  this.props.processForm(user);
   //modal code...
     if (this.state.modalType === 'login') {
+      delete user.modalOpen;
+      delete user.modalType;
 			this.props.login({user});
 		} else {
+      delete user.modalOpen;
+      delete user.modalType;
 			this.props.signup({user});
 		}
  }

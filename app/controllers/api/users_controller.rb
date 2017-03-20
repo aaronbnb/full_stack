@@ -4,14 +4,21 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      @user.zip = 12345
-      @user.description = ""
+      @user.zip = 12347
+      @user.description = "I'm a new programmer, trying to break into entrepreneurship."
       @user.profile_img_url = ""
       @user.email = ""
+      @user.tagline = ""
+      @user.save
       render :show
     else
       render json: @user.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render :show
   end
 
   def update
@@ -25,6 +32,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :email, :profile_img_url, :zip, :description)
+    params.require(:user).permit(:username, :password, :email, :profile_img_url, :zip, :description, :tagline)
   end
 end

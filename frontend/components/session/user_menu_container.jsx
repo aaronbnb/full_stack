@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 import { login, signup, logout } from './../../actions/session_actions';
 import UserMenu from './user_menu';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => {
+  return {
   currentUser: state.session.currentUser,
-  errors: state.session.errors
-});
+  errors: state.session.errors,
+  formType: ""
+  };
+};
 
 const mapDispatchToProps = (dispatch, {location}) => ({
 

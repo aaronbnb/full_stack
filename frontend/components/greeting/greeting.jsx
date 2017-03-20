@@ -25,7 +25,6 @@ class Greeting extends React.Component {
   }
 
   toggleUserMenu() {
-    console.log("works");
     this.setState({"showUserMenu": !this.state.showUserMenu});
   }
 

@@ -4,7 +4,7 @@ import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({currentUser: state.session.currentUser,
-          formType: 'show'});
+          formType: ownProps.location.pathname});
   // .currentUser[ownProps.params.userId]
 };
 
