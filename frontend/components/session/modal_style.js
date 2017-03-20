@@ -19,7 +19,10 @@ const ModalStyle = {
     minWidth              : '265px',
     minHeight             : '503px',
     borderRadius          : '0px',
-    overflow              : 'hidden'
+    overflow              : 'hidden',
+    maxWidth              :  '300px',
+    fontFamily            : 'sans-serif',
+    fontWeight            : '600'
   }
 };
 

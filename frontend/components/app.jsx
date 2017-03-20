@@ -13,9 +13,6 @@ const App = ({ children }) => (
       <GreetingContainer />
 
     </header>
-
-    <body>
-    </body>
     { children }
   </div>
 );

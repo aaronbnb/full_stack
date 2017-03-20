@@ -30,17 +30,19 @@ class Greeting extends React.Component {
 
   personalGreeting(currentUser, logout) {
     return(
-      <hgroup className="header-group">
+      <div>
+        <hgroup className="header-group">
+            <br></br>
+            <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
+
+            <div>
+              <div className='current-user-link' onClick={this.toggleUserMenu}>{currentUser.username}</div>
+
+              {(this.state.showUserMenu === true) ? this.userMenu() : ""}
+            </div>
           <br></br>
-          <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
-
-          <div>
-            <div className='current-user-link' onClick={this.toggleUserMenu}>{currentUser.username}</div>
-
-            {(this.state.showUserMenu === true) ? this.userMenu() : ""}
-          </div>
-        <br></br>
-      </hgroup>
+        </hgroup>
+      </div>
     );
       // <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
     // <button className="header-button" onClick={logout}>Log Out</button>

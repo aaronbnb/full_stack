@@ -4,6 +4,7 @@ export const RECEIVE_CAMPAIGN = 'RECEIVE_CAMPAIGN';
 export const RECEIVE_CAMPAIGNS = 'RECEIVE_CAMPAIGNS';
 export const RECEIVE_CAMPAIGN_ERRORS = 'RECEIVE_CAMPAIGN_ERRORS';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
+export const RECEIVE_CONTRIBUTION = 'RECEIVE_CONTRIBUTION';
 
 export const createCampaign = campaign => dispatch => (
   CampaignAPIUtil.create(campaign)
@@ -31,6 +32,11 @@ const receiveCampaign = campaign => ({
 const receiveCampaigns = campaigns => ({
   type: RECEIVE_CAMPAIGNS,
   campaigns
+});
+
+const receiveContribution = contribution => ({
+  type: RECEIVE_CONTRIBUTION,
+  contribution
 });
 
 const removeCampaign = campaign => ({

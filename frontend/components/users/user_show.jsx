@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import UserFormContainer from './user_form_container';
 
 class UserShow extends React.Component {
@@ -13,22 +13,29 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger;
     if(this.props.params) {
       this.props.fetchUser(this.props.params.userId);
     }
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillUpdate(nextProps) {
+    if(!nextProps.currentUser || !this.props.currentUser) {
+      hashHistory.push("/");
+    } else if (nextProps.currentUser.id !== parseInt(nextProps.params.userId)){
+      this.props.fetchUser(nextProps.params.userId);
+    }
   }
 
   render() {
-    const {username, zip, description, profile_img_url, tagline} = this.state;
+    const {username, zip, description, profile_img_url, tagline} = this.props.currentUser;
+
     return (
       <div className="user-show-page">
           <div className='user-show-stats'>
               <br/>
               <br/>
-              <h1 className="user-title">{this.props.currentUser.username}</h1>
+              <h1 className="user-title">{(this.props.currentUser === null) ? "" : this.props.currentUser.username }</h1>
               <br/>
               <div className="user-location">{this.location(zip)}</div>
               <br/>
@@ -43,6 +50,7 @@ class UserShow extends React.Component {
             <div>{this.shortDescribe(tagline)}</div>
             <br/>
             <div>{this.bodyDescribe(description)}</div>
+            <br/>
           </div>
       </div>
     );
@@ -75,7 +83,7 @@ class UserShow extends React.Component {
     if(tagline === null || tagline === '') {
       return (
         <div>
-          <p className="no-user-bio">this person hasn't written a bio yet...</p>
+          <p className="no-user-bio">this person's still thinking up their tagline.</p>
         </div>);
     } else {
       return (
@@ -88,10 +96,10 @@ class UserShow extends React.Component {
   bodyDescribe(description) {
     if(description === null || description === "") {
       return (
-        <div>
-          <br/>
-        </div>
-      );
+          <div>
+            <p className="no-user-bio">this person hasn't written a bio yet...</p>
+          </div>);
+
     } else {
       return (
         <div>

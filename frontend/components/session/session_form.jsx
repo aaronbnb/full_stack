@@ -76,10 +76,11 @@ class SessionForm extends React.Component {
 					contentLabel="Modal"
 					isOpen={this.state.modalOpen}
 					onRequestClose={this.closeModal}
-					style={ModalStyle}>
+					style={ModalStyle}
+          >
           Welcome to IndieClono!
  					<br/>
-            Please {this.state.modalType} or {this.navLink()}
+            Please {(this.state.modalType === 'signup') ? 'Sign Up' : 'Log In'} or {this.navLink()}
 					<form onSubmit={this.handleSubmit} >
 						{this.renderErrors()}
 						<div className="login-form">
@@ -138,9 +139,9 @@ class SessionForm extends React.Component {
     //   );
     // }
     if (this.state.modalType === 'login') {
-      return <button onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>;
+      return <button className='alt-portal-button' onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>;
     } else {
-      return <button onClick={this.openModal.bind(this, 'login')}>Log In</button>;
+      return <button className='alt-portal-button' onClick={this.openModal.bind(this, 'login')}>Log In</button>;
     }
 
   }

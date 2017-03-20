@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import UserFormContainer from './user_form_container';
 
 class UserNav extends React.Component {
@@ -27,6 +27,11 @@ class UserNav extends React.Component {
   }
 
   navBar(pageType) {
+    if(this.props.currentUser === null) {
+      hashHistory.push("/");
+    } else if (this.props.currentUser.id != this.props.params.userId) {
+      return (<div className="empty-nav-bar">""</div>);
+    }
     if (this.state.page === 'edit') {
       return (
       <div>

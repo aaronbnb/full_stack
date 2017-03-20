@@ -3,7 +3,7 @@ import { updateCampaign, createCampaign, destroy } from './../../actions/campaig
 import CampaignForm from './campaign_form';
 
 const mapStateToProps = (state, ownProps) => {
-  let campaign = {
+  let newCampaign = {
     title: "",
     description: "",
     location: "",
@@ -11,20 +11,15 @@ const mapStateToProps = (state, ownProps) => {
     goal: 500,
     status: 0,
     main_img_url: "",
-    user_id: "",
+    user_id: state.session.currentUser.id,
     category_id: "",
     duration: 30
   };
-
-  // if(ownProps.params) {
-  //   campaign = state.campaigns[ownProps.params.campaignId];
-  // }
-
   let formType = ownProps.formType || "edit";
 
   return ({currentUser: state.session.currentUser,
   errors: state.campaign.errors,
-  campaign,
+  campaign: newCampaign,
   formType});
 };
 

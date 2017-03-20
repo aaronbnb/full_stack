@@ -4,7 +4,7 @@ import { Link, hashHistory, withRouter } from 'react-router';
 class CampaignForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.currentUser;
+    this.state = this.props.campaign;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -13,7 +13,7 @@ class CampaignForm extends React.Component {
     const campaign = Object.assign({}, this.state);
   //  this.props.processForm(user);
   //modal code...
-    this.props.create(campaign);
+    this.props.createCampaign(campaign);
  }
 
  update(field) {
@@ -25,14 +25,14 @@ class CampaignForm extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="campaign-form-container">
+        <br/>
+        <h2 className="campaign-form-header">Start a campaign</h2>
+        <h3 className="campaign-form-tagline">Raise funds for creative, entrepreneurial,
+        or other passion projects.</h3>
       <form onSubmit={this.handleSubmit}>
-        <div>
+        <div className="campaign-form">
           <br/>
-          <h2 className="campaign-form-header">Start a campaign</h2>
-          <h3 className="campaign-form-tagline">Raise funds for creative, entrepreneurial,
-          or other passion projects.</h3>
-
           <br/>
 
             <label> Campaign Goal
@@ -43,8 +43,7 @@ class CampaignForm extends React.Component {
                 className="goal-input"/>
               <p className="minimum-goal-info">Minimum $500</p>
             </label>
-
-          <br/>
+            <br/>
 
             <label> Campaign Title
               <p className="input-descriptor">What is the title of your campaign?</p>
@@ -55,7 +54,7 @@ class CampaignForm extends React.Component {
             </label>
 
           <br/>
-
+          <br/>
             <label> Campaign Tagline
               <p className="input-descriptor">Provide a short description that best describes your campaign to your audience.</p>
               <textarea
@@ -64,8 +63,8 @@ class CampaignForm extends React.Component {
                 className="description-input" />
             </label>
 
-          <br></br>
-
+          <br/>
+          <br/>
             <label> Campaign Card Image
               <p className="input-descriptor">
                 Upload a square image that represents your campaign.
@@ -76,9 +75,8 @@ class CampaignForm extends React.Component {
                 onChange={this.update('main_img_url')}
                 className="campaign-img-url-input" />
             </label>
-
-          <br></br>
-
+              <br/>
+              <br/>
             <label> Campaign Location
               <p className="input-descriptor">
                 Choose the location where you are running the campaign. This location
@@ -89,8 +87,8 @@ class CampaignForm extends React.Component {
                 onChange={this.update('location')}
                 className="location-input" />
             </label>
-
-          <br></br>
+            <br/>
+            <br/>
 
             <label> Campaign Overview
               <p className="input-descriptor">
@@ -103,11 +101,10 @@ class CampaignForm extends React.Component {
                 onChange={this.update('location')}
                 className="location-input" />
             </label>
-
-          <br></br>
-
+            <br/>
+            <br/>
         </div>
-        <input className='campaign-submit-btn' type='submit'>SAVE & CONTINUE</input>
+        <input className='campaign-submit-btn' type='submit' value="save & continue"></input>
       </form>
       </div>
     );

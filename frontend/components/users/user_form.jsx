@@ -17,13 +17,25 @@ class UserForm extends React.Component {
     hashHistory.push(`users/${this.props.currentUser.id}`);
  }
 
- update(field) {
-  return (e) => {
-    this.setState({[field]: e.target.value});
-  };
-}
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    };
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillUpdate(nextProps) {
+    if(nextProps.currentUser === null) {
+      hashHistory.push("/");
+    }
+  }
 
   render() {
+    if(this.props.currentUser === null) {
+      return (<div>""</div>);
+    }
     return (
     <div>
       <br/>
