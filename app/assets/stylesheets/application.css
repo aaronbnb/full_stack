@@ -641,7 +641,7 @@ div.empty-nav-bar {
     min-height: 260px;
     max-height: 260px;
     display: flex;
-    background-color: #ECD6F0
+    background-color: #ECD6F0;
     justify-content: center;
   }
 
@@ -746,9 +746,6 @@ div.empty-nav-bar {
     display: inline;
   }
 
-  .campaign-show-page {
-
-  }
 
   .campaign-profile-img {
     margin: 25px;
