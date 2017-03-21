@@ -28,6 +28,11 @@ export const deleteCampaign = id => dispatch => (
   errors => dispatch(receiveCampaignErrors(errors.responseJSON)))
 );
 
+export const fetchCampaign = id => dispatch => (
+  CampaignAPIUtil.fetchCampaign(id)
+  .then( campaign => dispatch(receiveCampaign(campaign)))
+);
+
 const receiveCampaign = campaign => ({
   type: RECEIVE_CAMPAIGN,
   campaign

@@ -28,3 +28,10 @@ export const fetchCampaigns = campaigns => (
     url: "/api/campaigns"
   })
 );
+
+export const fetchCampaign = id => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/campaigns/${id}`
+  })
+);

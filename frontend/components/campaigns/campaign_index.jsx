@@ -16,7 +16,7 @@ class CampaignIndex extends React.Component {
     return (
       <div className='campaign-index-container'>
         {campaigns.map( campaign => (
-        <CampaignIndexItemCard campaign={campaign} key={campaign.id} />
+        <CampaignIndexItemCard campaign={campaign} key={campaign.id} currentUser={this.props.currentUser}/>
         ))}
       </div>
     );

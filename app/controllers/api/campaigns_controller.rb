@@ -13,6 +13,11 @@ class Api::CampaignsController < ApplicationController
     end
   end
 
+  def show
+    @campaign = Campaign.find(params[:id])
+    render :show
+  end
+
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)

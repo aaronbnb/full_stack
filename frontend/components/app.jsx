@@ -7,7 +7,7 @@ const App = ({ children }) => (
   <div>
     <header>
       <h1>
-        <img className='logo' src='https://s5.postimg.org/3okqvy5xj/logo.jpg'></img>
+        <img className='logo' src='https://s5.postimg.org/3okqvy5xj/logo.jpg' onClick={() => hashHistory.push("/")}></img>
       </h1>
 
       <GreetingContainer />

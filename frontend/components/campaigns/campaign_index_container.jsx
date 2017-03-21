@@ -4,6 +4,7 @@ import CampaignIndex from './campaign_index';
 
 const mapStateToProps = state => {
   return ({
+    currentUser: state.session.currentUser,
     campaigns: Object.keys(state.campaigns).map(id => state.campaigns[id])
   });
 };

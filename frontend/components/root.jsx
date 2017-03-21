@@ -10,6 +10,7 @@ import UserFormContainer from './users/user_form_container';
 import UserShowContainer from './users/user_show_container';
 import CampaignFormContainer from './campaigns/campaign_form_container';
 import CampaignIndexContainer from './campaigns/campaign_index_container';
+import CampaignShowContainer from './campaigns/campaign_show_container';
 
 const Root = ({ store }) => {
 
@@ -38,6 +39,7 @@ const Root = ({ store }) => {
             <IndexRoute component={UserShowContainer}  onEnter={_ensureLoggedIn}/>
             <Route path="edit" component={UserFormContainer} onEnter={_ensureLoggedIn}/>
           </Route>
+          <Route path="campaigns/:campaignId" component={CampaignShowContainer} />
           <Route path="campaigns" component={CampaignFormContainer} onEnter={_ensureLoggedIn}/>
         </Route>
       </Router>

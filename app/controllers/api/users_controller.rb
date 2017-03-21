@@ -5,10 +5,10 @@ class Api::UsersController < ApplicationController
     if @user.save
       login(@user)
       @user.zip = 12347
-      @user.description = "I'm a new programmer, trying to break into entrepreneurship."
-      @user.profile_img_url = ""
-      @user.email = ""
-      @user.tagline = ""
+      @user.description ||= "I'm a new programmer, trying to break into entrepreneurship."
+      @user.profile_img_url ||= ""
+      @user.email ||= ""
+      @user.tagline ||= ""
       @user.save
       render :show
     else
