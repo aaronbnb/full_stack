@@ -5,7 +5,6 @@ import { Link, hashHistory, withRouter } from 'react-router';
 class CampaignIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {
@@ -15,7 +14,7 @@ class CampaignIndex extends React.Component {
   render() {
     const {campaigns} = this.props;
     return (
-      <div>
+      <div className='campaign-index-container'>
         {campaigns.map( campaign => (
         <CampaignIndexItemCard campaign={campaign} key={campaign.id} />
         ))}

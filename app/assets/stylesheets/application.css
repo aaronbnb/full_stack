@@ -611,6 +611,29 @@ input.campaign-img-url-input {
 div.empty-nav-bar {
   color: #FFFFFF;
 }
+
+.campaign-index-container {
+  list-style: none;
+  width: 95%;
+  overflow: hidden;
+  font-family: "Gill Sans", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.campaign-card {
+  margin: 1.5%;
+  width: 260px;
+  height: 480px;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  padding: 0;
+  font-family: "Libre Franklin", sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  word-wrap: break-word;
+  }
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);

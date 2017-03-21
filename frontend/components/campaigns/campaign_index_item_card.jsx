@@ -9,12 +9,13 @@ class CampaignIndexItemCard extends React.Component {
   render() {
     const {campaign} = this.props;
     return (
-      <div>
-        <li>Id {campaign.id} </li>
-        <li>Title {campaign.title} </li>
-        <li>Tagline {campaign.description}</li>
-        <li>Location {campaign.location}</li>
-        <li>Goal$ {campaign.goal}</li>
+      <div className='campaign-card'>
+        <li className='campaign-preview-pic'>Id {campaign.main_img_url} </li>
+        <li className='campaign-card-title'>Title {campaign.title} </li>
+        <li className='campaign-card-tagline'>Tagline {campaign.description}</li>
+        <li className='campaign-location'>Location {campaign.location}</li>
+        <li className="status-bar"><p>status bar</p></li>
+        <li className='campaign-goal'>Goal$ {campaign.goal}</li>
       </div>
     );
   }
