@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   let formType = ownProps.formType || "edit";
 
   return ({currentUser: state.session.currentUser,
-  errors: state.campaign.errors,
+  errors: state.campaigns.errors,
   campaign: newCampaign,
   formType});
 };

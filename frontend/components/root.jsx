@@ -9,6 +9,7 @@ import UserContainer from './users/user_container';
 import UserFormContainer from './users/user_form_container';
 import UserShowContainer from './users/user_show_container';
 import CampaignFormContainer from './campaigns/campaign_form_container';
+import CampaignIndexContainer from './campaigns/campaign_index_container';
 
 const Root = ({ store }) => {
 
@@ -30,6 +31,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
+          <IndexRoute component={CampaignIndexContainer}/>
           <Route path="login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="users/:userId" component={UserContainer} onEnter={_ensureLoggedIn}>

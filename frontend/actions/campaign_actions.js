@@ -6,16 +6,20 @@ export const RECEIVE_CAMPAIGN_ERRORS = 'RECEIVE_CAMPAIGN_ERRORS';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
 export const RECEIVE_CONTRIBUTION = 'RECEIVE_CONTRIBUTION';
 
-export const createCampaign = campaign => dispatch => (
-  CampaignAPIUtil.create(campaign)
-  .then( newCampaign => dispatch(receiveCampaign(newCampaign)),
+export const createCampaign = campaign => dispatch => {
+  return (CampaignAPIUtil.createCampaign(campaign).then( newCampaign => dispatch(receiveCampaign(newCampaign)),
+  errors => dispatch(receiveCampaignErrors(errors.responseJSON))));
+};
+
+export const updateCampaign = campaign => dispatch => (
+  CampaignAPIUtil.updateCampaign(campaign)
+  .then( updatedCampaign => dispatch(receiveCampaign(updatedCampaign)),
   errors => dispatch(receiveCampaignErrors(errors.responseJSON)))
 );
 
-export const updateCampaign = campaign => dispatch => (
-  CampaignAPIUtil.update(campaign)
-  .then( updatedCampaign => dispatch(receiveCampaign(updatedCampaign)),
-  errors => dispatch(receiveCampaignErrors(errors.responseJSON)))
+export const fetchCampaigns = () => dispatch => (
+  CampaignAPIUtil.fetchCampaigns()
+  .then( campaigns => dispatch(receiveCampaigns(campaigns)))
 );
 
 export const deleteCampaign = id => dispatch => (

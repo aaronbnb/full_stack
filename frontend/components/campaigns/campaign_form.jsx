@@ -14,6 +14,7 @@ class CampaignForm extends React.Component {
   //  this.props.processForm(user);
   //modal code...
     this.props.createCampaign(campaign);
+    hashHistory.push("/");
  }
 
  update(field) {
@@ -97,8 +98,8 @@ class CampaignForm extends React.Component {
                 and remember - keep it short!
               </p>
               <textarea
-                value={this.state.location}
-                onChange={this.update('location')}
+                value={this.state.overview}
+                onChange={this.update('overview')}
                 className="location-input" />
             </label>
             <br/>

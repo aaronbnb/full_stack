@@ -6,7 +6,7 @@ import UserReducer from './user_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
-  campaign: CampaignReducer,
+  campaigns: CampaignReducer,
   user: UserReducer
 });
 

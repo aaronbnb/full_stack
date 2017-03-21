@@ -500,6 +500,11 @@ ul.user-links {
   margin-top: 15px;
 }
 
+.campaign-submit-btn:focus {
+  outline: 0;
+  background-color: #8e59a3;
+}
+
 div.campaign-form-container {
   margin-left: 7%;
   margin-right: 7%;
@@ -533,6 +538,10 @@ p.input-descriptor {
 
 }
 
+textarea.description-input {
+  height: 200px;
+}
+
 p.minimum-goal-info {
   font-size: 12px;
   text-transform: uppercase;
@@ -544,7 +553,6 @@ div.campaign-form textarea {
   font-family: "Gill Sans", sans-serif;
   font-size: 15px;
   width: 600px;
-  height: 400px;
   resize: none;
 }
 
@@ -581,6 +589,10 @@ input.location-input {
   height: 24px;
   width: 500px;
 
+}
+
+textarea.location-input {
+  height: 400px;
 }
 
 input.title-input {

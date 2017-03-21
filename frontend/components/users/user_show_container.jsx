@@ -6,7 +6,6 @@ import { fetchUser } from '../../actions/user_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   if (state.session.currentUser.id === parseInt(ownProps.params.userId)) {
     return ({currentUser: state.session.currentUser,
             formType: ownProps.formType});
