@@ -49,6 +49,7 @@ class Greeting extends React.Component {
   }
 
   render() {
+    debugger;
     return(
       <div>
         {this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()}

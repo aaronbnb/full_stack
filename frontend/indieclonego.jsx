@@ -18,14 +18,14 @@ window.logout = Session.logout;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
-  window.store = store;
+
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
   } else {
     store = configureStore();
   }
-
+  window.store = store;
   Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);

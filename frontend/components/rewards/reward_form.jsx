@@ -32,15 +32,25 @@ class RewardForm extends React.Component {
    const newState = merge({}, this.state);
    delete newState.more_rewards;
    this.props.createReward(newState);
-
-   (this.state.more_rewards) ?
-   hashHistory.push(`campaigns/${newState.campaign_id}/rewards`) :
-   hashHistory.push(`campaigns/${newState.campaign_id}`);
-
+   debugger;
+    if (this.state.more_rewards) {
+      this.setState({
+          campaign_id: newState.campaign_id,
+          title: "",
+          description: "",
+          supply : 0,
+          price: 0,
+          more_rewards: false
+          });
+      window.scroll(0, 0);
+      hashHistory.push(`campaigns/${newState.campaign_id}/rewards`);
+    } else {
+      hashHistory.push(`campaigns/${newState.campaign_id}`);
+    }
+ }
  //  this.props.processForm(user);
  //modal code...
    //hashHistory.push(campaigns/rewards) or provide link
-}
 
   render() {
     return (
@@ -106,8 +116,9 @@ class RewardForm extends React.Component {
 
           </div>
           <div className='reward-btns'>
-            <input className='reward-submit-another-btn' type='submit' value="save reward and finish"></input>
-            <input className='reward-submit-btn' onClick={this.displayRewardFormAgain} type='submit' value="save and add another reward"></input>
+            <br></br>
+            <input className='reward-submit-btn' type='submit' value="save reward and finish"></input>
+            <input className='reward-submit-another-btn' onClick={this.displayRewardFormAgain} type='submit' value="save and add another reward"></input>
           </div>
         </div>
       </form>
