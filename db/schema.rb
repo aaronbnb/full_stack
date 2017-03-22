@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320015449) do
+ActiveRecord::Schema.define(version: 20170322201732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 20170320015449) do
     t.integer "category_id"
     t.integer "duration"
     t.index ["title"], name: "index_campaigns_on_title", using: :btree
+  end
+
+  create_table "contributions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "reward_id"
+    t.integer "campaign_id"
+    t.integer "amount"
+    t.index ["user_id"], name: "index_contributions_on_user_id", using: :btree
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.string  "title",       null: false
+    t.text    "description", null: false
+    t.integer "campaign_id"
+    t.integer "price",       null: false
+    t.integer "supply"
+    t.index ["campaign_id"], name: "index_rewards_on_campaign_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

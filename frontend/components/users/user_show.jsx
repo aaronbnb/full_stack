@@ -58,7 +58,7 @@ class UserShow extends React.Component {
   profileImage(profileImgUrl) {
     if (profileImgUrl === null || profileImgUrl === "") {
       return (
-        <img src="http://www.clker.com/cliparts/B/R/Y/m/P/e/blank-profile-hi.png"/>
+        <div>"hello"</div>
       );
     } else {
       return (

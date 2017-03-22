@@ -6,6 +6,7 @@ class Api::CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
+
     if @campaign.save
       render :show
     else

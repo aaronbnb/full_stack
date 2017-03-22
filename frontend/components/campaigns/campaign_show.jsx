@@ -1,13 +1,11 @@
 import React from 'react';
 import { hashHistory, withRouter, Link } from 'react-router';
 import Progress from 'react-progressbar';
-import ContributionFormContainer from '../contributions/contribution_form_container';
 
 class CampaignShow extends React.Component {
   constructor(props) {
     super(props);
     this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
-    this.contributeLink = this.contributeLink.bind(this);
   }
 
   componentDidMount() {
@@ -16,15 +14,8 @@ class CampaignShow extends React.Component {
     }
   }
 
-  contributeLink() {
-    return(
-      <ContributionFormContainer campaign={this.props.campaign}/>
-    );
-  }
-
   render() {
     const { campaign } = this.props;
-
     return (
       <div className="campaign-show-page-container">
           <div className="campaign-profile-header-container">
@@ -32,13 +23,12 @@ class CampaignShow extends React.Component {
           <div className='campaign-vital-stats-box'>
             <div className='campaign-profile-title'><li>{campaign.title}</li></div>
             <div className='campaign-profile-description'><li>{campaign.description}</li></div>
-            <div className='campaign-profile-goal'><li>${campaign.goal}</li></div>
+            <div className='campaign-profile-goal'><li>{campaign.goal}</li></div>
             <div className='campaign-status-bar-container'>
               <div>{this.campaignProfileStatusBar(campaign.goal, campaign.status)}</div>
               <p className='campaign-profile-status-footer'>&nbsp;75%</p>
             </div>
             <div>
-              {this.contributeLink()}
             </div>
           </div>
         </div>

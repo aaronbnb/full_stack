@@ -32,7 +32,7 @@ class Greeting extends React.Component {
     return(
       <div>
         <hgroup className="header-group">
-            <br></br>
+          <br></br>
             <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
 
             <div>

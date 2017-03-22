@@ -1,4 +1,4 @@
-import * as ContributionAPIUtil from 'util/contribution_api_util';
+import * as ContributionAPIUtil from '../util/contribution_api_util';
 export const RECEIVE_CONTRIBUTION = 'RECEIVE_CONTRIBUTION';
 
 

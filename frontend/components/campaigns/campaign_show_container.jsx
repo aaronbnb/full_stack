@@ -7,23 +7,12 @@ import { fetchUser } from '../../util/user_api_util';
 import CampaignShow from './campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
-  const campaign_creator = fetchUser(state.campaigns[ownProps.params.campaignId].user_id);
-  if (state.session.currentUser.id === parseInt(state.campaigns[ownProps.params.campaignId].user_id)) {
-    return ({currentUser: state.session.currentUser,
-            campaign: state.campaigns[ownProps.params.campaignId],
-            formType: 'edit',
-            user: campaign_creator });
-  } else {
     return ({
       currentUser: state.session.currentUser,
       campaign: state.campaigns[ownProps.params.campaignId],
-      formType: 'view',
-      user: campaign_creator 
+      formType: 'view'
     });
-  }
-
-  // .currentUser[ownProps.params.userId]
-};
+  };
 
 const mapDispatchToProps = dispatch => ({
   fetchCampaign: id => dispatch(fetchCampaign(id)),

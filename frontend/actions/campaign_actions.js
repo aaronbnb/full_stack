@@ -4,10 +4,15 @@ export const RECEIVE_CAMPAIGN = 'RECEIVE_CAMPAIGN';
 export const RECEIVE_CAMPAIGNS = 'RECEIVE_CAMPAIGNS';
 export const RECEIVE_CAMPAIGN_ERRORS = 'RECEIVE_CAMPAIGN_ERRORS';
 export const REMOVE_CAMPAIGN = 'REMOVE_CAMPAIGN';
+import { hashHistory } from 'react-router';
 
 export const createCampaign = campaign => dispatch => {
-  return (CampaignAPIUtil.createCampaign(campaign).then( newCampaign => dispatch(receiveCampaign(newCampaign)),
-  errors => dispatch(receiveCampaignErrors(errors.responseJSON))));
+  return (CampaignAPIUtil.createCampaign(campaign)
+  .then( newCampaign => {
+    dispatch(receiveCampaign(newCampaign));
+    hashHistory.push(`campaigns/${newCampaign.id}/rewards`);
+  }),
+  errors => dispatch(receiveCampaignErrors(errors.responseJSON)));
 };
 
 export const updateCampaign = campaign => dispatch => (

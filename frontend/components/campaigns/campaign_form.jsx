@@ -1,31 +1,48 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
+import RewardFormContainer from '../rewards/reward_form_container';
+import merge from 'lodash/merge';
 
 class CampaignForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.campaign;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.displayRewardForm = this.displayRewardForm.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const campaign = Object.assign({}, this.state);
+    delete campaign.showRewardForm;
   //  this.props.processForm(user);
   //modal code...
     this.props.createCampaign(campaign);
-    hashHistory.push("/");
+    //hashHistory.push(campaigns/rewards) or provide link
  }
 
+ displayRewardForm() {
+   this.setState({"showRewardForm": !this.state.showRewardForm});
+ }
+
+ rewardForm(e){
+   return <RewardFormContainer campaign={this.state}/>;
+ }
+
+
  update(field) {
+
   return (e) => {
     this.setState({[field]: e.target.value});
   };
 }
 
-  render() {
+componentWillReceiveProps(newProps) {
+}
 
+  render() {
     return (
+      <div>
       <div className="campaign-form-container">
         <br/>
         <h2 className="campaign-form-header">Start a campaign</h2>
@@ -108,6 +125,9 @@ class CampaignForm extends React.Component {
         <input className='campaign-submit-btn' type='submit' value="save & continue"></input>
       </form>
       </div>
+      <div>
+      </div>
+    </div>
     );
   }
 }

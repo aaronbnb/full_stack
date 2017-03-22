@@ -506,12 +506,137 @@ ul.user-links {
   background-color: #8e59a3;
 }
 
+.reward-submit-btn {
+  background-color: #7A69B3;
+  height: 40px;
+  letter-spacing: 1px;
+  padding: 1px 10px 1px 10px;
+  color: #FFFFFF;
+  width: 220px;
+  border: 2px #f90e7c;
+  border-radius: 1px;
+  font-size: 14px;
+  font-family: "Gill Sans", sans-serif;
+  float: right;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reward-submit-btn:focus {
+  outline: 0;
+  background-color: #8e59a3;
+}
+
+.reward-submit-another-btn {
+  background-color: #7A69B3;
+  height: 40px;
+  letter-spacing: 1px;
+  padding: 1px 10px 1px 10px;
+  color: #FFFFFF;
+  width: 250px;
+  border: 2px #f90e7c;
+  border-radius: 1px;
+  font-size: 14px;
+  font-family: "Gill Sans", sans-serif;
+  float: right;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reward-submit-btn:focus {
+  outline: 0;
+  background-color: #8e59a3;
+}
+
+div.reward-form label, input, textarea {
+    margin-left: 3%;
+    width: 60%;
+    max-width: 600px;
+}
+
+div.reward-form input, textarea {
+  font-size: 16px;
+}
+
+input.price-input {
+  width: 120px;
+  line-height: 32px;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #1fcecb;
+  font-weight: 600;
+}
+
+input.reward-title-input {
+  outline: none;
+  width: 60%;
+  max-width: 600px;
+  color: #3a3a3a;
+}
+
+div.reward-form-container {
+  margin-top: 25px;
+  margin-bottom: 30px;
+  margin-left: 7%;
+  margin-right: 7%;
+  list-style: none;
+  width: 85%;
+  height: 960px;
+  background-color: #F5F5F5;
+}
+
+p.reward-title-input-descriptor {
+  font-family: "Gill Sans", sans-serif;
+  color: black;
+  font-size: 13px;
+}
+
 div.campaign-form-container {
   margin-left: 7%;
   margin-right: 7%;
   background-color: #F5F5F5;
   margin-top: 25px;
+  min-width: 675px;
 }
+
+h3.exit-reward-form {
+  color: #7A69B3;
+  font-size: 20px;
+  line-height: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  margin-left: 3%;
+  cursor: pointer;
+}
+
+h2.reward-form-header {
+  color: #7b7c7a;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 30px;
+  line-height: 26px
+  font-family: "Gill Sans", sans-serif;
+}
+
+h3.exit-reward-form:hover {
+  color: #eb1478;
+}
+
+
 
 div.campaign-form input, label, p {
   margin-left: 3%;
@@ -523,8 +648,13 @@ div.campaign-form input, label, p {
   font-family: "Gill Sans", sans-serif;
   letter-spacing: 1px;
   color: #68696b;
-  width: 60%;
-  max-width: 600px;
+}
+
+.reward-form label {
+  font-size: 18px;
+  font-family: "Gill Sans", sans-serif;
+  letter-spacing: 1px;
+  color: #68696b;
 }
 
 p.input-descriptor {
@@ -537,6 +667,47 @@ p.input-descriptor {
   width: 60%;
 
 
+}
+
+.reward-submit-btn {
+  background-color: #7A69B3;
+  height: 42px;
+  letter-spacing: 2px;
+  padding: 1px 15px 1px 15px;
+  color: #FFFFFF;
+  width: 250px;
+  border: 2px #f90e7c;
+  border-radius: 1px;
+  font-size: 14px;
+  font-family: "Gill Sans", sans-serif;
+  float: right;
+  text-transform: uppercase;
+  margin-bottom: 3%;
+  margin-right: 3%;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.reward-submit-btn:focus {
+  outline: 0;
+  background-color: #8e59a3;
+}
+
+.reward-submit-btn:hover {
+  background-color: #8e59a3;
+}
+
+
+
+p.reward-input-descriptor {
+  position: relative;
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-family: "Gill Sans", sans-serif;
+  color: #b6b7ba;
+  font-size: 14px;
+  width: 60%;
+  max-width: 600px;
 }
 
 textarea.description-input {
@@ -564,6 +735,7 @@ h2.campaign-form-header {
   font-size: 30px;
   line-height: 26px;
   margin-left: 3%;
+  letter-spacing: 1px;
 }
 
 h3.campaign-form-tagline {
@@ -826,6 +998,35 @@ div.empty-nav-bar {
     margin-bottom: 10px;
     text-transform: uppercase;
     font-family: sans-serif;
+  }
+
+  input.reward-title-input {
+    width: 400px;
+    line-height: 32px;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: #1fcecb;
+    font-weight: 600;
+  }
+
+  input.reward-title-input {
+    width: 400px;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #3a3a3a;
+    font-weight: 400;
+  }
+
+  textarea.reward-description-input {
+    min-width: 400px;
+    height: 300px;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #3a3a3a;
+    font-weight: 400;
+    resize: none;
   }
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);

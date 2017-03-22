@@ -13,14 +13,14 @@ const mapStateToProps = (state, ownProps) => {
     main_img_url: "",
     user_id: state.session.currentUser.id,
     category_id: "",
-    duration: 30
+    duration: 30,
+    showRewardForm: false
   };
   let formType = ownProps.formType || "edit";
 
   return ({currentUser: state.session.currentUser,
   errors: state.campaigns.errors,
-  campaign: newCampaign,
-  formType});
+  campaign: newCampaign});
 };
 
 const mapDispatchToProps = (dispatch, {location}) => ({
