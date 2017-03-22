@@ -754,11 +754,16 @@ div.empty-nav-bar {
 .campaign-profile-img img {
     max-height: 650px;
     width: 50%;
+    min-width: 350px;
   }
 
 .campaign-profile-header-container {
   display: flex;
-  width: 100%;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 400px;
+  overflow: hidden;
 }
 
   div.campaign-profile-img {
@@ -774,6 +779,53 @@ div.empty-nav-bar {
 
   .campaign-vital-stats-box {
     width: 400px;
+    list-style: none;
+  }
+
+  div.campaign-profile-title {
+    font-size: 28px;
+    font-weight: 600;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+  }
+
+  div.campaign-profile-description {
+    font-size: 18px;
+    line-height: 24px;
+    color: #5e5e5e;
+    font-family: sans-serif;
+    margin-bottom: 20px
+  }
+
+  div.campaign-profile-goal {
+    margin-bottom: 4px;
+  }
+
+  div.campaign-profile-goal li {
+    margin-left: 16px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  p.campaign-profile-status-footer {
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #a8a8a8;
+    margin-top: 5px;
+  }
+
+  div.campaign-profile-overview {
+  }
+
+  div.campaign-profile-overview h2 {
+    color: #BEBEBE;
+    border-bottom: 1px solid #BEBEBE;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: sans-serif;
   }
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);
