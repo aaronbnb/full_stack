@@ -13,6 +13,11 @@ class Api::RewardsController < ApplicationController
     @rewards = Reward.all
   end
 
+  def show
+    @reward = Reward.find(params[:id])
+    render :show
+  end
+
   private
 
   def reward_params

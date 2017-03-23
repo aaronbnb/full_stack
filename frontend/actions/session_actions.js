@@ -18,7 +18,6 @@ export const update = user => dispatch => (
 
 export const logout = () => dispatch => (
   SessionAPIUtil.logout().then( nonUser => dispatch(receiveCurrentUser(null)))
-  .then(hashHistory.push("/"))
 );
 
 export const signup = user => dispatch => (

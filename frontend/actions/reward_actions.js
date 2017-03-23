@@ -7,8 +7,8 @@ export const createReward = reward => dispatch => (
   .then(newReward => dispatch(receiveCampaignReward(newReward)))
 );
 
-export const fetchReward = reward => dispatch => (
-  RewardAPIUtil.fetchReward(reward)
+export const fetchRewards = id => dispatch => (
+  RewardAPIUtil.fetchRewards(id)
   .then( campaignRewards => dispatch(receiveCampaignRewards(campaignRewards)))
 );
 

@@ -21,7 +21,7 @@ class Greeting extends React.Component {
 
   userMenu(e){
 
-    return <UserMenuContainer />;
+    return <UserMenuContainer toggle={this.toggleUserMenu}/>;
   }
 
   toggleUserMenu() {
@@ -49,7 +49,6 @@ class Greeting extends React.Component {
   }
 
   render() {
-    debugger;
     return(
       <div>
         {this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()}

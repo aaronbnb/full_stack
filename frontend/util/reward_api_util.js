@@ -6,9 +6,9 @@ export const createReward = reward => (
   })
 );
 
-export const fetchReward = reward => (
+export const fetchRewards = id => (
   $.ajax({
     method: 'GET',
-    url: `/api/campaigns/${reward.campaign_id}/rewards/${reward.id}`
+    url: `/api/campaigns/${id}/rewards/`
   })
 );
