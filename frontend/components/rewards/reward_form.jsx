@@ -56,12 +56,12 @@ class RewardForm extends React.Component {
     return (
       <div className='reward-form-container'>
         <br/>
-            <input className='reward-submit-btn' onClick={() => hashHistory.push("/")} type='submit' value="skip rewards for now"></input>
+        <button onClick={() => hashHistory.push(`campaigns/${this.state.campaign_id}`)} className='reward-submit-btn'>skip rewards for now</button>
         <form onSubmit={this.handleSubmit}>
           <div className='reward-form'>
           <br/>
         <h2 className='reward-form-header'>Add a Reward</h2>
-        <h3 className='exit-reward-form'><div><Link onClick={() => hashHistory.push("/")}>Or don't worry about rewards for now</Link></div></h3>
+        <h3 className='exit-reward-form'><div><Link to={`campaigns/${this.state.campaign_id}`}>Or don't worry about rewards for now</Link></div></h3>
 
           <br/>
           <br/>

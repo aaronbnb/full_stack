@@ -9,7 +9,7 @@ class RewardIndexCard extends React.Component {
   render() {
     const {reward} = this.props;
     return (
-      <div className="reward-index-card">
+      <div className="reward-index-card" >
         <li><p className="reward-card-price">${reward.price}<span className='reward-currency'> USD</span>
           <span className='shipping-text'> + Shipping</span>
           </p>

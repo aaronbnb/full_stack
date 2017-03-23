@@ -538,6 +538,11 @@ ul.user-links {
   background-color: #8e59a3;
 }
 
+a.reward-submit-btn {
+  text-decoration: none;
+
+}
+
 div.reward-form label, input, textarea {
     margin-left: 3%;
     width: 60%;
@@ -589,7 +594,7 @@ div.campaign-form-container {
   min-width: 675px;
 }
 
-h3.exit-reward-form {
+.exit-reward-form a {
   color: #7A69B3;
   font-size: 20px;
   line-height: 18px;
@@ -598,6 +603,7 @@ h3.exit-reward-form {
   font-weight: 600;
   margin-left: 3%;
   cursor: pointer;
+  text-decoration: none;
 }
 
 h2.reward-form-header {
@@ -610,7 +616,7 @@ h2.reward-form-header {
   font-family: "Gill Sans", sans-serif;
 }
 
-h3.exit-reward-form:hover {
+.exit-reward-form a:hover {
   color: #eb1478;
 }
 
@@ -834,6 +840,7 @@ div.empty-nav-bar {
     margin-left: 15px;
     margin-right: 15px;
     font-size: 13px;
+    margin-top: 6px;
   }
 
   div.progressbar-container {
@@ -913,8 +920,9 @@ div.empty-nav-bar {
   width: 96%;
   margin-left: 2%;
   margin-right: 2%;
-  height: 400px;
+  height: 390px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
   div.campaign-profile-img {
@@ -929,8 +937,10 @@ div.empty-nav-bar {
   }
 
   .campaign-vital-stats-box {
-    width: 400px;
+    min-width: 380px;
+    max-width: 550px;
     list-style: none;
+    margin-left: 5%;
   }
 
   div.campaign-profile-title {
@@ -953,7 +963,7 @@ div.empty-nav-bar {
   }
 
   div.campaign-profile-goal li {
-    margin-left: 16px;
+    margin-left: 12px;
     letter-spacing: 1px;
     font-weight: 800;
     font-size: 16px;
@@ -1026,7 +1036,7 @@ div.empty-nav-bar {
 
   div.reward-index-card {
     min-width: 265px;
-    max-width: 330px;
+    max-width: 325px;
     min-height: 345px;
     margin-top: 20px;
 
@@ -1049,7 +1059,7 @@ div.empty-nav-bar {
     padding: 4px 0px 4px 0px;
     margin-right: 7%;
     min-width: 265px;
-    max-width: 330px;
+    max-width: 325px;
   }
 
   h2.campaign-overview-header {
@@ -1125,6 +1135,81 @@ div.empty-nav-bar {
     margin-left: 6%;
     margin-right: 6%;
 
+  }
+
+  div.campaign-user-box {
+    width: 250px;
+    margin: 0px 0px 35px 4px;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  div.campaign-user-stats {
+    line-height: 4px;
+    position: relative;
+    top: -18px;
+    margin-left: 4px;
+    width: 120px;
+  }
+
+  div.sidebar-no-rewards {
+    color: #adadad;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    line-height: 30px;
+    margin-left: 5%;
+  }
+
+  p.user-box-username {
+    color: #878787;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  p.user-box-location {
+    color: #adadad;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  a.user-about-link {
+    text-decoration: none;
+    color: #eb1478;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: 5px;
+  }
+
+  a.user-about-link:hover {
+    text-decoration: underline;
+    color: #e82781;
+  }
+
+  div.user-box-picture {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  div.user-box-picture img {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 1px solid #ededed;
+    background-color: #efeded;
   }
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);

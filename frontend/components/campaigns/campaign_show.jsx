@@ -8,12 +8,29 @@ class CampaignShow extends React.Component {
     super(props);
     this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
     this.numberWithCommas = this.numberWithCommas.bind(this);
+    this.userBox = this.userBox.bind(this);
   }
 
   componentDidMount() {
     if(this.props.params) {
       this.props.fetchCampaign(this.props.params.campaignId);
     }
+  }
+
+  userBox() {
+    const user = this.props.campaign.user;
+    return (
+      <div className='campaign-user-box'>
+        <div className='campaign-user-stats'>
+          <li><p className="user-box-username">{user.username}</p></li>
+          <li><p className="user-box-location">Philadelphia, PA</p></li>
+          <li><Link to={`users/${user.id}`} className="user-about-link">About</Link></li>
+        </div>
+        <div className="user-box-picture">
+          <img src="https://static1.squarespace.com/static/554553ade4b0ba2fd4eb10c4/55524958e4b008b6a454572a/55524b85e4b0c072ca6dd7dd/1431921973529/Ben_Franklin.jpg"></img>
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -26,6 +43,7 @@ class CampaignShow extends React.Component {
           <div className='campaign-vital-stats-box'>
             <div className='campaign-profile-title'><li>{campaign.title}</li></div>
             <div className='campaign-profile-description'><li>{campaign.description}</li></div>
+            {this.userBox()}
             <div className='campaign-profile-goal'><li>{this.numberWithCommas(campaign.goal)}</li></div>
             <div className='campaign-status-bar-container'>
               <div>{this.campaignProfileStatusBar(campaign.goal, campaign.status)}</div>
@@ -38,11 +56,13 @@ class CampaignShow extends React.Component {
         <div className="campaign-show-overview">{this.campaignOverviewSection(campaign.overview)}</div>
         <div className="rewards-sidebar">
           <h2 className="rewards-sidebar-header">&nbsp; rewards</h2>
-          {rewards.map( reward =>
+          { (rewards.length > 0) ? rewards.map( reward =>
             <div>
               <RewardIndexCard reward={reward} />
             </div>
-          )}
+          ) :
+          <div className="sidebar-no-rewards">This campaign doesn't have any rewards yet</div>
+          }
           </div>
       </div>
     );
@@ -63,7 +83,7 @@ class CampaignShow extends React.Component {
   campaignProfileStatusBar(goal, status) {
     return (
       <div >
-        <Progress completed={75} className="campaign-profile-status-bar"/>
+        <Progress completed={75} className="campaign-profile-status-bar"></Progress>
       </div>
     );
   }
