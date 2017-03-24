@@ -6,6 +6,7 @@ class CampaignIndexItemCard extends React.Component {
   constructor(props) {
     super(props);
     this.numberWithCommas = this.numberWithCommas.bind(this);
+    this.campaignPercent = this.campaignPercent.bind(this);
   }
 
   render() {
@@ -23,9 +24,15 @@ class CampaignIndexItemCard extends React.Component {
         <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;{this.numberWithCommas(campaign.goal)}<p className="campaign-card-currency">&nbsp; USD</p></li></div>
         <div className='campaign-status-bar'>
           <CampaignStatusBar status={campaign.status} goal={campaign.goal}/></div>
-          <p className='campaign-card-footer'>&nbsp;75%</p>
+          <p className='campaign-card-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}%</p>
       </div>
     );
+  }
+
+  campaignPercent(status, goal) {
+    status = (parseInt(status) === 0) ? 1 : parseInt(status);
+    goal = parseInt(goal);
+    return (status / goal);
   }
 
 
