@@ -1304,4 +1304,13 @@ div.empty-nav-bar {
     font-family: sans-serif;
     color: #7c7b7a;
   }
-  
+
+  div.no-user-campaigns {
+    margin-left: 8%;
+    font-size: 20px;
+    color: #7a7b7c;
+    font-weight: 500;
+    font-family: sans-serif;
+    margin-top: 30px;
+    font-style: italic;
+  }

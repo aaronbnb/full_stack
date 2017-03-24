@@ -24,7 +24,7 @@ class CampaignShow extends React.Component {
       <div className='campaign-user-box'>
         <div className='campaign-user-stats'>
           <li><p className="user-box-username">{user.username}</p></li>
-          <li><p className="user-box-location">Philadelphia, PA</p></li>
+          <li><p className="user-box-location">{user.zip ? user.zip : "Philadelphia, PA"}</p></li>
           <li><Link to={`users/${user.id}`} className="user-about-link">About</Link></li>
         </div>
         <div className="user-box-picture">

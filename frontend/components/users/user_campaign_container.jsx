@@ -6,8 +6,12 @@ import { fetchUser } from '../../actions/user_actions';
 import UserCampaignShow from './user_campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
-  return ({campaigns: state.user.campaigns,
+  let userCampaigns = [];
+  Object.keys(state.campaigns).forEach( id =>
+    { if (state.campaigns[id].user_id === ownProps.params.userId) {
+      userCampaigns.push(state.campaigns[id]);
+    }});
+  return ({campaigns: userCampaigns,
           user: state.user,
           currentUserId: state.session.currentUser.id});
 

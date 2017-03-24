@@ -9,7 +9,15 @@ class UserCampaignShow extends React.Component {
     this.campaignList = this.campaignList.bind(this);
   }
 
+  componentDidMount() {
+    if(this.props.params) {
+      this.props.fetchUser(this.props.params.userId);
+    }
+    debugger;
+  }
+
   render() {
+    debugger;
     const {campaigns, user, currentUser } = this.props;
     return (
       <div className='user-show-stats'>
@@ -53,7 +61,7 @@ class UserCampaignShow extends React.Component {
         );
       } else {
         return (
-          <div>This user hasn't made any campaigns yet. Pozor!</div>
+          <div className='no-user-campaigns'>This user hasn't made any campaigns yet...pobrecito</div>
         );
       }
 

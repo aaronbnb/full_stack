@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      @user.zip = 12347
+      @user.zip ||= "San Francisco, CA"
       @user.description ||= "I'm a new programmer, trying to break into entrepreneurship."
       @user.profile_img_url ||= "http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg"
       @user.email ||= ""
