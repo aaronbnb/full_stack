@@ -9,6 +9,7 @@ class CampaignShow extends React.Component {
     this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
     this.numberWithCommas = this.numberWithCommas.bind(this);
     this.userBox = this.userBox.bind(this);
+
   }
 
   componentDidMount() {

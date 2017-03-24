@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       @user.zip = 12347
       @user.description ||= "I'm a new programmer, trying to break into entrepreneurship."
-      @user.profile_img_url ||= ""
+      @user.profile_img_url = "http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg"
       @user.email ||= ""
       @user.tagline ||= ""
       @user.save

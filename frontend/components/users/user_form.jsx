@@ -67,6 +67,12 @@ class UserForm extends React.Component {
                 onChange={this.update('zip')}
                />
             </label>
+            <label> &nbsp; Profile Picture (give us a URL)
+              <input type="text"
+                value={this.state.profile_img_url}
+                onChange={this.update('profile_img_url')}
+               />
+            </label>
         </div>
           <br/>
           <br/>
