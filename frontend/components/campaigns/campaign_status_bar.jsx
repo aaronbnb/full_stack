@@ -12,9 +12,19 @@ class CampaignStatusBar extends React.Component {
   }
 
     render () {
+      debugger;
+      let progress;
+      let status = parseInt(this.props.status);
+      let goal = parseInt(this.props.goal);
+      if (status === 0) {
+        status = 1;
+      }
+
+      progress = Math.ceil(goal / status);
+
     return (
       <div>
-        <Progress completed={75} />
+        <Progress completed={progress} />
       </div>
     );
   }
