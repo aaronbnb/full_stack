@@ -59,7 +59,7 @@ class CampaignShow extends React.Component {
           <h2 className="rewards-sidebar-header">&nbsp; rewards</h2>
           { (rewards.length > 0) ? rewards.map( reward =>
             <div>
-              <RewardIndexCard reward={reward} />
+              <RewardIndexCard reward={reward} key={reward.id}/>
             </div>
           ) :
           <div className="sidebar-no-rewards">This campaign doesn't have any rewards yet</div>
