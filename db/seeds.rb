@@ -51,6 +51,7 @@ Campaign.create!(title: "Raise money for the Rose Garden",  description: "The Ro
 
 Campaign.create!(	title:	"New weight room at El Camino High School",	description:	"Weights are the only reason some come to school",	location:	"Carmichael, CA",	overview:	"We need 10k for new weight racks, a camera to monitor and provide feedback on athletes' swings, pitching motion, or power clean.",	goal:	10000,	status:	1100,	main_img_url:	"http://www.ucbearcatsfootball.com/uploads/5/8/3/5/58352975/6545535_orig.png"	,	user_id:	6,	category_id:	6,	duration:	30)
 
+ Campaign.create!(title: "Help the homeless folks of Oakland",  description: "The most vulnerable of our town are in need of hot meals. Folks who don’t have homes also don’t have kitchens, please donate to help us cook meals for the underpriviliged", location: "Oakland, CA",  overview: "We are raising money to start a kitchen that would provide meals for folks who are financially insecure. Our project will need to rent out an industrial kitchen, buy food, and spend time preparing and distributing meals. The more money we raise, the more people we can feed!", goal: 15000,  status: 10000,  main_img_url: "http://www.trianglerealestategroup.com/images/holiday_thanksgiving_turkey-dinner-picture-2012-hd-wallpaper-1_1225.jpg", user_id: 5,  category_id: 3,  duration: 30 )
 
 
 Reward.create!(title: "Receive a Raspberry Pi", description: "It evens come with a wifi detector and bluetooth. Amazing, right?", campaign_id: 1, price: 50, supply: 10)
@@ -101,3 +102,6 @@ Reward.create!(title: "Receive rare rose and iris seeds.", description: "It's th
 
 Reward.create!(title: "Receive a letterman jacket", description: "The school has had some legit teams through the years. Show your support", campaign_id: 13, price: 150, supply: 10)
 Reward.create!(title: "Receive some old dumbbells", description: "The weights go from 5 lbs to 60 lbs", price: 1200, supply: 1, campaign_id: 13)
+
+
+Reward.create!(title: "Receive a recipe book for simple and affordable meals",  description: "Learn how to cook healthy, nutritious meals on a budget.",  campaign_id: 14, price: 25,  supply:  10)
