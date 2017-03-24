@@ -49,6 +49,7 @@ class UserCampaignShow extends React.Component {
     }
 
     campaignList(campaigns) {
+      debugger;
       if (campaigns.length > 0) {
         return (
           <div>

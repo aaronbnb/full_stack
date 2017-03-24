@@ -2,14 +2,13 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.zip ||= "San Francisco, CA"
+    @user.description ||= "I need to write a profile already."
+    @user.profile_img_url ||= "http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg"
+    @user.email ||= ""
+    @user.tagline ||= ""
     if @user.save
       login(@user)
-      @user.zip ||= "San Francisco, CA"
-      @user.description ||= "I'm a new programmer, trying to break into entrepreneurship."
-      @user.profile_img_url ||= "http://blog.ramboll.com/fehmarnbelt/wp-content/themes/ramboll2/images/profile-img.jpg"
-      @user.email ||= ""
-      @user.tagline ||= ""
-      @user.save
       render :show
     else
       render json: @user.errors.full_messages, status: 422

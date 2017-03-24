@@ -12,7 +12,6 @@ class CampaignStatusBar extends React.Component {
   }
 
     render () {
-      debugger;
       let progress;
       let status = parseInt(this.props.status);
       let goal = parseInt(this.props.goal);
