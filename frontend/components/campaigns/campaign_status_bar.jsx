@@ -21,7 +21,6 @@ class CampaignStatusBar extends React.Component {
 
       progress = Math.ceil(status / goal);
 
-      debugger;
     return (
       <div>
         <Progress completed={progress} />

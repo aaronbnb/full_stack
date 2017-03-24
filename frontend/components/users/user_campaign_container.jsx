@@ -7,7 +7,6 @@ import UserCampaignShow from './user_campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
   let userCampaigns = [];
-  debugger;
   Object.keys(state.campaigns).forEach( id =>
     { if (state.campaigns[id].user_id === parseInt(ownProps.params.userId)) {
       userCampaigns.push(state.campaigns[id]);

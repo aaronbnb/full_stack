@@ -2,14 +2,17 @@ import React from 'react';
 import { hashHistory, withRouter, Link } from 'react-router';
 import Progress from 'react-progressbar';
 import RewardIndexCard from '../rewards/reward_index_card';
+import CampaignStatusBar from '../campaigns/campaign_status_bar';
 
 class CampaignShow extends React.Component {
   constructor(props) {
     super(props);
+    window.scroll(0,0);
     this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
     this.numberWithCommas = this.numberWithCommas.bind(this);
     this.userBox = this.userBox.bind(this);
-
+    this.campaignPercent = this.campaignPercent.bind(this);
+    this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +22,7 @@ class CampaignShow extends React.Component {
   }
 
   userBox() {
-    const user = this.props.campaign.user;
+    const user = (this.props.campaign) ? this.props.campaign.user : {};
     return (
       <div className='campaign-user-box'>
         <div className='campaign-user-stats'>
@@ -35,8 +38,10 @@ class CampaignShow extends React.Component {
   }
 
   render() {
-    const { campaign } = this.props;
+    // const { campaign } = this.props;
+    const campaign = (this.props.campaign) ? this.props.campaign : {};
     const { rewards } = this.props;
+    debugger;
     return (
       <div className="campaign-show-page-container">
           <div className="campaign-profile-header-container">
@@ -45,10 +50,11 @@ class CampaignShow extends React.Component {
             <div className='campaign-profile-title'><li>{campaign.title}</li></div>
             <div className='campaign-profile-description'><li>{campaign.description}</li></div>
             {this.userBox()}
-            <div className='campaign-profile-goal'><li>{this.numberWithCommas(campaign.goal)}</li></div>
-            <div className='campaign-status-bar-container'>
-              <div>{this.campaignProfileStatusBar(campaign.goal, campaign.status)}</div>
-              <p className='campaign-profile-status-footer'>&nbsp;75%</p>
+            <div className='campaign-profile-goal'><li>{this.numberWithCommas(campaign.goal)}<span className="goal-text">&nbsp; goal</span></li></div>
+            <div>
+
+              <CampaignStatusBar status={campaign.status} goal={campaign.goal}/>
+              <p className='campaign-profile-status-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
             </div>
             <div>
             </div>
@@ -59,7 +65,7 @@ class CampaignShow extends React.Component {
           <h2 className="rewards-sidebar-header">&nbsp; rewards</h2>
           { (rewards.length > 0) ? rewards.map( reward =>
             <div>
-              <RewardIndexCard reward={reward} key={reward.id}/>
+                 <RewardIndexCard reward={reward} key={reward.id}/>
             </div>
           ) :
           <div className="sidebar-no-rewards">This campaign doesn't have any rewards yet</div>
@@ -81,15 +87,32 @@ class CampaignShow extends React.Component {
     );
   }
 
+  campaignPercent(status, goal) {
+    status = (parseInt(status) === 0) ? 1 : parseInt(status);
+    goal = parseInt(goal);
+    let progress = (status / goal);
+    if (progress < .1) {
+      return ("Less than 1");
+    } else {
+      return (`${Math.ceil(progress)}`);
+    }
+  }
+
+
   campaignProfileStatusBar(goal, status) {
+    status = (parseInt(status) === 0) ? 1 : parseInt(status);
+    goal = parseInt(goal);
+    let progress = (status / goal);
+
     return (
       <div >
-        <Progress completed={75} className="campaign-profile-status-bar"></Progress>
+        <Progress completed={progress} className="campaign-profile-status-bar"></Progress>
       </div>
     );
   }
 
   numberWithCommas(num) {
+    num = num ? num : "";
     num = num.toString();
     let pattern = /(-?\d+)(\d{3})/;
     while (pattern.test(num))

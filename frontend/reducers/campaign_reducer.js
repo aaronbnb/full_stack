@@ -5,6 +5,20 @@ import {
   RECEIVE_CAMPAIGN_ERRORS } from '../actions/campaign_actions';
 import merge from 'lodash/merge';
 
+const defaultState = {
+                          campaign: {
+                          title: "",
+                          description: "",
+                          overview: "",
+                          category_id: 0,
+                          main_img_url: "",
+                          user_id: 0,
+                          goal: 0,
+                          status: 0,
+                          duration: 30
+                        }
+                      };
+
 const CampaignReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);

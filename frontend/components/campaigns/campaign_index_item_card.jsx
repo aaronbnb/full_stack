@@ -12,19 +12,27 @@ class CampaignIndexItemCard extends React.Component {
   render() {
     // onClick={hashHistory.push(`/api/campaigns/${campaign.id}`)}
     const {campaign} = this.props;
+    const categories = {
+      1: "tech",
+      2: "art",
+      3: "health",
+      5: "charity",
+      4: "community",
+      6: "public action"
+    };
     return (
       <div className='campaign-card' onClick={() => hashHistory.push(`campaigns/${campaign.id}`)}>
         <li className='campaign-preview-pic'>
           <img src={campaign.main_img_url}/>
         </li>
-        <div className='campaign-category-container'><li className='campaign-category-head'>To be seeded</li></div>
+        <div className='campaign-category-container'><li className='campaign-category-head'>{categories[campaign.category_id]}</li></div>
         <div className='campaign-title-container'><li className='campaign-card-title'>{campaign.title} </li></div>
         <div className='campaign-card-tagline-container'><li className='campaign-card-tagline'>{campaign.description}</li></div>
         <div className='campaign-card-location-container'><li className='campaign-location'><i className="fa fa-map-marker" aria-hidden="true"/>&nbsp;{campaign.location}</li></div>
         <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;{this.numberWithCommas(campaign.goal)}<p className="campaign-card-currency">&nbsp; USD</p></li></div>
         <div className='campaign-status-bar'>
           <CampaignStatusBar status={campaign.status} goal={campaign.goal}/></div>
-          <p className='campaign-card-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}%</p>
+          <p className='campaign-card-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
       </div>
     );
   }
@@ -32,7 +40,12 @@ class CampaignIndexItemCard extends React.Component {
   campaignPercent(status, goal) {
     status = (parseInt(status) === 0) ? 1 : parseInt(status);
     goal = parseInt(goal);
-    return (status / goal);
+    let progress = (status / goal);
+    if (progress < 1) {
+      return ("Less than 1");
+    } else {
+      return Math.ceil(progress);
+    }
   }
 
 

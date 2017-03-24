@@ -13,11 +13,9 @@ class UserCampaignShow extends React.Component {
     if(this.props.params) {
       this.props.fetchUser(this.props.params.userId);
     }
-    debugger;
   }
 
   render() {
-    debugger;
     const {campaigns, user, currentUser } = this.props;
     return (
       <div className='user-show-stats'>
@@ -49,7 +47,6 @@ class UserCampaignShow extends React.Component {
     }
 
     campaignList(campaigns) {
-      debugger;
       if (campaigns.length > 0) {
         return (
           <div>
