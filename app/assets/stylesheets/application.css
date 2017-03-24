@@ -497,6 +497,10 @@ ul.user-links a:hover {
   cursor: pointer;
 }
 
+div.dropzone {
+  margin-left: 3%;
+}
+
 .campaign-submit-btn {
   background-color: #7A69B3;
   height: 42px;
@@ -1300,13 +1304,4 @@ div.empty-nav-bar {
     font-family: sans-serif;
     color: #7c7b7a;
   }
-/*.current-user-link div:hover {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-  margin: 0px;
-  padding: 0px;
-}*/
+  

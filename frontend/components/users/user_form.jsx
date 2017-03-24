@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+const CLOUDINARY_UPLOAD_PRESET = 'cnulddmh';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dn4jhnh54/image/upload';
+
 
 class UserForm extends React.Component {
   constructor(props) {
@@ -11,6 +17,9 @@ class UserForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    if (user.uploadedFile != undefined) {
+      delete user.uploadedFile;
+    }
   //  this.props.processForm(user);
   //modal code...
     this.props.update(user);
@@ -21,6 +30,32 @@ class UserForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  onImageDrop(files) {
+    this.setState({
+      uploadedFile: files[0]
+    });
+
+    this.handleImageUpload(files[0]);
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          profile_img_url: response.body.secure_url
+        });
+      }
+    });
   }
 
   componentDidMount() {
@@ -67,12 +102,31 @@ class UserForm extends React.Component {
                 onChange={this.update('zip')}
                />
             </label>
-            <label> &nbsp; Profile Picture (give us a URL)
-              <input type="text"
-                value={this.state.profile_img_url}
-                onChange={this.update('profile_img_url')}
-               />
-            </label>
+            <br/>
+
+              <div className='user-dropzone'>
+               <Dropzone
+                 multiple={false}
+                 accept="image/*"
+                 onDrop={this.onImageDrop.bind(this)}>
+
+                 <p className="dropzone-text"><i className="fa fa-camera fa-2x" aria-hidden="true"></i>upload image</p>
+               </Dropzone>
+               <div>
+              <div className="FileUpload">
+                ...
+              </div>
+
+              <div>
+                {this.state.profile_img_url === '' ? null :
+                <div>
+                  <img src={this.state.profile_img_url} />
+                  {}
+                </div>}
+              </div>
+            </div>
+            </div>
+
         </div>
           <br/>
           <br/>

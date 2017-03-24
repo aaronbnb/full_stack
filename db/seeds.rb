@@ -44,4 +44,60 @@ Campaign.create!(	title:	"Fantasy football for high school!"	,	description:	"Let
 
 Campaign.create!(	title:	"Empty the new asylums"	,	description:	"LA County Jail is the largest mental health facility in the US"	,	location:	"Los Angeles, CA"	,	overview:	"In 2016, an estimated 90,000 US jail inmates were pretrial defendants with serious mental illness who had been found incompetent to stand trial. IST services most commonly take place in state hospitals. Most state hospitals maintain waitlists of IST inmates because they do not have enough beds to meet demand. Waits are typically around one month but some are as long as a year. While the inmates wait, typically without treatment, they deteriorate, are often victimized and sometimes die. The findings of a mathematical model built to project whether relatively modest selected changes to the status quo could break this logjam. Data from five sample states were used for to model the effect of three specific changes. These recommendations are key to improving mental health facilities." ,	goal:	75000,
 status:	30000,	main_img_url:	"http://affinitymagazine.us/wp-content/uploads/2017/02/mental-health.jpg"	,	user_id:	5	,	category_id:	4	,	duration:	30	)
-# Campaign.create!(	title:	"New weight room at El Camino High School"	,	description:	"Weights are the only reason some come to school"	,	location:	"Carmichael, CA"	,	overview:	"We need 10k for new weight racks, a camera to monitor and provide feedback on athletes' swings, pitching motion, or power clean."	,	goal:	10000	,	status:	1100	,	main_img_url:	"http://www.ucbearcatsfootball.com/uploads/5/8/3/5/58352975/6545535_orig.png"	,	user_id:	6	,	category_id:	6	,	duration:	30	)
+
+Campaign.create!(title: "Raise money for the ASPCA",  description: "We all love animals, help raise money for their care.", location: "Oakland, CA",  overview: "We are raising money on an ongoing basis to help the ASPCA with operating costs. The ASPCA provides shelter, food, veterinary services, and adoption services for wayward pets. Help a furry friend today!",  goal: 10000,  status: 3000,  main_img_url: "https://i.ytimg.com/vi/emxzURj3cxE/maxresdefault.jpg", user_id: 1,  category_id: 5,  duration: 30 )
+
+Campaign.create!(title: "Raise money for the Rose Garden",  description: "The Rose Garden provides floral beauty to the neighborhood, please preserve our neighborhoods crown jewel.", location: "Oakland, CA",  overview: "We are raising money on an ongoing basis to help the City of Oakland maintain the rose garden. The Rose Garden needs tools, expertise, and volunteer coordination to preserve the beauty of the roses and to keep the premises clean. Help our volunteers continue their hard work!",  goal: 15000,  status: 4000,  main_img_url: "http://www2.oaklandnet.com/oakca1/groups/opr/documents/image/oak051313.jpg",  user_id: 2,  category_id: 4,  duration: 30 )
+
+Campaign.create!(	title:	"New weight room at El Camino High School",	description:	"Weights are the only reason some come to school",	location:	"Carmichael, CA",	overview:	"We need 10k for new weight racks, a camera to monitor and provide feedback on athletes' swings, pitching motion, or power clean.",	goal:	10000,	status:	1100,	main_img_url:	"http://www.ucbearcatsfootball.com/uploads/5/8/3/5/58352975/6545535_orig.png"	,	user_id:	6,	category_id:	6,	duration:	30)
+
+
+
+Reward.create!(title: "Receive a Raspberry Pi", description: "It evens come with a wifi detector and bluetooth. Amazing, right?", campaign_id: 1, price: 50, supply: 10)
+Reward.create!(title: "Receive a card signed by class students", description: "Let everyone know about your dedication to young people's education", campaign_id: 1, price: 100, supply: 10)
+Reward.create!(title: "Attend student demo day and serve as competition judge", description: "At project completion, there's a demo day and for a low fee, you get to pass judgment", price: 250, supply: 2)
+
+Reward.create!(title: "Receive a bound, hard copy of our findings", description: "This unprecedented report will include an abstract, findings, and our recommendations.", campaign_id: 2, price: 150, supply: 25)
+Reward.create!(title: "A listing in the report's acknowledgements", description: "You support this kind of research. Let people searching you on Google find out", campaign_id: 2, price: 500, supply: 10);
+Reward.create!(title: "Serve on study advisory board", description: "Provide guidance on study collection methods, report design and priorities, and meet new people", campaign_id: 2, price: 2500, supply: 3)
+
+Reward.create!(title: "Receive a .1 share of revenue for 2 years", description: "There's guaranteed revenue. We don't know how much yet but we're bullish", campaign_id: 3, price: 250, supply: 25)
+Reward.create!(title: "Receive a 1% share of revenue for 3 years", description: "Mo money mo problems except in this instance", campaign_id: 3, price: 3000, supply: 10)
+Reward.create!(title: "High Roller! Receive a 4% of share for 5 years", description: "2nd Chance lottery tickets pay out 30 cents on the dollar. We're golden.", campaign_id: 3, price: 10000, supply: 5)
+
+Reward.create!(title: "We'll send FOIA request on your personal surveillance", description: "Learn just how litte privacy you have for a low price", campaign_id: 4, price: 500, supply: 10)
+Reward.create!(title: "Serve on the study advisory board", description: "The stakes are high and you care enough to donate. Provide your thoughts too.", campaign_id: 4, price: 2000, supply: 3)
+Reward.create!(title: "Attend a seminar with leading ALPR and privacy experts", description: "The seminar is Oakland. Sorry it's not Davos.", campaign_id: 4, price: 1000, supply: 5)
+
+Reward.create!(title: "Receive a plaque on a shipping container", description: "This project will benefit lives or crash and burn. Let everyone know about your participation.", campaign_id: 5, price: 1000, supply: 20)
+Reward.create!(title: "Attend weekly site meetings <-- Policy Role", description: "Not for the faint of heart. Law enforcement. NIMBY's, they'll all come after you", campaign_id: 5, price: 10000, supply: 10)
+Reward.create!(title: "Attend retreat with Mayor Lee on project", description: "For the record, you won't be speaking but you'll see decision makers in action", campaign_id: 5, price: 20000)
+
+Reward.create!(title: "Attend study peer review", description: "It's hard work but fascinating. Join us!", price: 1000, supply: 25)
+Reward.create!(title: "Bi-weekly meetings with staff and fund recipients", description: "Don't just trust study results. Form some firsthand opinions yourself", price: 2500, supply: 5, campaign_id: 6)
+Reward.create!(title: "Invite to meeting with Obama's BMI point man", description: "Obama intimates we need a UBI or BMI. What's he thinking?", price: 5000, supply: 3, campaign_id: 6)
+
+Reward.create!(title: "2003 Guinness Book of World Records", description: "It's a big book with important facts like most spoons balanced on the face. Study it!", price: 50, supply: 5, campaign_id: 7)
+Reward.create!(title: "2003 Guinness Book of World Records", description: "It's a big book with important facts like most spoons balanced on the face. Study it!", price: 50, supply: 5, campaign_id: 7)
+Reward.create!(title: "2014 Guinness Book of World Records", description: "Did you know that Michael Johnson is no longer the fastest man in the world? This one's going to fly off the rewards shelf.", price: 200, supply: 5, campaign_id: 7)
+
+Reward.create!(title: "Attend DC Summit for Net Neutrality", description: "Includes two night stay at reasonably priced Airbnb", price: 600, supply: 5, campaign_id: 8)
+
+Reward.create!(title: "Join the Beta testing group", description: "Great opportunity to provide feedback and gain UI/UX experience", price: 500, supply: 4, campaign_id: 9)
+Reward.create!(title: "Receive a share of the potential profits", description: "It could be high school DraftKings big. That's pretty big.", price: 1000, supply: 5, campaign_id: 9)
+Reward.create!(title: "Entrepreneur in Residence", description: "If you can contribute this much, you must be doing something right", price: 5000, supply: 2, campaign_id: 9)
+
+
+Reward.create!(title: "Attend meeting with leading prison/mental health analysts", description: "Come with lots of questions. It will be informative and thought-provoking. Supplies limited.", price: 400, supply: 5, campaign_id: 10)
+Reward.create!(title: "Take a tour of San Quentin before it becomes shore-side, Marin mansions.", description: "Aaron went several years ago and it was a life-changing experience", price: 5000, supply: 5, campaign_id: 10)
+
+Reward.create!(title: "Receive a kitten and puppy calendar",  description: "12 months of really cute pictures! Reminds you daily of your contribution to helping our furry friends",  campaign_id: 11, price: 50,  supply:  10)
+Reward.create!(title: "Receive a kitten and puppy",  description: "Don't you love gifts that create decades of work and dedication",  campaign_id: 11, price: 250,  supply:  10)
+Reward.create!(title: "A bench plaque at a dog park",  description: "12 months of really cute pictures! Reminds everyone else of your contribution",  campaign_id: 11, price: 1000,  supply:  10)
+
+
+Reward.create!(title: "Receive a photo book of rare roses from the garden",  description: "Enjoy the beauty of a multicolor collection of roses when you don’t feel like visiting the garden",  campaign_id: 12, price: 50,  supply:  10)
+Reward.create!(title: "Receive rare rose and iris seeds.", description: "It's the second best rose garden in the country according to sources", campaign_id: 12, price: 50, supply: 200)
+
+Reward.create!(title: "Receive a letterman jacket", description: "The school has had some legit teams through the years. Show your support", campaign_id: 13, price: 150, supply: 10)
+Reward.create!(title: "Receive some old dumbbells", description: "The weights go from 5 lbs to 60 lbs", price: 1200, supply: 1, campaign_id: 13)

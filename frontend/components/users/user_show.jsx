@@ -28,7 +28,7 @@ class UserShow extends React.Component {
 
   render() {
     const {username, zip, description, profile_img_url, tagline} = this.props.currentUser;
-
+    debugger;
     return (
       <div className="user-show-page">
           <div className='user-show-stats'>

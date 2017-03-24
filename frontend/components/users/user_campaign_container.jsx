@@ -6,6 +6,7 @@ import { fetchUser } from '../../actions/user_actions';
 import UserCampaignShow from './user_campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   return ({campaigns: state.user.campaigns,
           user: state.user,
           currentUserId: state.session.currentUser.id});
