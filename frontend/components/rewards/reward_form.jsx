@@ -32,7 +32,6 @@ class RewardForm extends React.Component {
    const newState = merge({}, this.state);
    delete newState.more_rewards;
    this.props.createReward(newState);
-   debugger;
     if (this.state.more_rewards) {
       this.setState({
           campaign_id: newState.campaign_id,

@@ -27,7 +27,7 @@ class CampaignShow extends React.Component {
           <li><Link to={`users/${user.id}`} className="user-about-link">About</Link></li>
         </div>
         <div className="user-box-picture">
-          <img src="https://static1.squarespace.com/static/554553ade4b0ba2fd4eb10c4/55524958e4b008b6a454572a/55524b85e4b0c072ca6dd7dd/1431921973529/Ben_Franklin.jpg"></img>
+          <img src={`${user.profile_img_url}`}></img>
         </div>
       </div>
     );

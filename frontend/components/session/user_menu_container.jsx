@@ -3,7 +3,6 @@ import { login, signup, logout } from './../../actions/session_actions';
 import UserMenu from './user_menu';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
   currentUser: state.session.currentUser,
   errors: state.session.errors,

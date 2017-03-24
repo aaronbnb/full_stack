@@ -301,13 +301,26 @@ ul.user-links {
   width: 85%;
 }
 
+ul.user-links a {
+  text-decoration: none;
+  color: #070707;
+}
+
+ul.user-links a:hover {
+  font-weight: 600;
+  color: #eb1478;
+  text-decoration: underline;
+
+}
+
 .user-links li {
   display: inline-block;
   margin-right: 26px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   margin-bottom: 4px;
+  margin-left: 1%;
 }
 
 .user-links li:hover {
@@ -1210,6 +1223,82 @@ div.empty-nav-bar {
     border-radius: 50%;
     border: 1px solid #ededed;
     background-color: #efeded;
+  }
+
+  h2.user-campaign-list-header {
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px 0px 20px 0px;
+    font-family: sans-serif;
+    color: #212121;
+    margin-left: 9%;
+  }
+
+  div.campaign-list-item {
+    max-width: 1220px;
+    min-width: 670px;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-top: 1px solid #dddddd;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+  }
+
+  div.campaign-list-item-img img {
+    height: 210px;
+    width: 210px;
+    margin: 20px 30px 20px 20px;
+    border-radius: 2%;
+    border: solid 1px #dddddd;
+  }
+
+  li.campaign-list-title-container {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  a.campaign-list-item-title {
+    font-family: "Benton Sans","Helvetica","sans-serif";
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: 600;
+    color: #3d3d3d;
+    text-decoration: none;
+  }
+
+  a.campaign-list-item-title:hover {
+    text-decoration: underline;
+  }
+
+  span.campaign-list-item-by {
+    font-weight: 500;
+    font-family: sans-serif;
+    margin-left: 2px;
+    font-size: 15px;
+    color: #4f4e4e;
+    margin-top: 5px;
+  }
+
+  a.campaign-list-item-by-user {
+    color: #eb1478;
+    font-weight: 600;
+    margin-top: 5px;
+    font-family: "Benton Sans", sans-serif;
+    text-decoration: none;
+  }
+
+  a.campaign-list-item-by-user:hover {
+    text-decoration: underline;
+    color: #d80265;
+  }
+
+  div.campaign-list-item-tagline {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: sans-serif;
+    color: #7c7b7a;
   }
 /*.current-user-link div:hover {
   -moz-transform: scaleX(-1);

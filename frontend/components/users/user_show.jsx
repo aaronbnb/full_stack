@@ -40,7 +40,7 @@ class UserShow extends React.Component {
               <br/>
               <ul className="user-links">
                 <li>Profile</li>
-                <li>Campaigns</li>
+                <li><Link to={`users/${this.props.currentUser.id}/campaigns`}>Campaigns</Link></li>
                 <li>Contributions</li>
               </ul>
               <br/>

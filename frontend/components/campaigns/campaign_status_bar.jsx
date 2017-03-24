@@ -12,7 +12,6 @@ class CampaignStatusBar extends React.Component {
   }
 
     render () {
-
     return (
       <div>
         <Progress completed={75} />
