@@ -1,5 +1,4 @@
-# FresherNote
-
+# Indieclono
 [Indieclono live][heroku] **Please take a moment to look through the production site**
 
 [heroku]: http://www.indieclono.herokuapp.com
