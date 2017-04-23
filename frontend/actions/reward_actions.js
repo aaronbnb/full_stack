@@ -12,6 +12,11 @@ export const fetchRewards = id => dispatch => (
   .then( campaignRewards => dispatch(receiveCampaignRewards(campaignRewards)))
 );
 
+export const fetchReward = reward => dispatch => (
+  RewardAPIUtil.fetchReward(reward)
+  .then( campaignReward => dispatch(receiveCampaignReward(campaignReward)))
+);
+
 export const receiveCampaignReward = reward => ({
   type: RECEIVE_CAMPAIGN_REWARD,
   reward

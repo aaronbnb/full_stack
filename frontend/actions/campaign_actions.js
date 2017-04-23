@@ -37,6 +37,7 @@ export const fetchCampaign = id => dispatch => (
   .then( campaign => dispatch(receiveCampaign(campaign)))
 );
 
+
 const receiveCampaign = campaign => ({
   type: RECEIVE_CAMPAIGN,
   campaign

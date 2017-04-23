@@ -3,16 +3,16 @@ import { link, hashHistory, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions';
-import { fetchCampaigns } from '../../actions/campaign_actions';
+import { fetchContributions } from '../../actions/contribution_actions';
 import UserCampaignShow from './user_campaign_show';
 
 const mapStateToProps = (state, { params }) => {
-  let userCampaigns = [];
-  Object.keys(state.campaigns).forEach( id =>
-    { if (state.campaigns[id].user_id === parseInt(params.userId)) {
-      userCampaigns.push(state.campaigns[id]);
+  let userContributions = [];
+  Object.keys(state.contributions).forEach( id =>
+    { if (state.contirbutions[id].user_id === parseInt(params.userId)) {
+      userContributions.push(state.contributions[id]);
     }});
-  return ({campaigns: userCampaigns,
+  return ({contributions: userContributions,
           user: state.user,
           currentUserId: state.session.currentUser.id});
 
@@ -21,7 +21,7 @@ const mapStateToProps = (state, { params }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: id => dispatch(fetchUser(id)),
-  fetchCampaigns: () => dispatch(fetchCampaigns()),
+  fetchContributions: () => dispatch(fetchContributions()),
   logout: id => dispatch(logout(id))
 });
 

@@ -68,7 +68,7 @@ class RewardForm extends React.Component {
         <label> Price
             <p className="reward-input-descriptor">Set an amount that you want to collect from backers who claim this reward.
               This amount should represent how much you want to receive for all the items included in this reward.</p>
-            <input type="number"
+            <input type="number" 
               value={this.state.price}
               onChange={this.update('price')}
               className="price-input"/>

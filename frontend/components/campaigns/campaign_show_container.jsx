@@ -8,13 +8,13 @@ import { fetchRewards } from '../../actions/reward_actions';
 import CampaignShow from './campaign_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
     let userRewards = (state.campaigns[ownProps.params.campaignId]) ? state.campaigns[ownProps.params.campaignId].rewards : [];
     return ({
       currentUser: state.session.currentUser,
       campaign: state.campaigns[ownProps.params.campaignId],
       formType: 'view',
-      rewards: userRewards
+      rewards: userRewards,
+      amount: 0
     });
   };
 
