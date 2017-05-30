@@ -2,7 +2,6 @@ import {RECEIVE_CONTRIBUTION, RECEIVE_CONTRIBUTIONS } from '../actions/contribut
 import merge from 'lodash/merge';
 
 const ContributionReducer = (state = {} ,action) => {
-  debugger;
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_CONTRIBUTION:

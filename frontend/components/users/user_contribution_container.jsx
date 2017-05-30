@@ -9,7 +9,7 @@ import UserCampaignShow from './user_campaign_show';
 const mapStateToProps = (state, { params }) => {
   let userContributions = [];
   Object.keys(state.contributions).forEach( id =>
-    { if (state.contirbutions[id].user_id === parseInt(params.userId)) {
+    { if (state.contributions[id].user_id === parseInt(params.userId)) {
       userContributions.push(state.contributions[id]);
     }});
   return ({contributions: userContributions,

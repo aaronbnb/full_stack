@@ -45,13 +45,13 @@ class CampaignShow extends React.Component {
     const {campaign} = this.props;
     return (
       <div className='campaign-contribute-box'>
-        <div className='contribute-button'>
+        <div>
           <input type="number" min="0"
+            className='contribute-input'
             value={this.state.amount}
             onChange={this.update('amount')}>
           </input>
-
-          <button onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)} className="contribute-link">back it</button>
+          <button className="contribute-button" onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}>back it</button>
         </div>
       </div>
     );
@@ -74,11 +74,19 @@ class CampaignShow extends React.Component {
           <div className="campaign-profile-header-container">
           <div className='campaign-profile-img'><img src={campaign.main_img_url}></img></div>
           <div className='campaign-vital-stats-box'>
-            <div className='campaign-profile-title'><li>{campaign.title}</li></div>
-            <div className='campaign-profile-description'><li>{campaign.description}</li></div>
+            <div className='campaign-profile-title'>
+              <li>{campaign.title}</li>
+            </div>
+            <div className='campaign-profile-description'>
+              <li>{campaign.description}</li>
+            </div>
             {this.userBox()}
             {this.contributeBox()}
-            <div className='campaign-profile-goal'><li>{this.numberWithCommas(campaign.goal)}<span className="goal-text">&nbsp; goal</span></li></div>
+              <div className='campaign-profile-goal'>
+                <li>${this.numberWithCommas(campaign.goal)}
+                  <span className="goal-text">&nbsp; goal</span>
+                </li>
+              </div>
             <div>
 
               <CampaignStatusBar status={campaign.status} goal={campaign.goal}/>

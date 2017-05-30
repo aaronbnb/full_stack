@@ -29,7 +29,6 @@ class ContributionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     //  this.props.processForm(user);
-    debugger;
     const newContribution = Object.assign({}, this.state.contribution);
     newContribution.amount = parseInt(newContribution.amount);
     const updatedCampaign = Object.assign({}, this.state.campaign);
@@ -42,7 +41,6 @@ class ContributionForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="contribution-form-container">
         <form onSubmit={this.handleSubmit}>

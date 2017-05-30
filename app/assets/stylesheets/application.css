@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require_tree
  *= require_self
  */
 
@@ -794,7 +794,7 @@ div.empty-nav-bar {
   font-family: "Gill Sans", sans-serif;
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center;
 }
 
 .campaign-card {
@@ -1157,7 +1157,7 @@ div.empty-nav-bar {
 
   div.campaign-user-box {
     width: 250px;
-    margin: 0px 0px 35px 4px;
+    margin: 0px 0px 25px 4px;
     padding: 0px;
     overflow: hidden;
     display: flex;
@@ -1321,4 +1321,26 @@ div.empty-nav-bar {
     color: #9b9b9b;
     text-transform: uppercase;
     font-family: sans-serif;
+  }
+
+  button.contribute-button {
+    font-weight: 500;
+    font-family: Gill Sans, sans-serif;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 14px;
+    padding: 17px 15px 17px 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    text-decoration: none;
+    background-color: #eb1478;
+    border: 2px solid #eb1478;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  input.contribute-input  {
+
   }

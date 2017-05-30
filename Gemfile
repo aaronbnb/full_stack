@@ -40,6 +40,11 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do

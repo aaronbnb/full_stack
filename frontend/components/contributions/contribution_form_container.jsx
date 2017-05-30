@@ -5,7 +5,6 @@ import { fetchCampaign, updateCampaign } from './../../actions/campaign_actions'
 import { createContribution } from './../../actions/contribution_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   const rewardId = (ownProps.params.reward) ? ownProps.params.reward.id : 1;
 
   const campaign = state.campaigns[ownProps.params.campaignId];

@@ -20,7 +20,6 @@ const CampaignReducer = (state = {}, action) => {
       const newCampaign = {[action.campaign.id]: action.campaign};
       return merge({}, state, newCampaign);
     case RECEIVE_CONTRIBUTION:
-    debugger;
       const contribution = action.contribution;
       newState[action.contribution.campaign_id].status += parseInt(action.contribution);
       return newState;

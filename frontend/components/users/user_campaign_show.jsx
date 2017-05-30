@@ -14,7 +14,6 @@ class UserCampaignShow extends React.Component {
       this.props.fetchUser(this.props.params.userId);
       this.props.fetchCampaigns();
     }
-    debugger;
   }
 
   render() {
