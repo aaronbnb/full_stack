@@ -3,7 +3,6 @@ class Api::ContributionsController < ApplicationController
   def create
     @contribution = Contribution.new(contribute_params)
     if @contribution.save
-      debugger
       render :show
     else
       render json: @contribution.errors.full_messages, status: 422
@@ -11,8 +10,8 @@ class Api::ContributionsController < ApplicationController
   end
 
   def index
+    debugger
     @contributions = Contribution.all
-    render :show
   end
 
   def contribute_params

@@ -25,13 +25,14 @@ import { logout } from '../../actions/session_actions';
     }
 
  	  render(){
+      const currentUserId = this.props.currentUser.id;
  	    return(
         <div>
           <ul className="header-popout">
-            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${this.props.currentUser.id}/campaigns`)}>My Campaigns</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${this.props.userId}/contributions`)}>My Contributions</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${this.props.currentUser.id}`)}>My Profile</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`users/${this.props.currentUser.id}/edit`)}>My Settings</li>
+            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}/campaigns`)}>My Campaigns</li>
+            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}/contributions`)}>My Contributions</li>
+            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}`)}>My Profile</li>
+            <li className="popout-li" onClick={this.closeMenuAndLink(`users/${currentUserId}/edit`)}>My Settings</li>
             <li className="popout-li" onClick={this.logoutExit()}>Log Out</li>
           </ul>
         </div>

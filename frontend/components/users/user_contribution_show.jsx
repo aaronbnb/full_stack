@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import UserCampaignListItem from './user_campaign_list_item';
+import UserContributionListItem from './user_contribution_list_item';
 
-class UserCampaignShow extends React.Component {
+class UserContributionShow extends React.Component {
   constructor(props) {
     super(props);
     this.location = this.location.bind(this);
-    this.campaignList = this.campaignList.bind(this);
+    this.contributionList = this.contributionList.bind(this);
   }
 
   componentDidMount() {
     if(this.props.params) {
       this.props.fetchUser(this.props.params.userId);
-      this.props.fetchCampaigns();
     }
   }
 
   render() {
-    const {campaigns, user, currentUser } = this.props;
+    console.log(this.props);
+    const {contributions, user, currentUser } = this.props;
     return (
       <div className='user-show-stats'>
           <br/>
@@ -32,7 +32,7 @@ class UserCampaignShow extends React.Component {
             <li><Link to={`users/${user.id}/contributions`}>Contributions</Link></li>
           </ul>
           <br/>
-          {this.campaignList(campaigns)}
+          {this.contributionList()}
       </div>
     );
   }
@@ -47,20 +47,26 @@ class UserCampaignShow extends React.Component {
       );
     }
 
-    campaignList(campaigns) {
-      if (campaigns.length > 0) {
+    contributionList() {
+      const { contributions } = this.props.user;
+      const username = this.props.user.username;
+      console.log(contributions);
+      if (contributions.length > 0) {
         return (
           <div>
-            <h2 className='user-campaign-list-header'>Campaigns I'm On</h2>
-            {campaigns.map( campaign => (
-              <UserCampaignListItem campaign={campaign} user={this.props.user} key={campaign.id} currentUser={this.props.currentUser}/>
+            <h2 className='user-campaign-list-header'>{`${username}'s Contributions'`}</h2>
+            {contributions.map( contribution => (
+              <div>
+                <p>{contribution.amount}</p>
+                <UserContributionListItem contribution={contribution}/>
+              </div>
             ))
             }
           </div>
         );
       } else {
         return (
-          <div className='no-user-campaigns'>This user hasn't made any campaigns yet...pobrecito</div>
+          <div className='no-user-campaigns'>This user hasn't made any contributions yet...pobrecito</div>
         );
       }
 
@@ -68,4 +74,4 @@ class UserCampaignShow extends React.Component {
 
 }
 
-export default UserCampaignShow;
+export default UserContributionShow;
