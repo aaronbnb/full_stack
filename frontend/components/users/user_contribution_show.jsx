@@ -22,7 +22,7 @@ class UserContributionShow extends React.Component {
       <div className='user-show-stats'>
           <br/>
           <br/>
-          <h1 className="user-title">{user.username }</h1>
+          <h1 className="user-title">{user.username}</h1>
           <br/>
           <div className="user-location">{this.location(user.zip)}</div>
           <br/>
