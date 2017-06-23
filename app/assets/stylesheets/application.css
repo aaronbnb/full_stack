@@ -1346,3 +1346,12 @@ div.empty-nav-bar {
     margin-right: 20px;
     outline: none;
   }
+
+  input.contribute-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .example-enter {
+    color: green;
+  }

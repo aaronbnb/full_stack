@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import UserMenuContainer from '../session/user_menu_container';
 import SessionFormContainer from '../session/session_form_container';
 import CampaignFormContainer from '../campaigns/campaign_form_container';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -37,8 +38,12 @@ class Greeting extends React.Component {
 
             <div>
               <div className='current-user-link' onClick={this.toggleUserMenu}>{currentUser.username}</div>
-
-              {(this.state.showUserMenu === true) ? this.userMenu() : ""}
+              <ReactCSSTransitionGroup
+                 transitionName="example-enter"
+                 transitionEnterTimeout={500}
+                 transitionLeaveTimeout={300}>
+                 {(this.state.showUserMenu === true) ? this.userMenu() : ""}
+              </ReactCSSTransitionGroup>
             </div>
           <br></br>
         </hgroup>
