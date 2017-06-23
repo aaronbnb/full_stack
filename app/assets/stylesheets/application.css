@@ -922,14 +922,10 @@ div.empty-nav-bar {
   }
 
 
-  .campaign-profile-img {
-    margin: 25px;
-  }
-
 .campaign-profile-img img {
-    max-height: 650px;
-    width: 50%;
-    min-width: 350px;
+    height: 640px;
+    max-width: 390px;
+    margin: 5px;
   }
 
 .campaign-profile-header-container {
