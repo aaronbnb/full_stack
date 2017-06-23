@@ -13,6 +13,8 @@ import RewardFormContainer from './rewards/reward_form_container';
 import CampaignIndexContainer from './campaigns/campaign_index_container';
 import CampaignShowContainer from './campaigns/campaign_show_container';
 import UserCampaignContainer from './users/user_campaign_container';
+import ContributionFormContainer from './contributions/contribution_form_container';
+import UserContributionContainer from './users/user_contribution_container';
 
 const Root = ({ store }) => {
 
@@ -41,9 +43,11 @@ const Root = ({ store }) => {
             <IndexRoute component={UserShowContainer}  onEnter={_ensureLoggedIn}/>
             <Route path="edit" component={UserFormContainer} onEnter={_ensureLoggedIn}/>
             <Route path="campaigns" component={UserCampaignContainer} onEnter={_ensureLoggedIn}/>
+            <Route path="contributions" component={UserContributionContainer} onEnter={_ensureLoggedIn}/>
           </Route>
           <Route path="campaigns/:campaignId" component={CampaignShowContainer}/>
           <Route path="campaigns/:campaignId/rewards" component={RewardFormContainer} onEnter={_ensureLoggedIn}/>
+          <Route path="campaigns/:campaignId/contribute/amt=:amount" component={ContributionFormContainer} onEnter={_ensureLoggedIn}/>
           <Route path="campaigns" component={CampaignFormContainer} onEnter={_ensureLoggedIn}/>
 
         </Route>

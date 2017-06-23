@@ -5,5 +5,6 @@ class Campaign < ApplicationRecord
 
   belongs_to :user
   has_many :rewards
-
+  has_many :contributions
+  
 end

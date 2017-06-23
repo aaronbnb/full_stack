@@ -88,7 +88,7 @@ componentWillReceiveProps(newProps) {
 
             <label> Campaign Goal
               <p className="input-descriptor">How much would you like to raise?</p>
-              <input type="number"
+              <input type="number" min="0"
                 value={this.state.goal}
                 onChange={this.update('goal')}
                 className="goal-input"/>

@@ -10,8 +10,10 @@ import Modal from 'react-modal';
 import * as UserAPIUtil from './util/user_api_util';
 import * as CampaignAPIUtil from './util/campaign_api_util';
 import * as RewardAPIUtil from './util/reward_api_util';
+import * as ContributionAPIUtil from './util/contribution_api_util';
 
 window.fetchUser = UserAPIUtil.fetchUser;
+window.createContribution = ContributionAPIUtil.createContribution;
 window.fetchUserAction = User.fetchUser;
 window.fetchCampaigns = CampaignAPIUtil.fetchCampaigns;
 window.fetchCampaign = CampaignAPIUtil.fetchCampaign;

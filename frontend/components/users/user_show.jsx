@@ -19,29 +19,29 @@ class UserShow extends React.Component {
   }
 
   componentWillUpdate(nextProps) {
-    if(!nextProps.currentUser || !this.props.currentUser) {
+    if(!nextProps.user || !this.props.user) {
       hashHistory.push("/");
-    } else if (nextProps.currentUser.id !== parseInt(nextProps.params.userId)){
+    } else if (nextProps.user.id !== parseInt(nextProps.params.userId)){
       this.props.fetchUser(nextProps.params.userId);
     }
   }
 
   render() {
-    const {username, zip, description, profile_img_url, tagline} = this.props.currentUser;
-    debugger;
+    const {user} = this.props;
+    const {username, zip, description, profile_img_url, tagline} = this.props.user;
     return (
       <div className="user-show-page">
           <div className='user-show-stats'>
               <br/>
               <br/>
-              <h1 className="user-title">{(this.props.currentUser === null) ? "" : this.props.currentUser.username }</h1>
+              <h1 className="user-title">{(user === null) ? "" : user.username }</h1>
               <br/>
               <div className="user-location">{this.location(zip)}</div>
               <br/>
               <ul className="user-links">
                 <li>Profile</li>
-                <li><Link to={`users/${this.props.currentUser.id}/campaigns`}>Campaigns</Link></li>
-                <li>Contributions</li>
+                <li><Link to={`users/${user.id}/campaigns`}>Campaigns</Link></li>
+                <li><Link to={`users/${user.id}/contributions`}>Contributions</Link></li>
               </ul>
               <br/>
             <div className="user-profile-img">{this.profileImage(profile_img_url)}</div>

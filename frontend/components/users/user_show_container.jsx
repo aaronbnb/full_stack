@@ -7,11 +7,11 @@ import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
   if (state.session.currentUser.id === parseInt(ownProps.params.userId)) {
-    return ({currentUser: state.session.currentUser,
+    return ({user: state.session.currentUser,
             formType: ownProps.formType});
   } else {
     return ({
-      currentUser: state.user,
+      user: state.user,
       formType: ownProps.formType
     });
   }

@@ -13,6 +13,7 @@ class CampaignShow extends React.Component {
     this.userBox = this.userBox.bind(this);
     this.campaignPercent = this.campaignPercent.bind(this);
     this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
+    this.state = {amount: 0};
   }
 
   componentDidMount() {
@@ -37,20 +38,55 @@ class CampaignShow extends React.Component {
     );
   }
 
+  componentWillReceiveProps(newProps) {
+  }
+
+  contributeBox() {
+    const {campaign} = this.props;
+    return (
+      <div className='campaign-contribute-box'>
+        <div>
+          <input type="number" min="0"
+            className='contribute-input'
+            value={this.state.amount}
+            onChange={this.update('amount')}>
+          </input>
+          <button className="contribute-button" onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}>back it</button>
+        </div>
+      </div>
+    );
+  }
+
+  update(field) {
+
+   return (e) => {
+     this.setState({[field]: e.target.value});
+    };
+  }
+
   render() {
     // const { campaign } = this.props;
     const campaign = (this.props.campaign) ? this.props.campaign : {};
     const { rewards } = this.props;
-    debugger;
+
     return (
       <div className="campaign-show-page-container">
           <div className="campaign-profile-header-container">
           <div className='campaign-profile-img'><img src={campaign.main_img_url}></img></div>
           <div className='campaign-vital-stats-box'>
-            <div className='campaign-profile-title'><li>{campaign.title}</li></div>
-            <div className='campaign-profile-description'><li>{campaign.description}</li></div>
+            <div className='campaign-profile-title'>
+              <li>{campaign.title}</li>
+            </div>
+            <div className='campaign-profile-description'>
+              <li>{campaign.description}</li>
+            </div>
             {this.userBox()}
-            <div className='campaign-profile-goal'><li>{this.numberWithCommas(campaign.goal)}<span className="goal-text">&nbsp; goal</span></li></div>
+            {this.contributeBox()}
+              <div className='campaign-profile-goal'>
+                <li>${this.numberWithCommas(campaign.goal)}
+                  <span className="goal-text">&nbsp; goal</span>
+                </li>
+              </div>
             <div>
 
               <CampaignStatusBar status={campaign.status} goal={campaign.goal}/>
@@ -64,8 +100,8 @@ class CampaignShow extends React.Component {
         <div className="rewards-sidebar">
           <h2 className="rewards-sidebar-header">&nbsp; rewards</h2>
           { (rewards.length > 0) ? rewards.map( reward =>
-            <div>
-                 <RewardIndexCard reward={reward} key={reward.id}/>
+            <div key={reward.id}>
+                 <RewardIndexCard reward={reward}/>
             </div>
           ) :
           <div className="sidebar-no-rewards">This campaign doesn't have any rewards yet</div>
