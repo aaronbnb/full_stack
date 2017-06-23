@@ -10,7 +10,6 @@ class Api::ContributionsController < ApplicationController
   end
 
   def index
-    debugger
     @contributions = Contribution.all
   end
 

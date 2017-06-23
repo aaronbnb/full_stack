@@ -9,7 +9,7 @@ class UserContributionShow extends React.Component {
     this.contributionList = this.contributionList.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if(this.props.params) {
       this.props.fetchUser(this.props.params.userId);
     }
