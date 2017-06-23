@@ -82,11 +82,11 @@ button.modal-btn {
 
 button.alt-portal-btn {
   background: none!important;
-color: #eb1478!important;
-border: none;
-padding: 0!important;
-border-bottom: 1px solid #444;
-cursor: pointer;
+  color: #eb1478!important;
+  border: none;
+  padding: 0!important;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
 }
 
 .login-modal-btn
@@ -667,7 +667,6 @@ p.input-descriptor {
   font-size: 14px;
   width: 60%;
 
-
 }
 
 .reward-submit-btn {
@@ -808,7 +807,7 @@ div.empty-nav-bar {
   cursor: pointer;
   overflow: hidden;
   word-wrap: break-word;
-  }
+}
 
   li.campaign-preview-pic img {
     max-width: 100%;
@@ -1351,4 +1350,3 @@ div.empty-nav-bar {
     margin-right: 20px;
     outline: none;
   }
-}
