@@ -32,7 +32,7 @@ class CampaignIndexItemCard extends React.Component {
         <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}<p className="campaign-card-currency">&nbsp; USD</p></li></div>
         <div className='campaign-status-bar'>
           <CampaignStatusBar status={campaign.status} goal={campaign.goal}/></div>
-          <p className='campaign-card-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
+          <p className='campaign-card-footer'>{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
       </div>
     );
   }
