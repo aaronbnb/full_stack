@@ -8,11 +8,9 @@ class CampaignShow extends React.Component {
   constructor(props) {
     super(props);
     window.scroll(0,0);
-    this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
     this.numberWithCommas = this.numberWithCommas.bind(this);
     this.userBox = this.userBox.bind(this);
     this.campaignPercent = this.campaignPercent.bind(this);
-    this.campaignProfileStatusBar = this.campaignProfileStatusBar.bind(this);
     this.state = {amount: 0};
   }
 
@@ -20,48 +18,6 @@ class CampaignShow extends React.Component {
     if(this.props.params) {
       this.props.fetchCampaign(this.props.params.campaignId);
     }
-  }
-
-  userBox() {
-    const user = (this.props.campaign) ? this.props.campaign.user : {};
-    return (
-      <div className='campaign-user-box'>
-        <div className='campaign-user-stats'>
-          <li><p className="user-box-username">{user.username}</p></li>
-          <li><p className="user-box-location">{user.zip ? user.zip : "Philadelphia, PA"}</p></li>
-          <li><Link to={`users/${user.id}`} className="user-about-link">About</Link></li>
-        </div>
-        <div className="user-box-picture">
-          <img src={`${user.profile_img_url}`}></img>
-        </div>
-      </div>
-    );
-  }
-
-  componentWillReceiveProps(newProps) {
-  }
-
-  contributeBox() {
-    const {campaign} = this.props;
-    return (
-      <div className='campaign-contribute-box'>
-        <div>
-          <input type="number" min="0"
-            className='contribute-input'
-            value={this.state.amount}
-            onChange={this.update('amount')}>
-          </input>
-          <button className="contribute-button" onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}>back it</button>
-        </div>
-      </div>
-    );
-  }
-
-  update(field) {
-
-   return (e) => {
-     this.setState({[field]: e.target.value});
-    };
   }
 
   render() {
@@ -111,6 +67,47 @@ class CampaignShow extends React.Component {
     );
   }
 
+
+  userBox() {
+    const user = (this.props.campaign) ? this.props.campaign.user : {};
+    return (
+      <div className='campaign-user-box'>
+        <div className='campaign-user-stats'>
+          <li><p className="user-box-username">{user.username}</p></li>
+          <li><p className="user-box-location">{user.zip ? user.zip : "Philadelphia, PA"}</p></li>
+          <li><Link to={`users/${user.id}`} className="user-about-link">About</Link></li>
+        </div>
+        <div className="user-box-picture">
+          <img src={`${user.profile_img_url}`}></img>
+        </div>
+      </div>
+    );
+  }
+
+  contributeBox() {
+    const {campaign} = this.props;
+    return (
+      <div className='campaign-contribute-box'>
+        <div>
+          <input type="number" min="0"
+            className='contribute-input'
+            value={this.state.amount}
+            onChange={this.update('amount')}>
+          </input>
+          <button className="contribute-button" onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}>back it</button>
+        </div>
+      </div>
+    );
+  }
+
+  update(field) {
+
+   return (e) => {
+     this.setState({[field]: e.target.value});
+    };
+  }
+
+
   campaignOverviewSection(overview) {
 
     return (
@@ -124,27 +121,10 @@ class CampaignShow extends React.Component {
   }
 
   campaignPercent(status, goal) {
-    status = (parseInt(status) === 0) ? 1 : parseInt(status);
-    goal = parseInt(goal);
     let progress = (status / goal);
-    if (progress < .1) {
-      return ("Less than 1");
-    } else {
-      return (`${Math.ceil(progress)}`);
-    }
-  }
-
-
-  campaignProfileStatusBar(goal, status) {
-    status = (parseInt(status) === 0) ? 1 : parseInt(status);
-    goal = parseInt(goal);
-    let progress = (status / goal);
-
-    return (
-      <div >
-        <Progress completed={progress} className="campaign-profile-status-bar"></Progress>
-      </div>
-    );
+    if (progress < .01) return "Less than 1";
+    let pct = (progress*100).toFixed(0);
+    return pct;
   }
 
   numberWithCommas(num) {

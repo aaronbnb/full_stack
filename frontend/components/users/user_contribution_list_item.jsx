@@ -4,8 +4,6 @@ import { Link, hashHistory } from 'react-router';
 class UserContributionListItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    console.log(this.props);
   }
 
   componentDidMount() {
@@ -15,7 +13,6 @@ class UserContributionListItem extends React.Component {
 
   render() {
     const {contribution} = this.props;
-    console.log(this.props);
     return (
       <div className="campaign-list-item">
         <div className='campaign-list-item-info'>

@@ -38,14 +38,10 @@ class CampaignIndexItemCard extends React.Component {
   }
 
   campaignPercent(status, goal) {
-    status = (parseInt(status) === 0) ? 1 : parseInt(status);
-    goal = parseInt(goal);
     let progress = (status / goal);
-    if (progress < 1) {
-      return ("Less than 1");
-    } else {
-      return Math.ceil(progress);
-    }
+    if (progress < .01) return "Less than 1";
+    let pct = (progress*100).toFixed(0);
+    return pct;
   }
 
 

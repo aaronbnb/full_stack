@@ -13,6 +13,7 @@ class CampaignIndex extends React.Component {
 
   render() {
     const {campaigns} = this.props;
+    console.log(campaigns);
     return (
       <div className='campaign-index-container'>
         {campaigns.map( campaign => (
