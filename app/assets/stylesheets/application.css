@@ -240,6 +240,12 @@ ul.testpics img {
   cursor: pointer;
 }
 
+.campaign-create-btn {
+  background-color: #ffffff;
+  border: 3px solid #eb1478;
+  color: #eb1478;
+}
+
 .header-popout {
   list-style: none;
   margin-top: 30px;
