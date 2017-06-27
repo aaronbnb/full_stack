@@ -318,7 +318,7 @@ div.arrow-up {
   margin-left: 2px;
   padding: 0px;
   transform: rotate(270deg);
-  transition-duration: 1s;
+  transition-duration: 1.25s;
   display: inline-block;
 }
 
