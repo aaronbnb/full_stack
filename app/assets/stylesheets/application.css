@@ -858,6 +858,12 @@ div.empty-nav-bar {
   cursor: pointer;
   overflow: hidden;
   word-wrap: break-word;
+  transition-duration: .2s;
+}
+
+div.campaign-card:hover {
+  transform: scale(1.01);
+  transition-duration: .2s;
 }
 
   li.campaign-preview-pic img {
