@@ -57,6 +57,7 @@ h1 {
   float: left;
 }
 
+
 .modal-btn {
   background-color: #eb1478;
   border: 2px solid #eb1478;
@@ -248,7 +249,7 @@ ul.testpics img {
 
 .header-popout {
   list-style: none;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-right: 15px;
   line-height: 200%;
   cursor: pointer;
@@ -296,6 +297,27 @@ li.popout-li a:hover {
 
 .current-user-link:hover {
   color: #eb1478;
+}
+
+div.user-dropdown-container {
+  display: flex;
+}
+
+div.arrow-down {
+  margin-left: 2px;
+  padding: 0px;
+  display: inline-table;
+  transform: rotate(450deg);
+  transition-duration: 1s;
+}
+
+div.arrow-up {
+  width: 10px;
+  margin-left: 2px;
+  padding: 0px;
+  transform: rotate(270deg);
+  transition-duration: 1s;
+  display: inline-block;
 }
 
 ul.user-links {

@@ -29,7 +29,7 @@ class CampaignIndexItemCard extends React.Component {
         <div className='campaign-title-container'><li className='campaign-card-title'>{campaign.title} </li></div>
         <div className='campaign-card-tagline-container'><li className='campaign-card-tagline'>{campaign.description}</li></div>
         <div className='campaign-card-location-container'><li className='campaign-location'><i className="fa fa-map-marker" aria-hidden="true"/>&nbsp;{campaign.location}</li></div>
-        <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}<p className="campaign-card-currency">&nbsp; USD</p></li></div>
+        <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}<p className="campaign-card-currency">&nbsp;USD</p></li></div>
         <div className='campaign-status-bar'>
           <CampaignStatusBar status={campaign.status} goal={campaign.goal}/></div>
           <p className='campaign-card-footer'>{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>

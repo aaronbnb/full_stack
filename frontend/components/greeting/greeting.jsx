@@ -9,9 +9,11 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showUserMenu: false
+      showUserMenu: false,
+      arrow: true
     };
     this.toggleUserMenu = this.toggleUserMenu.bind(this);
+    this.toggleArrow = this.toggleArrow.bind(this);
   }
 
   sessionLinks() {
@@ -29,6 +31,13 @@ class Greeting extends React.Component {
     this.setState({"showUserMenu": !this.state.showUserMenu});
   }
 
+  toggleArrow(e) {
+    e.preventDefault();
+    clearTimeout();
+    console.log("hello");
+    this.setState({'arrow': !this.state.arrow});
+  }
+
   personalGreeting(currentUser, logout) {
     return(
       <div>
@@ -36,8 +45,18 @@ class Greeting extends React.Component {
           <br></br>
             <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
 
-            <div>
-              <div className='current-user-link' onClick={this.toggleUserMenu}>{currentUser.username}</div>
+            <div className='user-dropdown-container'>
+              <div className='current-user-link'
+                onClick={this.toggleUserMenu}
+                onMouseEnter={this.toggleArrow}
+                onMouseLeave={this.toggleArrow}
+              >
+                {currentUser.username}
+                <div className={(this.state.arrow) ? 'arrow-up' : 'arrow-down'}>
+                  <span> > </span>
+                </div>
+              </div>
+
               <ReactCSSTransitionGroup
                  transitionName="example-enter"
                  transitionEnterTimeout={500}
