@@ -38,18 +38,20 @@ class CampaignShow extends React.Component {
             </div>
             {this.userBox()}
             {this.contributeBox()}
+
+            <div className='campaign-status-sec'>
               <div className='campaign-profile-goal'>
                 <li>${this.numberWithCommas(campaign.goal)}
                   <span className="goal-text">&nbsp; goal</span>
                 </li>
               </div>
-            <div>
 
               <CampaignStatusBar status={campaign.status} goal={campaign.goal}/>
-              <p className='campaign-profile-status-footer'>&nbsp;{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
+              <p className='campaign-profile-status-footer'>
+                &nbsp;{this.campaignPercent(campaign.status, campaign.goal)}% raised
+              </p>
             </div>
-            <div>
-            </div>
+
           </div>
         </div>
         <div className="campaign-show-overview">{this.campaignOverviewSection(campaign.overview)}</div>
@@ -88,14 +90,16 @@ class CampaignShow extends React.Component {
     const {campaign} = this.props;
     return (
       <div className='campaign-contribute-box'>
-        <div>
           <input type="number" min="0"
-            className='contribute-input'
+            className='campaign-contribution-input'
             value={this.state.amount}
             onChange={this.update('amount')}>
           </input>
-          <button className="contribute-button" onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}>back it</button>
-        </div>
+          <button className="contribute-button"
+            onClick={() => hashHistory.push(`campaigns/${campaign.id}/contribute/amt=${this.state.amount}`)}
+          >
+            back it
+          </button>
       </div>
     );
   }

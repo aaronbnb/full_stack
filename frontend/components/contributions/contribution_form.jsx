@@ -21,11 +21,6 @@ class ContributionForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps(newProps) {
-
-  }
-
-
   handleSubmit(e) {
     e.preventDefault();
     //  this.props.processForm(user);
@@ -52,7 +47,7 @@ class ContributionForm extends React.Component {
               onChange={this.update()}
               className="contribution-input"/>
           </label>
-          <input className='campaign-submit-btn' type='submit' value="submit payment"></input>
+          <input className='contribution-btn' type='submit' value="submit payment"></input>
         </form>
       </div>
     );
