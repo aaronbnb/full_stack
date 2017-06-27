@@ -240,7 +240,7 @@ ul.testpics img {
   cursor: pointer;
 }
 
-.campaign-create-btn {
+.campaign-create-btn:hover {
   background-color: #ffffff;
   border: 3px solid #eb1478;
   color: #eb1478;
