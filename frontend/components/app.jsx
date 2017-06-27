@@ -6,9 +6,9 @@ import { hashHistory } from 'react-router';
 const App = ({ children }) => (
   <div>
     <header>
-      <h1>
-        <img className='logo' src='https://s5.postimg.org/3okqvy5xj/logo.jpg' onClick={() => hashHistory.push("/")}></img>
-      </h1>
+        <img className='logo'
+          src='http://res.cloudinary.com/dn4jhnh54/image/upload/v1498538465/updatedlogo_hy3xrc.png'
+          onClick={() => hashHistory.push("/")}>&nbsp;</img>
 
       <GreetingContainer />
 
