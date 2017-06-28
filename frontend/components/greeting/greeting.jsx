@@ -79,7 +79,7 @@ class Greeting extends React.Component {
       </div>
     );
   }
-  
+
 
     // Add click listener to gear icon which invokes toggle function;
   }

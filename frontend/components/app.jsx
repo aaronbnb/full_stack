@@ -8,7 +8,7 @@ const App = ({ children }) => (
     <header>
         <img className='logo'
           src='http://res.cloudinary.com/dn4jhnh54/image/upload/v1498538465/updatedlogo_hy3xrc.png'
-          onClick={() => hashHistory.push("/")}>&nbsp;</img>
+          onClick={() => hashHistory.push("/")}></img>
 
       <GreetingContainer />
 
