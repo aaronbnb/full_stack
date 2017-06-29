@@ -57,7 +57,7 @@ class Greeting extends React.Component {
               </div>
 
               <ReactCSSTransitionGroup
-                 transitionName="example-enter"
+                 transitionName="enter"
                  transitionEnterTimeout={500}
                  transitionLeaveTimeout={300}>
                  {(this.state.showUserMenu === true) ? this.userMenu() : ""}
