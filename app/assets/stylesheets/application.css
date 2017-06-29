@@ -886,7 +886,7 @@ div.buffer {
 }
 
 .campaign-card {
-  margin: 1.5%;
+  margin: 1.5% 2% 1.5% 2%;
   width: 260px;
   height: 480px;
   box-sizing: border-box;
