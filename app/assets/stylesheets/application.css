@@ -928,6 +928,10 @@ li.campaign-category-head {
   letter-spacing: 1px;
 }
 
+li.campaign-category-head:hover {
+  color: #eb1478;
+}
+
 p.campaign-card-title {
   font-family: "Benton Sans Medium", "Helvetica", sans-serif;
   font-size: 15px;
