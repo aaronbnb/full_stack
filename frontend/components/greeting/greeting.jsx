@@ -28,7 +28,8 @@ class Greeting extends React.Component {
   }
 
   toggleUserMenu() {
-    this.setState({"showUserMenu": !this.state.showUserMenu});
+    this.setState({"showUserMenu": !this.state.showUserMenu,
+                  "arrow": !this.state.arrow});
   }
 
   toggleArrow(e) {
@@ -48,12 +49,10 @@ class Greeting extends React.Component {
             <div className='user-dropdown-container'>
               <div className='current-user-link'
                 onClick={this.toggleUserMenu}
-                onMouseEnter={this.toggleArrow}
-                onMouseLeave={this.toggleArrow}
               >
                 {currentUser.username}
                 <div className={(this.state.arrow) ? 'arrow-up' : 'arrow-down'}>
-                  <span> > </span>
+                  <span id="arrow"> > </span>
                 </div>
               </div>
 
