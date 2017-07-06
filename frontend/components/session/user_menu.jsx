@@ -24,7 +24,7 @@ import { logout } from '../../actions/session_actions';
       hashHistory.push("/");};
     }
 
- 	  render(){
+ 	  render() {
       const currentUserId = this.props.currentUser.id;
  	    return(
         <div onMouseLeave={() => this.props.toggle()}>
