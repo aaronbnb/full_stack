@@ -120,8 +120,8 @@ header h1 img {
   cursor: pointer;
   margin-left: 10px;
   padding-left: 3%;
-  width: 169px;
-  height: 40px;
+  width: 189px;
+  height: 45px;
 }
 
 header {
@@ -313,6 +313,7 @@ li.popout-li a:hover {
   line-height: 20px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 
