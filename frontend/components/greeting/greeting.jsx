@@ -13,18 +13,18 @@ class Greeting extends React.Component {
       arrow: true
     };
     this.toggleUserMenu = this.toggleUserMenu.bind(this);
-    this.toggleArrow = this.toggleArrow.bind(this);
   }
 
   sessionLinks() {
-    return(
+    return (
       <SessionFormContainer />
     );
   }
 
   userMenu(e){
-
-    return <UserMenuContainer toggle={this.toggleUserMenu}/>;
+    return (
+      <UserMenuContainer toggle={this.toggleUserMenu}/>
+    );
   }
 
   toggleUserMenu() {
@@ -32,83 +32,40 @@ class Greeting extends React.Component {
                   "arrow": !this.state.arrow});
   }
 
-  toggleArrow(e) {
-    e.preventDefault();
-    clearTimeout();
-    console.log("hello");
-    this.setState({'arrow': !this.state.arrow});
-  }
-
   personalGreeting(currentUser, logout) {
     return(
-      <div>
         <hgroup className="header-group">
           <br></br>
-            <Link to={`campaigns`} className='campaign-create-btn' formType={'new'} currentUser={currentUser}>Start a campaign</Link>
+            <Link to={`campaigns`} className='campaign-create-btn'
+              currentUser={currentUser}>Start a campaign</Link>
 
             <div className='user-dropdown-container'>
               <div className='current-user-link'
-                onFocus={this.toggleUserMenu}
-              >
+                onClick={this.toggleUserMenu}>
                 {currentUser.username}
                 <div className={(this.state.arrow) ? 'arrow-up' : 'arrow-down'}>
                   <span id="arrow"> > </span>
                 </div>
               </div>
 
-              <ReactCSSTransitionGroup
-                 transitionName="enter"
-                 transitionEnterTimeout={500}
-                 transitionLeaveTimeout={300}>
                  {(this.state.showUserMenu === true) ? this.userMenu() : ""}
-              </ReactCSSTransitionGroup>
+
             </div>
           <br></br>
         </hgroup>
-      </div>
     );
-      // <Link to={`users/${currentUser.id}`}>{currentUser.username}</Link>
-    // <button className="header-button" onClick={logout}>Log Out</button>
   }
 
   render() {
+    const { currentUser } = this.props;
     return(
       <div>
-        {this.props.currentUser ? this.personalGreeting(this.props.currentUser, this.props.logout) : this.sessionLinks()}
+        {currentUser ?
+          this.personalGreeting(currentUser, this.props.logout) : this.sessionLinks()}
       </div>
     );
   }
-
-
-    // Add click listener to gear icon which invokes toggle function;
-  }
-
-
-
-
-
-
-//
-// const loggedIn = ( currentUser, logout ) => (
-//   <div className="logged-in-header">
-//     <h2>{`Hi ${currentUser}!`}</h2>
-//       <br></br>
-//     <button onClick={logout}>Log Out</button>
-//   </div>
-// );
-//
-// const sessionLinks = () => (
-//   <nav className="login-signup">
-//     <Link to="/signup" >Sign Up</Link>
-//     &nbsp; &nbsp;
-//     <Link to="/login" >Log In</Link>
-//   </nav>
-// );
-//
-// const Greeting = ({ currentUser, logout }) => {
-//   return (currentUser ? loggedIn(currentUser.username, logout) : sessionLinks());
-// }
-// ;
+}
 
 
 export default Greeting;
