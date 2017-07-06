@@ -56,22 +56,22 @@ class SessionForm extends React.Component {
 	}
 
   render() {
-    //need to add classes to this form
-    // const { formType } = this.props;
-    // const formHeader = (formType === 'login') ? "Log In" : "Sign Up";
 
     return (
 
 			<div className="login-signup-box">
 				<nav className="login-signup">
-          <Link onClick={this.headerDemo.bind(this)}>Demo</Link>
+          <Link onClick={this.headerDemo.bind(this)}
+            >Demo</Link>
           &nbsp;  &nbsp;
-					<Link onClick={this.openModal.bind(this, 'signup')}>Sign Up</Link>
+					<Link onClick={this.openModal.bind(this, 'signup')}
+            >Sign Up</Link>
           &nbsp;  &nbsp;
-          <Link onClick={this.openModal.bind(this, 'login')} className='rightmost'>Log In</Link>
+          <Link onClick={this.openModal.bind(this, 'login')}
+            className='rightmost'>Log In</Link>
           &nbsp;  &nbsp;
-
 				</nav>
+
 				<Modal
 					contentLabel="Modal"
 					isOpen={this.state.modalOpen}
@@ -79,8 +79,12 @@ class SessionForm extends React.Component {
 					style={ModalStyle}
           >
           Welcome to IndieClono!
- 					<br/>
-            Please {(this.state.modalType === 'signup') ? 'Sign Up' : 'Log In'} or {this.navLink()}
+
+        <br/>
+
+            Please {(this.state.modalType === 'signup')
+              ? 'Sign Up' : 'Log In'} or
+            {this.navLink()}
 					<form onSubmit={this.handleSubmit} >
 						{this.renderErrors()}
 						<div className="login-form">
@@ -100,7 +104,8 @@ class SessionForm extends React.Component {
 							</label>
               <br/>
               <div className='modal-btn-container'>
-							<input className='modal-btn' type="submit" value={this.modalSubmit(this.state.modalType)} />
+							<input className='modal-btn' type="submit"
+                value={this.modalSubmit(this.state.modalType)} />
                 <button className='modal-btn' onClick={this.demo}>Demo</button>
                 {this.modalAltText(this.state.modalType)}
                 </div>
@@ -108,7 +113,6 @@ class SessionForm extends React.Component {
 					</form>
           <br/>
 				</Modal>
-
       </div>
 );
 
@@ -117,10 +121,13 @@ class SessionForm extends React.Component {
   modalAltText(modalType) {
     if(modalType === 'login') {
       return (<p className="modal-alt-text-log-in">New to Indieclono?&nbsp;
-      <Link className='modal-alt-link' onClick={this.openModal.bind(this,'signup')}> Sign Up </Link></p>);
+      <Link className='modal-alt-link'
+        onClick={this.openModal.bind(this,'signup')}> Sign Up </Link></p>);
     } else {
       return (<p className="modal-alt-text-sign-up">By signing up you agree to our
-      <Link className='modal-alt-link' onClick={() => "en.wikipedia.org/wiki/Privacy_policy"}> Terms of Use </Link> and Privacy Policy</p>);
+      <Link className='modal-alt-link'
+        onClick={() => "en.wikipedia.org/wiki/Privacy_policy"}> Terms of Use
+      </Link> and Privacy Policy</p>);
     }
   }
 
@@ -129,21 +136,13 @@ class SessionForm extends React.Component {
   }
 
   navLink() {
-    // const { formType } = this.props;
-    //
-    // if(formType === 'login') {
-    //   return <Link to={'/signup'}>Sign Up instead</Link>;
-    // } else {
-    //   return (
-    //     <Link to={'/login'}>Log In instead</Link>
-    //   );
-    // }
     if (this.state.modalType === 'login') {
-      return <button className='alt-portal-button' onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>;
+      return <button className='alt-portal-button'
+        onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>;
     } else {
-      return <button className='alt-portal-button' onClick={this.openModal.bind(this, 'login')}>Log In</button>;
+      return <button className='alt-portal-button'
+        onClick={this.openModal.bind(this, 'login')}>Log In</button>;
     }
-
   }
 
   openModal(modalType) {
@@ -171,8 +170,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-  //  this.props.processForm(user);
-  //modal code...
+
     if (this.state.modalType === 'login') {
       delete user.modalOpen;
       delete user.modalType;
@@ -183,7 +181,6 @@ class SessionForm extends React.Component {
 			this.props.signup({user});
 		}
  }
-  //...
 }
 
 export default withRouter(SessionForm);

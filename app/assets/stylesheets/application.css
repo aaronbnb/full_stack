@@ -887,7 +887,7 @@ div.buffer {
 }
 
 .campaign-card {
-  margin: 1.5% 2% 1.5% 2%;
+  margin: 1.5% 2.5% 1.5% 2.5%;
   width: 260px;
   height: 480px;
   box-sizing: border-box;
@@ -899,12 +899,6 @@ div.buffer {
   word-wrap: break-word;
   transition-duration: .2s;
 }
-
-div.campaign-card:hover {
-  transform: scale(1.01);
-  transition-duration: .1s;
-}
-
 
 div.campaign-card:hover p {
   text-decoration: underline;

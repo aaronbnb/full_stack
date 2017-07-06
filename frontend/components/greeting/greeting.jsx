@@ -48,7 +48,7 @@ class Greeting extends React.Component {
 
             <div className='user-dropdown-container'>
               <div className='current-user-link'
-                onClick={this.toggleUserMenu}
+                onFocus={this.toggleUserMenu}
               >
                 {currentUser.username}
                 <div className={(this.state.arrow) ? 'arrow-up' : 'arrow-down'}>
