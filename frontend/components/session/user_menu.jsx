@@ -27,7 +27,7 @@ import { logout } from '../../actions/session_actions';
  	  render(){
       const currentUserId = this.props.currentUser.id;
  	    return(
-        <div>
+        <div onMouseLeave={() => this.props.toggle()}>
           <ul className="header-popout">
             <li className="popout-li" id="top" onClick={this.closeMenuAndLink(`/users/${currentUserId}/campaigns`)}>My Campaigns</li>
             <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}/contributions`)}>My Contributions</li>

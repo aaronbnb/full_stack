@@ -27,7 +27,7 @@ class Greeting extends React.Component {
     );
   }
 
-  toggleUserMenu() {
+  toggleUserMenu(e) {
     this.setState({"showUserMenu": !this.state.showUserMenu,
                   "arrow": !this.state.arrow});
   }
@@ -41,7 +41,7 @@ class Greeting extends React.Component {
 
             <div className='user-dropdown-container'>
               <div className='current-user-link'
-                onClick={this.toggleUserMenu}>
+                onMouseOver={this.toggleUserMenu}>
                 {currentUser.username}
                 <div className={(this.state.arrow) ? 'arrow-up' : 'arrow-down'}>
                   <span id="arrow"> > </span>
