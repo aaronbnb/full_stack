@@ -31,11 +31,20 @@ import { logout } from '../../actions/session_actions';
  	    return (
         <div onMouseLeave={() => this.props.toggle()}>
           <ul className="header-popout">
-            <li className="popout-li" id="top" onClick={this.closeMenuAndLink(`/users/${currentUserId}/campaigns`)}>My Campaigns</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}/contributions`)}>My Contributions</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`/users/${currentUserId}`)}>My Profile</li>
-            <li className="popout-li" onClick={this.closeMenuAndLink(`users/${currentUserId}/edit`)}>My Settings</li>
-            <li className="popout-li" onClick={this.logoutExit()}>Log Out</li>
+            <li className="popout-li" id="top" onClick=
+              {this.closeMenuAndLink(`/users/${currentUserId}/campaigns`)}>
+              My Campaigns</li>
+            <li className="popout-li" onClick=
+              {this.closeMenuAndLink(`/users/${currentUserId}/contributions`)}>
+              My Contributions</li>
+            <li className="popout-li"
+              onClick={this.closeMenuAndLink(`/users/${currentUserId}`)}>
+              My Profile</li>
+            <li className="popout-li"
+              onClick={this.closeMenuAndLink(`users/${currentUserId}/edit`)}>
+              My Settings</li>
+            <li className="popout-li"
+              onClick={this.logoutExit()}>Log Out</li>
           </ul>
         </div>
  	    );
