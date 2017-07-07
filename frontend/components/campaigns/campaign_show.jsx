@@ -11,7 +11,7 @@ class CampaignShow extends React.Component {
     this.numberWithCommas = this.numberWithCommas.bind(this);
     this.userBox = this.userBox.bind(this);
     this.campaignPercent = this.campaignPercent.bind(this);
-    this.state = {amount: 0};
+    this.state = {amount: ""};
   }
 
   componentDidMount() {
