@@ -897,7 +897,11 @@ div.buffer {
   cursor: pointer;
   overflow: hidden;
   word-wrap: break-word;
-  transition-duration: .2s;
+  transition-duration: .1s;
+}
+
+div.campaign-card:hover {
+  border: 1px solid #9b9b9b;
 }
 
 div.campaign-card:hover p {
