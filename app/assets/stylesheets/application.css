@@ -871,8 +871,8 @@ div.empty-nav-bar {
 }
 
 div.buffer {
-  width: 5%;
-  min-width: 25px;
+  width: 7%;
+  min-width: 35px;
 }
 
 .campaign-index-container {
@@ -887,7 +887,7 @@ div.buffer {
 }
 
 .campaign-card {
-  margin: 1.5% 2.5% 1.5% 2.5%;
+  margin: 1.5% 3% 2.5% 3%;
   width: 260px;
   height: 480px;
   box-sizing: border-box;
