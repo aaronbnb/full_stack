@@ -13,7 +13,7 @@ Indieclono supports the precepts of React, emphasizing code readability and modu
 
   Authentication is rendered in the `SessionForm` component. The `SessionForm` component is a modal, which allows for both log-in and sign up. The component relies on changes in state to make small re-renders that allow us to have a single component rather than two similar components, which would be inefficient and difficult to understand as a developer new to the project. Indieclono allows users' sessions to persist after refreshing or closing browser.
 
-  ![image of session form](docs/login.png)
+  ![image of session form](docs/wireframes/login.png)
 
   Indieclono utilizes object relational mapping to allow for associations between different tables--users, campaigns, and rewards. Upon login, an API call is made to the database which joins the user table and the campaign table, allowing us to see our own campaigns. JBuilder gives us the associations between these tables, allowing us to avoid creating massive hash data structures. React's creators have emphasized that state should be 'shallow' and avoid excessive nesting.
 
@@ -57,7 +57,7 @@ Indieclono supports the precepts of React, emphasizing code readability and modu
 
   Indieclono has a small codebase due to avoiding multiple components wherever possible, namely forms. For example, following the completion of a campaign, users add rewards for contributors. While a campaign is created one at a time, rewards are a variable number. Once again, we render additional rewards form based on user action.
 
-![tag screenshot](docs/reward-form.png)
+![tag screenshot](docs/wireframes/reward-form.png)
 ## Future Directions for the Project
 
 In addition to the features already implemented, I will work on the project, implementing more elaborate features.  Here's the next steps for Indieclono.
