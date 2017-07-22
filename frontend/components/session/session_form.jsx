@@ -43,10 +43,10 @@ class SessionForm extends React.Component {
 
   demo() {
     this.setState({
-      username: "aaron12",
+      username: "aaron11",
       password: "password"
     });
-    this.props.login(this.state);
+    this.props.login({user: {username: "aaron11", password: "password"}});
   }
 
   update(field) {
@@ -87,23 +87,26 @@ class SessionForm extends React.Component {
               <em>{(this.state.modalType === 'signup')
               ? 'sign up ' : 'log in '}</em></p>
 						<div className="login-form">
-							<label> Username:
+							<label for="username">
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
-									className="login-input" />
+									className="login-input"
+                  placeholder="Username" />
 							</label>
 							<br/>
-							<label> Password:
+							<label for="password">
 							<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
-									className="login-input" />
+									className="login-input"
+                  placeholder="Password"  />
 							</label>
               <br/>
               <div className='modal-btn-container'>
-							  <input className='modal-btn' type="submit"
-                      value={this.modalSubmit(this.state.modalType)} />
+							  <input className={`${this.state.modalType}-modal-btn`}
+                        type="submit"
+                        value={this.modalSubmit(this.state.modalType)} />
                 <button className='modal-btn' onClick={this.demo}>Demo</button>
               </div>
               <div className="footer-text-container">
