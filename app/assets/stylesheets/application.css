@@ -1024,8 +1024,7 @@ div.campaign-card:hover p {
   text-decoration: underline;
 }
 
-li.campaign-preview-pic img {
-  max-width: 100%;
+div.campaign-preview-pic img {
   min-height: 260px;
   max-height: 260px;
   display: flex;
@@ -1320,7 +1319,7 @@ p.reward-card-price {
   color: #0c0c0c;
   margin-left: 7%;
   margin-right: 6%;
-
+  margin-top: 12px;
 }
 
 span.reward-currency {
@@ -1349,6 +1348,7 @@ p.reward-supply {
   font-weight: 300;
   color: #b2b2b2;
   margin-left: 6%;
+  padding-bottom: 8px;
 }
 
 p.reward-card-title {
@@ -1359,7 +1359,7 @@ p.reward-card-title {
   letter-spacing: 1px;
   color: #0c0c0c;
   margin-right: 6%;
-
+  margin-bottom: 10px;
 }
 
 p.reward-card-description {

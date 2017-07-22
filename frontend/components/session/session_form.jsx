@@ -78,8 +78,9 @@ class SessionForm extends React.Component {
 					onRequestClose={this.closeModal}
 					style={ModalStyle}
           >
-          <p className="modal-title">Welcome to Indieclono!</p>
-
+          <div class='github-info'>
+            <p className="modal-title">Welcome to Indieclono!</p>
+          </div>
         <br/>
 					<form onSubmit={this.handleSubmit} >
             {this.renderErrors()}

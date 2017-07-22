@@ -20,11 +20,19 @@ class CampaignIndexItemCard extends React.Component {
       4: "community",
       6: "public action"
     };
+
+    let img_style = {
+      backgroundImage: 'url(' + campaign.main_img_url + ')',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '260px'
+    };
+    
     return (
       <div className='campaign-card' onClick={() => hashHistory.push(`campaigns/${campaign.id}`)}>
-        <li className='campaign-preview-pic'>
-          <img src={campaign.main_img_url}/>
-        </li>
+        <div className='campaign-preview-pic' style={img_style}>
+
+        </div>
         <div className='campaign-category-container'><li className='campaign-category-head'>{categories[campaign.category_id]}</li></div>
         <div className='campaign-title-container'><p className='campaign-card-title'>{campaign.title} </p></div>
         <div className='campaign-card-tagline-container'><li className='campaign-card-tagline'>{campaign.description}</li></div>
