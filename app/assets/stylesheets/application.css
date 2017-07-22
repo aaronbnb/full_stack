@@ -113,7 +113,11 @@ h1 {
   margin: 5px 0px 10px;
   align-self: flex-end;
   text-transform: uppercase;
-  width: 240px;
+  width: 230px;
+}
+
+.modal-title {
+
 }
 
 .login-modal-btn {
@@ -134,7 +138,7 @@ h1 {
   display: inline-block;
   margin: 5px 0px 10px;
   text-transform: uppercase;
-  width: 150px;
+  width: 140px;
 }
 
 button.modal-btn {
@@ -174,7 +178,7 @@ button.alt-portal-button {
 }
 
 .modal-signup-privacy {
-  margin: 0px 5px 0px 5px;
+  margin: -8px 5px 0px 5px;
   font-size: 12px;
   color: #bababa;
   font-weight: 400;
@@ -1382,9 +1386,12 @@ div.campaign-user-box {
 div.campaign-user-stats {
   line-height: 4px;
   position: relative;
-  top: -18px;
   margin-left: 4px;
   width: 150px;
+}
+
+div.campaign-user-stats li {
+  padding: 0px 0px 12px 0px;
 }
 
 div.sidebar-no-rewards {

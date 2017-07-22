@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
 					onRequestClose={this.closeModal}
 					style={ModalStyle}
           >
-          <p className="modal-title">Welcome to IndieClono!</p>
+          <p className="modal-title">Welcome to Indieclono!</p>
 
         <br/>
 					<form onSubmit={this.handleSubmit} >
@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
               <em>{(this.state.modalType === 'signup')
               ? 'sign up ' : 'log in '}</em></p>
 						<div className="login-form">
-							<label for="username">
+							<label htmlFor="username">
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
                   placeholder="Username" />
 							</label>
 							<br/>
-							<label for="password">
+							<label htmlFor="password">
 							<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
