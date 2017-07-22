@@ -162,7 +162,7 @@ input.signup-modal-btn {
   border: 1px solid lightgrey;
 }
 
-.login-modal-btn {
+input.login-modal-btn {
   background-color: #eb1478;
   border: 2px solid #eb1478;
   color: white !important;
@@ -306,7 +306,7 @@ ul.testpics img {
 
 .login-form input {
   margin-left: 0px;
-  color: #d1d1d1 !important;
+  color: #d1d1d1;
   letter-spacing: 0.5px;
   background-color: #d1d1d1;
 }
