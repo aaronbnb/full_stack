@@ -13,13 +13,13 @@ const ModalStyle = {
     right                 : 'auto',
     bottom                : 'auto',
     transform             : 'translate(-50%, -50%)',
-    boxShadow             : '5px 10px 10px 0px rgba(40, 40, 40, .6)',
+    boxShadow             : '0px 0px 20px 8px rgba(40, 40, 40, .65)',
     backgroundColor       : 'rgba(245, 245, 245, 1)',
     margin                : '0',
     minHeight             : '500px',
     borderRadius          : '0px',
     overflow              : 'hidden',
-    width                 : '300px',
+    width                 : '270px',
     fontFamily            : 'sans-serif',
     fontWeight            : '600'
   }
