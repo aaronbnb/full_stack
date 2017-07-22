@@ -80,6 +80,9 @@ class SessionForm extends React.Component {
           >
           <div className='github-info'>
             <p className="modal-title">Welcome to Indieclono!</p>
+            <img
+              className="github-logo"
+              src="http://res.cloudinary.com/dn4jhnh54/image/upload/c_scale,h_62,q_100/v1500736046/github-logo-icon-16174_dqvkkl.png"/>
           </div>
         <br/>
 					<form onSubmit={this.handleSubmit} >
