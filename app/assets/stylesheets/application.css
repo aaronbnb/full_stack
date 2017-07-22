@@ -114,6 +114,7 @@ h1 {
   align-self: flex-end;
   text-transform: uppercase;
   width: 230px;
+  cursor: pointer;
 }
 
 .modal-title {
@@ -139,6 +140,7 @@ h1 {
   margin: 5px 0px 10px;
   text-transform: uppercase;
   width: 140px;
+  cursor: pointer;
 }
 
 button.modal-btn {
@@ -159,6 +161,7 @@ button.modal-btn {
   margin: 5px 0px;
   text-transform: uppercase;
   min-width: 125px;
+  cursor: pointer;
 }
 
 button.alt-portal-button {
@@ -175,6 +178,7 @@ button.alt-portal-button {
   padding-left: 3px;
   margin-right: 2px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-signup-privacy {
@@ -261,7 +265,7 @@ ul.testpics img {
 
 .login-form input {
   margin-left: 0px;
-  color: #c6c6c6;
+  color: #d1d1d1;
   letter-spacing: 0.5px;
 }
 
@@ -274,6 +278,9 @@ ul.testpics img {
   margin: 0px;
 }
 
+.login-form input:focus {
+  outline: solid 1px grey;
+}
 
 
 .modal-btn-container {
