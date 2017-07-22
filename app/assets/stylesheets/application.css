@@ -90,10 +90,33 @@
   color: #EB1478;
 }
 
+.github-info {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2px;
+  margin-bottom: 1px;
+}
+
 h1 {
   float: left;
 }
 
+.github-logo-container {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.my-profile-pic-container {
+  text-align: center;
+}
+
+figcaption {
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 300;
+  color: #b5b5b5;
+}
 
 .signup-modal-btn {
   background-color: #eb1478;
@@ -118,7 +141,25 @@ h1 {
 }
 
 .modal-title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #a0a0a0;
+}
 
+.github-info a {
+  text-decoration: none;
+  pointer: cursor;
+}
+
+.my-profile-pic {
+  margin-top: 6px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
 }
 
 .login-modal-btn {

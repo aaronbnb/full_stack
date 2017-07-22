@@ -79,11 +79,24 @@ class SessionForm extends React.Component {
 					style={ModalStyle}
           >
           <div className='github-info'>
-            <p className="modal-title">Welcome to Indieclono!</p>
-            <img
-              className="github-logo"
-              src="http://res.cloudinary.com/dn4jhnh54/image/upload/c_scale,h_62,q_100/v1500736046/github-logo-icon-16174_dqvkkl.png"/>
+            <div className='github-logo-container'>
+              <a href="https://github.com/aaronbnb/full_stack">
+              <img className="github-logo"
+                  src={"http://res.cloudinary.com/dn4jhnh54/" +
+                  "image/upload/c_scale,h_62,q_100/v1500736046/"
+                  + "github-logo-icon-16174_dqvkkl.png"}/>
+              <figcaption>Github Repo</figcaption>
+              </a>
+            </div>
+            <div className="my-profile-pic-container">
+              <a href="https://github.com/aaronbnb">
+              <img className="my-profile-pic"
+                src="http://res.cloudinary.com/dn4jhnh54/image/upload/c_scale,h_52,w_52/v1500741035/mini-face_imyiy4.jpg"/>
+              <figcaption>My Portfolio</figcaption>
+              </a>
+            </div>
           </div>
+        <br/>
         <br/>
 					<form onSubmit={this.handleSubmit} >
             {this.renderErrors()}
