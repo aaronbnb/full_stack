@@ -163,7 +163,7 @@ input.signup-modal-btn {
 }
 
 input.login-modal-btn {
-  background-color: #eb1478;
+  background-color: #eb1478 !important;
   border: 2px solid #eb1478;
   color: white !important;
   padding: 10px 18px;
