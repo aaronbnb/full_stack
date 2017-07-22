@@ -306,8 +306,9 @@ ul.testpics img {
 
 .login-form input {
   margin-left: 0px;
-  color: #d1d1d1;
+  color: #d1d1d1 !important;
   letter-spacing: 0.5px;
+  background-color: #d1d1d1;
 }
 
 .login-form label {
