@@ -118,7 +118,7 @@ figcaption {
   color: #b5b5b5;
 }
 
-.signup-modal-btn {
+input.signup-modal-btn {
   background-color: #eb1478 !important;
   color: white !important;
   border: 2px solid #eb1478;
