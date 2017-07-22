@@ -78,17 +78,15 @@ class SessionForm extends React.Component {
 					onRequestClose={this.closeModal}
 					style={ModalStyle}
           >
-          Welcome to IndieClono!
+          <p className="modal-title">Welcome to IndieClono!</p>
 
         <br/>
-
-            Please {(this.state.modalType === 'signup')
-              ? 'Sign Up' : 'Log In'} or
-            {this.navLink()}
 					<form onSubmit={this.handleSubmit} >
-						{this.renderErrors()}
+            {this.renderErrors()}
+            <p className="signup-text">
+              <em>{(this.state.modalType === 'signup')
+              ? 'sign up ' : 'log in '}</em></p>
 						<div className="login-form">
-							<br/>
 							<label> Username:
 								<input type="text"
 									value={this.state.username}
@@ -111,6 +109,7 @@ class SessionForm extends React.Component {
                 </div>
           </div>
 					</form>
+
           <br/>
 				</Modal>
       </div>
@@ -120,14 +119,28 @@ class SessionForm extends React.Component {
 
   modalAltText(modalType) {
     if(modalType === 'login') {
-      return (<p className="modal-alt-text-log-in">New to Indieclono?&nbsp;
+      return (<p className="modal-alt-login">New to Indieclono? 
       <Link className='modal-alt-link'
-        onClick={this.openModal.bind(this,'signup')}> Sign Up </Link></p>);
+        onClick={this.openModal.bind(this,'signup')}>Sign Up </Link></p>);
     } else {
-      return (<p className="modal-alt-text-sign-up">By signing up you agree to our
-      <Link className='modal-alt-link'
-        onClick={() => "en.wikipedia.org/wiki/Privacy_policy"}> Terms of Use
-      </Link> and Privacy Policy</p>);
+      return (
+        <div>
+          <p className="modal-signup-privacy">By signing up you agree to our
+            <Link className='modal-alt-link'
+                  onClick={() => "en.wikipedia.org/wiki/Privacy_policy"}>
+                  Terms of Use
+            </Link>
+          and Privacy Policy
+          </p>
+          <p className='modal-alt-login'>
+            Already have an account?
+            <Link className='modal-alt-link'
+                  onClick={this.openModal.bind(this,'login')}>
+            Log In
+            </Link>
+          </p>
+      </div>
+    );
     }
   }
 
