@@ -25,10 +25,17 @@ class CampaignShow extends React.Component {
     const campaign = (this.props.campaign) ? this.props.campaign : {};
     const { rewards } = this.props;
 
+    let imgStyle = {
+      backgroundImage: 'url(' + campaign.main_img_url + ')',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '390px'
+    };
+
     return (
       <div className="campaign-show-page-container">
           <div className="campaign-profile-header-container">
-          <div className='campaign-profile-img'><img src={campaign.main_img_url}></img></div>
+          <div className='campaign-profile-img' style={imgStyle}></div>
           <div className='campaign-vital-stats-box'>
             <div className='campaign-profile-title'>
               <li>{campaign.title}</li>
