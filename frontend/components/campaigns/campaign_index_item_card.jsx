@@ -31,8 +31,8 @@ class CampaignIndexItemCard extends React.Component {
 
     const options = {
       followCursor:true,
-      shiftX: 20,
-      shiftY: 0
+      shiftX: 18,
+      shiftY: -10
     };
 
     return (
