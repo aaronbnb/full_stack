@@ -1,8 +1,7 @@
 {
   "name": "indieclonego",
-  "build-production": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
   "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "A fundraising platform inspired by Indiegogo",
   "main": "webpack.config.js",
   "directories": {
     "test": "test"
