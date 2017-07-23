@@ -57,7 +57,7 @@ class CampaignIndexItemCard extends React.Component {
             <span className="campaign-card-currency">&nbsp;USD</span>
           </li>
         </div>
-          <ReactHover
+          {<ReactHover
           options={options}>
           <ReactHover.Trigger>
             <div>
@@ -75,7 +75,7 @@ class CampaignIndexItemCard extends React.Component {
               <span id="raised">raised</span>
             </div>
           </ReactHover.Hover>
-        </ReactHover>
+        </ReactHover>}
       </div>
     );
   }
