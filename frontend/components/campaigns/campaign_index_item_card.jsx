@@ -32,39 +32,44 @@ class CampaignIndexItemCard extends React.Component {
     };
 
     return (
-      <div className='campaign-card' onClick={() => hashHistory.push(`campaigns/${campaign.id}`)}>
+      <div className='campaign-card'
+        onClick={() => hashHistory.push(`campaigns/${campaign.id}`)}>
         <div className='campaign-preview-pic' style={imgStyle}>
 
         </div>
-        <div className='campaign-category-container'>
-          <li className='campaign-category-head'>{categories[campaign.category_id]}</li>
-        </div>
-        <div className='campaign-title-container'>
-          <p className='campaign-card-title'>{campaign.title} </p>
-        </div>
-        <div className='campaign-card-tagline-container'>
-          <li className='campaign-card-tagline'>{campaign.description}</li>
-        </div>
-        <div className='campaign-card-location-container'>
-          <li className='campaign-location'>
-            <i className="fa fa-map-marker" aria-hidden="true"/>&nbsp;{campaign.location}</li></div>
-        <div className='campaign-card-goal-container'>
-          <li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}
-            <span className="campaign-card-currency">&nbsp;USD</span>
-          </li>
-        </div>
-          <div>
-            <div className='status-container'
-              onMouseEnter={this.toggleStatus}
-              onMouseExit={this.toggleStatus}>
-            <div className='campaign-status-bar'>
-              <CampaignStatusBar status={campaign.status}
-                goal={campaign.goal}/></div>
-              <p className='campaign-card-footer'>
-                {this.campaignPercent(campaign.status, campaign.goal)}% raised
-              </p>
-            </div>
-            {this.state.showStatus ? this.campaignHover() : ""}
+        <div onMouseEnter={this.toggleStatus}>
+          <div className='campaign-category-container'>
+            <li className='campaign-category-head'>{categories[campaign.category_id]}</li>
+          </div>
+          <div className='campaign-title-container'>
+            <p className='campaign-card-title'>{campaign.title} </p>
+          </div>
+          <div className='campaign-card-tagline-container'>
+            <li className='campaign-card-tagline'>{campaign.description}</li>
+          </div>
+          <div className='campaign-card-location-container'>
+            <li className='campaign-location'>
+              <i className="fa fa-map-marker" aria-hidden="true"/>
+              &nbsp;{campaign.location}
+            </li>
+          </div>
+          <div className='campaign-card-goal-container'>
+            <li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}
+              <span className="campaign-card-currency">&nbsp;USD</span>
+            </li>
+          </div>
+            <div>
+              <div className='status-container'
+              >
+              <div className='campaign-status-bar'>
+                <CampaignStatusBar status={campaign.status}
+                  goal={campaign.goal}/></div>
+                <p className='campaign-card-footer'>
+                  {this.campaignPercent(campaign.status, campaign.goal)}% raised
+                </p>
+              </div>
+              {this.state.showStatus ? this.campaignHover() : ""}
+          </div>
         </div>
       </div>
     );
@@ -72,7 +77,12 @@ class CampaignIndexItemCard extends React.Component {
 
   toggleStatus() {
     this.setState({'showStatus': !this.state.showStatus});
-    setTimeout(() => this.setState({'showStatus': false}), 2000);
+    setTimeout(() => this.setState({'showStatus': false}), 1500);
+
+  }
+
+  toggleOff(){
+    this.setState({'showStatus': false});
   }
 
   campaignPercent(status, goal) {
