@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactHover from 'react-hover';
+import { Trigger } from 'react-hover';
 import { hashHistory, withRouter, Link } from 'react-router';
 import CampaignStatusBar from './campaign_status_bar';
 
