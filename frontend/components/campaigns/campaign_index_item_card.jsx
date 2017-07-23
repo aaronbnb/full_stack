@@ -37,7 +37,8 @@ class CampaignIndexItemCard extends React.Component {
         <div className='campaign-preview-pic' style={imgStyle}>
 
         </div>
-        <div onMouseEnter={this.toggleStatus}>
+        <div onMouseEnter={this.toggleStatus}
+          onMouseLeave={this.toggleStatus}>
           <div className='campaign-category-container'>
             <li className='campaign-category-head'>{categories[campaign.category_id]}</li>
           </div>
@@ -77,12 +78,6 @@ class CampaignIndexItemCard extends React.Component {
 
   toggleStatus() {
     this.setState({'showStatus': !this.state.showStatus});
-    setTimeout(() => this.setState({'showStatus': false}), 1500);
-
-  }
-
-  toggleOff(){
-    this.setState({'showStatus': false});
   }
 
   campaignPercent(status, goal) {
