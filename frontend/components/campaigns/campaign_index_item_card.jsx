@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactHover from 'react-hover';
 import { hashHistory, withRouter, Link } from 'react-router';
 import CampaignStatusBar from './campaign_status_bar';
 
@@ -21,26 +22,60 @@ class CampaignIndexItemCard extends React.Component {
       6: "public action"
     };
 
-    let img_style = {
+    let imgStyle = {
       backgroundImage: 'url(' + campaign.main_img_url + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '260px'
     };
-    
+
+    const options = {
+      followCursor:true,
+      shiftX: 20,
+      shiftY: 0
+    };
+
     return (
       <div className='campaign-card' onClick={() => hashHistory.push(`campaigns/${campaign.id}`)}>
-        <div className='campaign-preview-pic' style={img_style}>
+        <div className='campaign-preview-pic' style={imgStyle}>
 
         </div>
-        <div className='campaign-category-container'><li className='campaign-category-head'>{categories[campaign.category_id]}</li></div>
-        <div className='campaign-title-container'><p className='campaign-card-title'>{campaign.title} </p></div>
-        <div className='campaign-card-tagline-container'><li className='campaign-card-tagline'>{campaign.description}</li></div>
-        <div className='campaign-card-location-container'><li className='campaign-location'><i className="fa fa-map-marker" aria-hidden="true"/>&nbsp;{campaign.location}</li></div>
-        <div className='campaign-card-goal-container'><li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}<span className="campaign-card-currency">&nbsp;USD</span></li></div>
-        <div className='campaign-status-bar'>
-          <CampaignStatusBar status={campaign.status} goal={campaign.goal}/></div>
-          <p className='campaign-card-footer'>{this.campaignPercent(campaign.status, campaign.goal)}% raised</p>
+        <div className='campaign-category-container'>
+          <li className='campaign-category-head'>{categories[campaign.category_id]}</li>
+        </div>
+        <div className='campaign-title-container'>
+          <p className='campaign-card-title'>{campaign.title} </p>
+        </div>
+        <div className='campaign-card-tagline-container'>
+          <li className='campaign-card-tagline'>{campaign.description}</li>
+        </div>
+        <div className='campaign-card-location-container'>
+          <li className='campaign-location'>
+            <i className="fa fa-map-marker" aria-hidden="true"/>&nbsp;{campaign.location}</li></div>
+        <div className='campaign-card-goal-container'>
+          <li className='campaign-card-goal'>&nbsp;${this.numberWithCommas(campaign.goal)}
+            <span className="campaign-card-currency">&nbsp;USD</span>
+          </li>
+        </div>
+          <ReactHover
+          options={options}>
+          <ReactHover.Trigger>
+            <div>
+            <div className='campaign-status-bar'>
+              <CampaignStatusBar status={campaign.status}
+                goal={campaign.goal}/></div>
+              <p className='campaign-card-footer'>
+                {this.campaignPercent(campaign.status, campaign.goal)}% raised
+              </p>
+            </div>
+          </ReactHover.Trigger>
+          <ReactHover.Hover>
+            <div className='campaign-status-hover'>
+              {`$${this.numberWithCommas(campaign.status)} `}
+              <span id="raised">raised</span>
+            </div>
+          </ReactHover.Hover>
+        </ReactHover>
       </div>
     );
   }

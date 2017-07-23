@@ -359,6 +359,55 @@ ul.testpics img {
   padding-right: 30px;
 }
 
+.campaign-status-hover {
+  width: 60px;
+  height: 34px;
+  background-color: #f7f7f7;
+  color: #8c8c8c;
+  border: solid 1px #5eb27b;
+  font-size: 15px;
+  font-weight: 300;
+  opacity: .9;
+  position: relative;
+  -moz-border-radius:    3px;
+  -webkit-border-radius: 3px;
+  border-radius:         3px;
+  padding-left: 4px;
+
+}
+
+#raised {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8c8c8c;
+  font-size: 10px;
+  margin-top: -5px;
+  padding-bottom: 5px;
+}
+
+.campaign-status-hover:after {
+  display: block;
+  width: 9px;
+  height: 9px;
+  content: '';
+  border-bottom: 1px solid #5eb27b;
+  border-left: 1px solid #5eb27b;
+  border-radius: 1px;
+  background: #f7f7f7;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  left: -6px;
+  top: 12px;
+  z-index: 1;
+}
+
+.campaign-status-hover p:hover {
+  text-decoration: none;
+}
+
 .nav-bar-selected {
   padding: 1px 5px 1px 5px;
   color: #FFFFFF;
