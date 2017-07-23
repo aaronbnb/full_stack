@@ -16,7 +16,6 @@ class UserContributionShow extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const {contributions, user, currentUser } = this.props;
     return (
       <div className='user-show-stats'>
@@ -50,7 +49,6 @@ class UserContributionShow extends React.Component {
     contributionList() {
       const { contributions } = this.props.user;
       const username = this.props.user.username;
-      console.log(contributions);
       if (contributions.length > 0) {
         return (
           <div>

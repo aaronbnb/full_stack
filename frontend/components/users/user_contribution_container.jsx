@@ -8,7 +8,6 @@ import { fetchCampaign, fetchCampaigns } from '../../actions/campaign_actions';
 import UserContributionShow from './user_contribution_show';
 
 const mapStateToProps = (state, { params }) => {
-  console.log(state);
   return ({contributions: state.user.contributions,
           user: state.user,
           currentUser: state.session.currentUser});
