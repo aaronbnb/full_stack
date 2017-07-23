@@ -373,6 +373,9 @@ ul.testpics img {
   -webkit-border-radius: 3px;
   border-radius:         3px;
   padding-left: 4px;
+  text-align: center;
+margin-left: 250px;
+margin-top: -42px;
 
 }
 
@@ -1109,7 +1112,7 @@ div.buffer {
   padding: 0;
   font-family: "Libre Franklin", sans-serif;
   cursor: pointer;
-  overflow: hidden;
+  overflow: visible;
   word-wrap: break-word;
   transition-duration: .1s;
 }

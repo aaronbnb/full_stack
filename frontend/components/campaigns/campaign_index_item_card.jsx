@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactHover from 'react-hover';
-import { Trigger } from 'react-hover';
 import { hashHistory, withRouter, Link } from 'react-router';
 import CampaignStatusBar from './campaign_status_bar';
 
@@ -9,6 +7,9 @@ class CampaignIndexItemCard extends React.Component {
     super(props);
     this.numberWithCommas = this.numberWithCommas.bind(this);
     this.campaignPercent = this.campaignPercent.bind(this);
+    this.campaignHover = this.campaignHover.bind(this);
+    this.toggleStatus = this.toggleStatus.bind(this);
+    this.state = {'showStatus': false};
   }
 
   render() {
@@ -28,12 +29,6 @@ class CampaignIndexItemCard extends React.Component {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '260px'
-    };
-
-    const options = {
-      followCursor:true,
-      shiftX: 18,
-      shiftY: -10
     };
 
     return (
@@ -59,10 +54,9 @@ class CampaignIndexItemCard extends React.Component {
           </li>
         </div>
           <div>
-          <ReactHover
-          options={options}>
-          <ReactHover.Trigger>
-            <div>
+            <div className='status-container'
+              onMouseEnter={this.toggleStatus}
+              onMouseExit={this.toggleStatus}>
             <div className='campaign-status-bar'>
               <CampaignStatusBar status={campaign.status}
                 goal={campaign.goal}/></div>
@@ -70,17 +64,15 @@ class CampaignIndexItemCard extends React.Component {
                 {this.campaignPercent(campaign.status, campaign.goal)}% raised
               </p>
             </div>
-          </ReactHover.Trigger>
-          <ReactHover.Hover>
-            <div className='campaign-status-hover'>
-              {`$${this.numberWithCommas(campaign.status)} `}
-              <span id="raised">raised</span>
-            </div>
-          </ReactHover.Hover>
-        </ReactHover>
+            {this.state.showStatus ? this.campaignHover() : ""}
         </div>
       </div>
     );
+  }
+
+  toggleStatus() {
+    this.setState({'showStatus': !this.state.showStatus});
+    setTimeout(() => this.setState({'showStatus': false}), 2000);
   }
 
   campaignPercent(status, goal) {
@@ -97,6 +89,15 @@ class CampaignIndexItemCard extends React.Component {
     while (pattern.test(num))
         num = num.replace(pattern, "$1,$2");
     return num;
+  }
+
+  campaignHover() {
+    return(
+      <div className='campaign-status-hover'>
+        {`$${this.numberWithCommas(this.props.campaign.status)} `}
+        <span id="raised">raised</span>
+      </div>
+    );
   }
 }
 
