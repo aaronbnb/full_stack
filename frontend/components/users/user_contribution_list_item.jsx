@@ -65,11 +65,13 @@ class UserContributionListItem extends React.Component {
           </div>
 
           <div className='contribution-campaign-title-container'>
-            <p>{campaign.title}</p>
+            <Link to={`campaigns/${campaign.id}`}>
+              <p>{campaign.title}</p>
+            </Link>
           </div>
 
           <div className='contribution-amount-container'>
-            <p>${contribution.amount}</p>
+            <p><span id='contribution-money'>$</span>&nbsp;{contribution.amount}</p>
           </div>
 
       </div>
