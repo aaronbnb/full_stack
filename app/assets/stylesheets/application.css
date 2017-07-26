@@ -947,13 +947,53 @@ p.input-descriptor {
 
 }
 
-.contribution-campaign-pic {
-  border: 1px solid #cecece;
-  outline: 1px solid white;
+.contribution-campaign-pic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.contribution-campaign-pic {
+  border: 1px solid #cecece;
+  outline: 2px solid white;
+}
 
+.contribution-campaign-title-container {
+  display: flex;
+  align-items: center;
+  color: #444444;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
+.contribution-amount-container {
+  display: flex;
+  align-items: center;
+}
+
+.contribution-list-item-container-even {
+  display: flex;
+  margin-left: 9%;
+  margin-right: 9%;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+  background-color: #F5F1DE;
+}
+
+.contribution-list-item-container-odd {
+  display: flex;
+  margin-left: 9%;
+  margin-right: 9%;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+}
+
+.contribution-date-container {
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+}
 
 .contribution-btn {
   background-color: #7A69B3;

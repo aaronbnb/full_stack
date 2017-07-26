@@ -33,18 +33,22 @@ class UserContributionListItem extends React.Component {
 
   render() {
     const { contribution, campaign } = this.props;
+
+    let count = ((this.props.count % 2 ) === 0) ? 'even' : 'odd';
     console.log(this.props);
 
     const imgStyle = {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '200px',
-      width: '200px'
+      height: '160px',
+      width: '160px'
     };
 
+
+
     return (
-      <div className="contribution-list-item-container">
+      <div className={"contribution-list-item-container-" + `${count}`}>
 
           <div className='contribution-date-container'>
             <p>{this.displayDate(contribution.created_at)}</p>
@@ -54,9 +58,14 @@ class UserContributionListItem extends React.Component {
             <Link to={`campaigns/${campaign.id}`}
               className='campaign-list-item-title'>
               <div className='contribution-campaign-pic'
-                style={imgStyle}>
+                style={imgStyle}
+                alt={`Campaign profile pic. Link to ${campaign.title}`}>
               </div>
             </Link>
+          </div>
+
+          <div className='contribution-campaign-title-container'>
+            <p>{campaign.title}</p>
           </div>
 
           <div className='contribution-amount-container'>

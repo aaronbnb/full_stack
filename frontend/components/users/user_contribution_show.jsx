@@ -49,15 +49,16 @@ class UserContributionShow extends React.Component {
     contributionList() {
       const { contributions } = this.props;
       const username = this.props.user.username;
+      const count = 0;
       if (contributions.length > 0) {
         return (
           <div>
             <h2 className='user-campaign-list-header'>{`${username}'s Contributions'`}</h2>
-            {contributions.map( contribution => (
-              <div key={contribution.id}>
-                <p>{contribution.amount}</p>
+            {contributions.map( (contribution, index) => (
+              <div key={contribution.id} className='contributions-container'>
                 <UserContributionListItemContainer
-                  contribution={contribution}/>
+                  contribution={contribution}
+                  count={index}/>
               </div>
             ))
             }
