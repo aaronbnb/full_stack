@@ -5,24 +5,19 @@ import { logout } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchContributions } from '../../actions/contribution_actions';
 import { fetchCampaign, fetchCampaigns } from '../../actions/campaign_actions';
-import UserContributionShow from './user_contribution_show';
-const mapStateToProps = (state, params ) => {
-  if (state.user.contributions == undefined) {
-    return ({
-      contributions: [],
-      user: {},
-      currentUser: state.session.currentUser
-    });
-  }
-  return ({contributions: state.user.contributions,
-          user: state.user,
-          currentUser: state.session.currentUser});
+import UserContributionListItem from './user_contribution_list_item';
+
+const mapStateToProps = (state, params) => {
+  console.log(state);
+  console.log(params);
+  return({
+    contribution: params.contribution,
+    campaign: state.campaigns[params.contribution.campaign_id]
+  });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: id => dispatch(fetchUser(id)),
-  fetchContributions: () => dispatch(fetchContributions()),
-  fetchCampaigns: () => dispatch(fetchCampaigns()),
   fetchCampaign: (id) => dispatch(fetchCampaign(id)),
   logout: id => dispatch(logout(id))
 });
@@ -30,4 +25,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UserContributionShow);
+)(UserContributionListItem);

@@ -99,7 +99,7 @@ class CampaignIndexItemCard extends React.Component {
   campaignHover() {
     return(
       <div className='campaign-status-hover'>
-        {`$${this.numberWithCommas(this.props.campaign.status)} `}
+        {`$${this.numberWithCommas(this.props.campaign.status)}\n`}
         <span id="raised">raised</span>
       </div>
     );

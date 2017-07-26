@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import UserContributionListItem from './user_contribution_list_item';
+import UserContributionListItemContainer from './user_contribution_list_item_container';
 
 class UserContributionShow extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class UserContributionShow extends React.Component {
     this.contributionList = this.contributionList.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if(this.props.params) {
       this.props.fetchUser(this.props.params.userId);
     }
@@ -47,16 +47,17 @@ class UserContributionShow extends React.Component {
     }
 
     contributionList() {
-      const { contributions } = this.props.user;
+      const { contributions } = this.props;
       const username = this.props.user.username;
       if (contributions.length > 0) {
         return (
           <div>
             <h2 className='user-campaign-list-header'>{`${username}'s Contributions'`}</h2>
             {contributions.map( contribution => (
-              <div>
+              <div key={contribution.id}>
                 <p>{contribution.amount}</p>
-                <UserContributionListItem contribution={contribution}/>
+                <UserContributionListItemContainer
+                  contribution={contribution}/>
               </div>
             ))
             }

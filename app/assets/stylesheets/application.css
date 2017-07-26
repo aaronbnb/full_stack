@@ -367,7 +367,7 @@ ul.testpics img {
   border: solid 2px #5eb27b;
   font-size: 15px;
   font-weight: 300;
-  opacity: .9;
+  opacity: .7;
   position: relative;
   -moz-border-radius:    3px;
   -webkit-border-radius: 3px;
@@ -405,9 +405,11 @@ margin-top: -42px;
   left: -6px;
   top: 12px;
   z-index: 1;
+  opacity: .85;
 }
 
-.campaign-status-hover p:hover {
+.campaign-status-hover p {
+  margin-right: 1px;
   text-decoration: none;
 }
 
@@ -944,6 +946,14 @@ p.input-descriptor {
   width: 60%;
 
 }
+
+.contribution-campaign-pic {
+  border: 1px solid #cecece;
+  outline: 1px solid white;
+}
+
+
+
 
 .contribution-btn {
   background-color: #7A69B3;
