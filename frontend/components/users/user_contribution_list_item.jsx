@@ -41,8 +41,8 @@ class UserContributionListItem extends React.Component {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '160px',
-      width: '160px'
+      height: '120px',
+      width: '120px'
     };
 
 
@@ -69,7 +69,7 @@ class UserContributionListItem extends React.Component {
           </div>
 
           <div className='contribution-amount-container'>
-            <p>{contribution.amount}</p>
+            <p>${contribution.amount}</p>
           </div>
 
       </div>

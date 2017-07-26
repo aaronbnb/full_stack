@@ -570,6 +570,10 @@ div.current-user-link:hover {
   color: #eb1478;
 }
 
+.user-links {
+  padding-top: 15px;
+}
+
 ul.user-links {
   display: block;
   list-style: none;
@@ -951,20 +955,23 @@ p.input-descriptor {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .contribution-campaign-pic {
-  border: 1px solid #cecece;
-  outline: 2px solid white;
+  box-shadow: 0 0 3pt 2pt #cecece;
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 .contribution-campaign-title-container {
   display: flex;
   align-items: center;
   color: #444444;
-  font-size: 18px;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 400px;
 }
 
 .contribution-amount-container {
@@ -974,17 +981,17 @@ p.input-descriptor {
 
 .contribution-list-item-container-even {
   display: flex;
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: 7%;
+  margin-right: 7%;
   border-bottom: 1px solid #dddddd;
   padding: 10px;
-  background-color: #F5F1DE;
+  background-color: #eaeaea
 }
 
 .contribution-list-item-container-odd {
   display: flex;
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: 7%;
+  margin-right: 7%;
   border-bottom: 1px solid #dddddd;
   padding: 10px;
 }
@@ -992,7 +999,12 @@ p.input-descriptor {
 .contribution-date-container {
   display: flex;
   align-items: center;
-  min-width: 150px;
+  justify-content: center;
+  min-width: 120px;
+  width: 12%;
+  color: #3d3d3d;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .contribution-btn {
