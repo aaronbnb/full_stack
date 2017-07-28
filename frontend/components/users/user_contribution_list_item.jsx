@@ -50,7 +50,7 @@ class UserContributionListItem extends React.Component {
       backgroundPosition: 'center',
       height: '120px',
       width: '120px'
-    }.bind(this);
+    };
 
 
 
