@@ -4,10 +4,12 @@ import { Link, hashHistory } from 'react-router';
 class UserContributionListItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
     this.displayDate = this.displayDate.bind(this);
   }
 
   displayDate(date) {
+
     const months = {
       '01': "January",
       '02': "February",
@@ -22,7 +24,7 @@ class UserContributionListItem extends React.Component {
       '11': "November",
       '12': "December"
     };
-    console.log("Fsd");
+    console.log("ucli" + date.ToString());
     let year = date.slice(0,4);
     let month = months[date.slice(5, 7)];
     let day = (date[8] === '0') ? date[9] : date.slice(8, 10);
@@ -31,12 +33,21 @@ class UserContributionListItem extends React.Component {
     return dateString;
   }
 
+  componentWillMount() {
+
+  }
+
   render() {
-    const { contribution, campaign } = this.props;
+    const { contribution, campaign } = this.state;
 
     let count = ((this.props.count % 2 ) === 0) ? 'even' : 'odd';
+    console.log("render ucli");
     console.log(this.props);
-
+    if (campaign.main_img_url === undefined) {
+      campaign.main_img_url = 'https://res.cloudinary.com' +
+      '/dn4jhnh54/image/upload/v1501215424/' +
+      'grey-website-background-illusionapparel-1024x640_yjnzpk.jpg';
+    }
     const imgStyle = {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',

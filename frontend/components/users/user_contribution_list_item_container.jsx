@@ -8,8 +8,6 @@ import { fetchCampaign, fetchCampaigns } from '../../actions/campaign_actions';
 import UserContributionListItem from './user_contribution_list_item';
 
 const mapStateToProps = (state, params) => {
-  console.log(state);
-  console.log(params);
   return({
     contribution: params.contribution,
     campaign: state.campaigns[params.contribution.campaign_id]
