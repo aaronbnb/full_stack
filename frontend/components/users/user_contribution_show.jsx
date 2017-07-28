@@ -53,7 +53,7 @@ class UserContributionShow extends React.Component {
       if (contributions.length > 0) {
         return (
           <div>
-            <h2 className='user-campaign-list-header'>{`${username}'s Contributions'`}</h2>
+            <h2 className='contribution-list-header'>{`${username}'s Contributions`}</h2>
             {contributions.map( (contribution, index) => (
               <div key={contribution.id} className='contributions-container'>
                 <UserContributionListItemContainer

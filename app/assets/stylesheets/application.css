@@ -1655,6 +1655,16 @@ h2.user-campaign-list-header {
   margin-left: 9%;
 }
 
+h2.contribution-list-header {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 20px 0px 20px 0px;
+  font-family: sans-serif;
+  color: #7A69B3;
+  margin-left: 7%;
+
+}
+
 div.campaign-list-item {
   max-width: 1220px;
   min-width: 670px;
