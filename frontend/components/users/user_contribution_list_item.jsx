@@ -25,7 +25,7 @@ class UserContributionListItem extends React.Component {
       '12': "December"
     };
     if (date === undefined) {
-      return "June 30, 2017";
+      return `June ${Math.trunc(Math.random() * 30)}, 2017`;
     }
     let year = date.slice(0,4);
     let month = months[date.slice(5, 7)];
@@ -44,8 +44,6 @@ class UserContributionListItem extends React.Component {
 
     let count = ((this.props.count % 2 ) === 0) ? 'even' : 'odd';
 
-    console.log(this.props);
-    console.log(campaign.main_img_url);
     const imgStyle = {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',
