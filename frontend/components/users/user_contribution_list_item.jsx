@@ -24,7 +24,9 @@ class UserContributionListItem extends React.Component {
       '11': "November",
       '12': "December"
     };
-    console.log("ucli" + date.ToString());
+    if (date === undefined) {
+      return "June 30, 2017";
+    }
     let year = date.slice(0,4);
     let month = months[date.slice(5, 7)];
     let day = (date[8] === '0') ? date[9] : date.slice(8, 10);
