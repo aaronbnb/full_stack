@@ -38,12 +38,12 @@ class UserContributionListItem extends React.Component {
   }
 
   render() {
-    const { contribution, campaign } = this.state;
+    const { contribution, campaign } = this.props;
 
     let count = ((this.props.count % 2 ) === 0) ? 'even' : 'odd';
     console.log("render ucli");
     console.log(this.props);
-
+    console.log(campaign.main_img_url);
     const imgStyle = {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',
