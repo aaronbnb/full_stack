@@ -43,18 +43,14 @@ class UserContributionListItem extends React.Component {
     let count = ((this.props.count % 2 ) === 0) ? 'even' : 'odd';
     console.log("render ucli");
     console.log(this.props);
-    if (campaign.main_img_url === undefined) {
-      campaign.main_img_url = 'https://res.cloudinary.com' +
-      '/dn4jhnh54/image/upload/v1501215424/' +
-      'grey-website-background-illusionapparel-1024x640_yjnzpk.jpg';
-    }
+
     const imgStyle = {
       backgroundImage: 'url(' + `${campaign.main_img_url}` + ')',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '120px',
       width: '120px'
-    };
+    }.bind(this);
 
 
 
